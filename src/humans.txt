@@ -1,0 +1,22 @@
+/* TEAM */
+
+Author: Stephen E. Chiang
+Site: https://www.chiangs.ninja
+Twitter: @chiangse
+Linkedin: https://www.linkedin.com/in/chiangs
+Location: Stavanger, Norway.
+
+/* THANKS */
+
+Name: Code & Hammer Design
+Site: www.codehammer.design
+                            
+/* SITE */
+
+Last update: 2018/05/03
+
+Standards: HTML5, CSS3, ES6
+
+Components: Semantic-UI, Google Maps API, Angular.
+
+Software: Visual Studio Code, Chrome Dev Tools, Firefox Dev Edition, AWS EC2, GitHub

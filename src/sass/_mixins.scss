@@ -1,0 +1,30 @@
+@mixin shadow() {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+@mixin shadow-hoverD() {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  box-shadow: 0 5px 10px 0 rgba(255, 255, 255, 0.8);
+  transition: 1s;
+}
+
+@mixin shadow-hoverL() {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.8);
+  transition: 1s;
+}
+
+@mixin themeL-transition() {
+  -webkit-transition: background-color 0.5s ease-in;
+  transition: background-color 0.5s ease-in;
+}
+
+@mixin themeD-transition() {
+  -webkit-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}

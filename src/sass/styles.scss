@@ -1,0 +1,142 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'normalize.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'functions.scss';
+@import 'animations.scss';
+
+html,
+body,
+view {
+  height: 100%;
+  font-size: 100%;
+  box-sizing: border-box;
+  margin: 0px;
+  color: $text;
+}
+
+html {
+  // Scales by 1px for every 100px from 600px onwards
+  @media (min-width: 600px) {
+    font-size: calc(112.5% + 4 * (100vw - 600px) / 400);
+  }
+
+  // Sets font-size to 22px after a viewport of 1000px
+  @media (min-width: 1000px) {
+    font-size: calc(137.5%);
+  }
+}
+
+h2,
+h3,
+h4 {
+  font-family: $fnt-labels;
+}
+
+h1,
+h5,
+h6,
+p {
+  font-family: $fnt-main;
+}
+
+// base CSS grid
+.viewContainer {
+  height: 100%;
+  display: grid;
+  grid-gap: $grid-gap;
+  grid-template: repeat(16, 1fr) / repeat(16, 1fr);
+  padding: spacing(extra-loose);
+}
+
+.title {
+  grid-column: 1 / -1;
+  grid-row: 2 / 4;
+}
+
+.subtitle {
+  grid-column: 1 / -1;
+  grid-row: 4 / 5;
+}
+
+.contentContainer {
+  grid-column: 1 / -1;
+  grid-row: 5 / -1;
+}
+
+// app-wide classes
+.hidden {
+  display: none !important;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.title {
+  font-size: calc(150% + 20 * (100vw - 600px) / 500);
+}
+
+.devToButton {
+  background-color: $black;
+  color: $white;
+}
+
+.ctaButton {
+  min-width: 150px;
+  min-height: 50px;
+}
+
+// Light
+.light {
+  background-color: $white;
+  color: $text;
+  @include themeL-transition;
+  .active {
+    color: $accent;
+  }
+
+  .lastName {
+    color: $main;
+  }
+
+  .shadow:hover {
+    @include shadow-hoverL;
+  }
+
+  .ctaButton {
+    border: $borderThinDark;
+  }
+
+  .devToButton {
+    background-color: $black;
+    color: $white;
+  }
+}
+
+// Dark
+.dark {
+  background-color: $main;
+  color: $text-inverted;
+  @include themeD-transition;
+  .active {
+    color: $blue;
+  }
+
+  .lastName {
+    color: $white;
+  }
+
+  .shadow:hover {
+    @include shadow-hoverD;
+  }
+
+  .ctaButton {
+    border: $borderThinLight;
+  }
+
+  .devToButton {
+    background-color: $white;
+    color: $black;
+  }
+}

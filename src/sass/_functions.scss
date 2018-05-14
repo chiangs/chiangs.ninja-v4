@@ -1,0 +1,23 @@
+@import 'variables.scss';
+
+// UNIT STANDARD DECLARATIONS
+$spacing-data: (
+  none: 0,
+  unit: $unit,
+  extra-tight: $unit * 2,
+  tight: $unit * 4,
+  base: $unit * 6,
+  medium: $unit * 8,
+  loose: $unit * 12,
+  extra-loose: $unit * 16
+);
+
+@function spacing($variant: base) {
+  $value: map-get($spacing-data, $variant);
+
+  @if $value == null {
+    @error 'Spacing variant `#{$variant}` not found.';
+  }
+
+  @return $value;
+}
