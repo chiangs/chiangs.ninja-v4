@@ -5,9 +5,19 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CreateComponent } from './create/create.component';
+import { PhotographyComponent } from './create/photography/photography.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { GalleryComponent } from './create/photography/gallery/gallery.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    ErrorPageComponent,
+    CreateComponent,
+    PhotographyComponent,
+    GalleryComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

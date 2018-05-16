@@ -1,18 +1,99 @@
 <!doctype html>
 <html lang="en">
-<head>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-  <meta charset="utf-8">
-  <title>ChiangsNinja</title>
-  <base href="/">
 
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Stephen E. Chiang</title>
+  <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="max-age=1209600">
+  <meta name="description" content="Personal full-stack developer portfolio and tech blog." />
+  <!-- Facebook meta for sharing -->
+  <meta property="og:url" content="http://www.chiangs.ninja" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Stephen E. Chiang - Full Stack Developer" />
+  <meta property="og:description" content="Project Portfolio and Feature Testing Ground" />
+  <meta property="og:image" content="https://www.chiangs.ninja/assets/icons/icon-512x512.png" />
+  <meta property="og:image:secure_url" content="https://www.chiangs.ninja/assets/icons/icon-512x512.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:image:alt" content="Icon" />
+  <!-- PWA -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1976d2">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#ee4035">
+  <meta name="apple-mobile-web-app-title" content="Chiangs.Ninja">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-icon-57x57" sizes="57x57">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-icon-60x60" sizes="60x60">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-icon-72x72" sizes="72x72">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-icon-76x76" sizes="76x76">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-icon-114x114" sizes="114x114">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-icon-120x120" sizes="120x120">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-icon-144x144" sizes="144x144">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-icon-152x152" sizes="152x152">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-icon-180x180" sizes="180x180">
+  <meta name="msapplication-Tilemage" content="/src/images/icons/apple-icon-144x144">
+  <meta name="msapplication-TileColor" content="#ee4035">
+  <meta name="theme-color" content="#ee4035">
+  <!-- Misc -->
+  <link rel="author" type="text/plain" href="humans.txt" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
-  <app-root></app-root>
+
+<body id="body">
+  <app-root>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+      app-root {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        color: #293040;
+        text-transform: lowercase;
+        font-family: 'Montserrat',
+        sans-serif;
+        font-size: 2.5em;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      body {
+        background: #fff;
+        margin: 0;
+        padding: 0;
+      }
+
+      @keyframes dots {
+        50% {
+          transform: translateY(-.4rem);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .d {
+        animation: dots 1.5s ease-out infinite;
+      }
+
+      .d-2 {
+        animation-delay: .5s;
+      }
+
+      .d-3 {
+        animation-delay: 1s;
+      }
+    </style>
+    Loading
+    <span class="d">.</span>
+    <span class="d d-2">.</span>
+    <span class="d d-3">.</span>
+  </app-root>
 </body>
+
 </html>
