@@ -9,6 +9,7 @@ class PhotographyStubComponent {}
 describe('PhotographyComponent', () => {
   let component: PhotographyComponent;
   let fixture: ComponentFixture<PhotographyComponent>;
+  let h1: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -29,7 +30,6 @@ describe('PhotographyComponent', () => {
   });
 
   // unit tests - each function
-  // ngOnInit
   describe('unit tests', () => {
     describe('ngOninit', () => {
       it('should set gallery by calling initGallery', () => {
@@ -38,19 +38,18 @@ describe('PhotographyComponent', () => {
       });
     });
 
-    describe('initGallery', () => {
-      it('should return array of gallery images ');
-    });
-
     describe('ngOnDestroy', () => {});
     it('should unsubscribe from theme subscription', () => {});
   });
 
+  // integration - template
   describe('template integration tests', () => {
     describe('constructor', () => {
-      it('should set title correctly', () => {});
+      it('should set title correctly', () => {
+        h1 = fixture.nativeElement.querySelector('h1');
+        expect(h1.textContent).toContain(component.title);
+      });
       it('should subscribe to theme service and set theme', () => {});
     });
   });
-  // integration - template
 });

@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LandingComponent } from './landing/landing.component';
 import { CreateComponent } from './create/create.component';
-
+import { DesignComponent } from './design/design.component';
+import { CodeComponent } from './code/code.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 
 const routes: Routes = [
+  { path: 'welcome', component: LandingComponent },
+  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
+  { path: 'design', component: DesignComponent },
+  { path: 'code', component: CodeComponent },
   { path: 'create', component: CreateComponent },
   { path: '**', component: ErrorPageComponent }
 ];

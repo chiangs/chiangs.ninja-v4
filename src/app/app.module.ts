@@ -9,6 +9,12 @@ import { CreateComponent } from './create/create.component';
 import { PhotographyComponent } from './create/photography/photography.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { GalleryComponent } from './create/photography/gallery/gallery.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { LandingComponent } from './landing/landing.component';
+import { LandingTitleComponent } from './landing/landing-title/landing-title.component';
+import { LandingTaglineComponent } from './landing/landing-tagline/landing-tagline.component';
+import { CodeComponent } from './code/code.component';
+import { DesignComponent } from './design/design.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,13 @@ import { GalleryComponent } from './create/photography/gallery/gallery.component
     ErrorPageComponent,
     CreateComponent,
     PhotographyComponent,
-    GalleryComponent
+    GalleryComponent,
+    NavbarComponent,
+    LandingComponent,
+    LandingTitleComponent,
+    LandingTaglineComponent,
+    CodeComponent,
+    DesignComponent
   ],
   imports: [
     BrowserModule,

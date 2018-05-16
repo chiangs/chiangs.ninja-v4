@@ -53,7 +53,9 @@ export class PhotographyComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.themeSub.unsubscribe();
+    if (this.themeSub) {
+      this.themeSub.unsubscribe();
+    }
   }
 
   initGallery(): GalleryImage[] {
