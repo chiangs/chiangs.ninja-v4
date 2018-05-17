@@ -1,0 +1,56 @@
+@import 'styles';
+
+nav {
+  background: transparent;
+  font-family: $fnt-main;
+}
+
+.container {
+  width: 100%;
+  max-height: spacing(base) * 3;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+}
+
+mat-slide-toggle,
+.navEnd {
+  padding: spacing(base) 0 0 0;
+  width: spacing(unit) * 25;
+}
+
+.brand {
+  max-height: 50px;
+}
+
+.links {
+  text-align: center;
+  width: 100%;
+  flex: 1;
+}
+
+.container .links li {
+  cursor: pointer;
+  display: inline-block;
+  width: spacing(loose);
+  list-style-type: none;
+  padding: spacing(base) spacing(extra-loose);
+}
+
+@media only screen and(max-width: 823px) {
+  mat-slide-toggle,
+  .navEnd {
+    height: 52px;
+    padding: spacing(unit) 0 0 10px;
+  }
+
+  .brand {
+    max-width: 25px;
+  }
+  .container .links li {
+    font-size: $fontSizeRegular;
+    width: spacing(tight);
+    padding: spacing(tight) spacing(loose);
+  }
+}

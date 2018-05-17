@@ -40,6 +40,15 @@ p {
   font-family: $fnt-main;
 }
 
+a,
+a:visited,
+a:active,
+a:hover,
+li {
+  text-decoration: none;
+  outline: none;
+}
+
 // base CSS grid
 .viewContainer {
   height: 100%;
