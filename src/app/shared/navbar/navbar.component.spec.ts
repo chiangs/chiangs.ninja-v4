@@ -7,6 +7,11 @@ describe('NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
 
+  class MockThemeSelectService {
+    selectedTheme = true;
+    user = { name: 'Test User' };
+  }
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [NavbarComponent],
@@ -24,6 +29,7 @@ describe('NavbarComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  // Component functions
   describe('unit tests', () => {
     describe('OnInit', () => {
       it('should set the navLinks', () => {
@@ -40,5 +46,11 @@ describe('NavbarComponent', () => {
     });
   });
 
+  // Connection to template such as string interpolations
   describe('template integration tests', () => {});
+
+  // Observables, services, and connection with other components
+  describe('integration tests', () => {
+    describe('theme subscription', () => {});
+  });
 });

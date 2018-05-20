@@ -20,6 +20,7 @@ import { LandingTitleComponent } from './landing/landing-title/landing-title.com
 import { LandingTaglineComponent } from './landing/landing-tagline/landing-tagline.component';
 import { CodeComponent } from './code/code.component';
 import { DesignComponent } from './design/design.component';
+import { ContextIntroComponent } from './shared/context-intro/context-intro.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DesignComponent } from './design/design.component';
     LandingTitleComponent,
     LandingTaglineComponent,
     CodeComponent,
-    DesignComponent
+    DesignComponent,
+    ContextIntroComponent
   ],
   imports: [
     BrowserModule,

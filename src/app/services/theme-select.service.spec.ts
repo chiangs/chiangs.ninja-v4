@@ -9,7 +9,17 @@ describe('ThemeSelectService', () => {
     });
   });
 
-  it('should be created', inject([ThemeSelectService], (service: ThemeSelectService) => {
-    expect(service).toBeTruthy();
-  }));
+  it(
+    'should be created',
+    inject([ThemeSelectService], (service: ThemeSelectService) => {
+      expect(service).toBeTruthy();
+    })
+  );
+
+  it('should toggle selectedTheme', () => {
+    const component = new ThemeSelectService();
+    expect(component.selectedTheme).toBe(false, 'at first');
+    component.setTheme(true);
+    expect(component.selectedTheme).toBe(true, 'after change');
+  });
 });
