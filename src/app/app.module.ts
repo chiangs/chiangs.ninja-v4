@@ -21,6 +21,7 @@ import { LandingTaglineComponent } from './landing/landing-tagline/landing-tagli
 import { CodeComponent } from './code/code.component';
 import { DesignComponent } from './design/design.component';
 import { ContextIntroComponent } from './shared/context-intro/context-intro.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ContextIntroComponent } from './shared/context-intro/context-intro.comp
     LandingTaglineComponent,
     CodeComponent,
     DesignComponent,
-    ContextIntroComponent
+    ContextIntroComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

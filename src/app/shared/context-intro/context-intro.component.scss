@@ -1,0 +1,72 @@
+@import 'styles';
+
+.blue {
+  color: #00a3ff;
+}
+
+.green {
+  color: #00c853;
+}
+
+.yellow {
+  color: #ffd600;
+}
+
+.orange {
+  color: #ff3d00;
+}
+
+.contextContainer {
+  width: 100%;
+  height: 80px;
+  border-radius: $unit;
+}
+
+.contextTitle h2 {
+  font-family: $fnt-labels;
+  font-weight: $fnt-labels-hv;
+  font-size: $fontSizeHuge;
+  font-style: italic;
+  text-transform: uppercase;
+  text-shadow: $shadowTextDark;
+  margin: 0;
+  position: absolute;
+  top: 80px;
+  left: 25%;
+  animation: slideTitle 2.5s ease-in-out 1 normal;
+}
+
+.contextTagline h6 {
+  font-family: $fnt-main;
+  font-weight: 400;
+  color: $accent;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0;
+  animation: slideTagline 3.5s ease-in-out 1 normal;
+}
+
+// Animation
+@keyframes slideTitle {
+  0% {
+    transform: translateX(-100%);
+  }
+  15% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideTagline {
+  0% {
+    transform: translateX(100%);
+  }
+  10% {
+    transform: translateX(8%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

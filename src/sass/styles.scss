@@ -58,6 +58,11 @@ li {
   padding: spacing(extra-loose);
 }
 
+.contextIntro {
+  grid-column: 2 / 6;
+  grid-row: 0 / 1;
+}
+
 .title {
   grid-column: 1 / -1;
   grid-row: 2 / 4;
