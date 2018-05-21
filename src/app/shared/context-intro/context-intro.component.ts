@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   template: `
     <div class="contextContainer">
       <div class="contextTitle">
-        <h2>{{ title }}</h2>
+        <h2 [ngClass]="color">{{ title }}</h2>
       </div>
 
       <div class="contextTagline">
@@ -18,8 +18,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ContextIntroComponent implements OnInit {
   @Input() title: string;
   @Input() tagline: string;
+  @Input() color: string;
 
-  constructor() {}
+  constructor() {
+    !this.title ? (this.title = 'default title') : (this.title = this.title);
+    !this.tagline
+      ? (this.tagline = 'default tagline')
+      : (this.tagline = this.tagline);
+    !this.color ? (this.color = 'blue') : (this.color = this.color);
+  }
 
   ngOnInit(): void {}
 }

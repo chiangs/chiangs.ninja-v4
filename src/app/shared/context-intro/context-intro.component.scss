@@ -1,0 +1,40 @@
+@import 'styles';
+
+.blue {
+  color: #00a3ff;
+}
+
+.green {
+  color: #00c853;
+}
+
+.yellow {
+  color: #ffd600;
+}
+
+.orange {
+  color: #ff3d00;
+}
+
+.contextContainer {
+  max-width: 450px;
+  max-height: 300px;
+  border-radius: $unit;
+  background-color: #f7f7f7;
+  border: $test-border1;
+}
+
+.contextTitle h2 {
+  font-family: $fnt-labels;
+  font-weight: $fnt-labels-hv;
+  font-size: $fontSizeHuge;
+  text-transform: uppercase;
+}
+
+.contextTagline h6 {
+  font-family: $fnt-main;
+  font-style: italic;
+  font-weight: 400;
+  color: $accent;
+  text-align-last: center;
+}
