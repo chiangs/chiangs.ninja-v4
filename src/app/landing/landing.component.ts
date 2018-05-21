@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <p>
       landing works!
-      <app-context-intro [title]="'test'" [tagline]="'testtagline'" [color]="'yellow'"></app-context-intro>
+      <app-context-intro></app-context-intro>
       </p>
   `,
   styleUrls: ['./landing.component.scss']
