@@ -17,11 +17,9 @@
 }
 
 .contextContainer {
-  max-width: 450px;
-  max-height: 300px;
+  width: 100%;
+  height: 80px;
   border-radius: $unit;
-  background-color: #f7f7f7;
-  border: $test-border1;
 }
 
 .contextTitle h2 {
@@ -31,6 +29,10 @@
   font-style: italic;
   text-transform: uppercase;
   text-shadow: $shadowTextDark;
+  margin: 0;
+  position: absolute;
+  top: 80px;
+  left: 25%;
   animation: slideTitle 2.5s ease-in-out 1 normal;
 }
 
@@ -38,7 +40,9 @@
   font-family: $fnt-main;
   font-weight: 400;
   color: $accent;
-  text-align-last: center;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0;
   animation: slideTagline 3.5s ease-in-out 1 normal;
 }
 

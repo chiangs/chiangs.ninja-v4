@@ -1,3 +1,5 @@
+import { ContextModel } from './context.model';
+
 export class Me {
   firstName: string;
   middleName: string;
@@ -19,8 +21,10 @@ export class Me {
   livePic: string;
   freelanceStatus: string;
   tagline: string;
-  welcome: string;
   beliefs: string;
   goals: string;
   story: string;
+  designContext: ContextModel;
+  codeContext: ContextModel;
+  createContext: ContextModel;
 }

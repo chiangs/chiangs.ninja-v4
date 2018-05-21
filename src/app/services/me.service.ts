@@ -9,6 +9,7 @@ export class MeService {
 
   // The only place information needs to be populated and updated.
   // Use lowercase to allow for more styling flexibility in css.
+  // TODO: Complete information here
   constructor() {
     this.me.firstName = 'stephen';
     this.me.middleName = 'e.';
@@ -51,10 +52,25 @@ export class MeService {
     this.me.livePic = 'string';
     this.me.freelanceStatus = 'string';
     this.me.tagline = 'Full-stack developer & designer';
-    this.me.welcome = 'string';
     this.me.beliefs = 'string';
     this.me.goals = 'string';
     this.me.story = 'string';
+    // contexts
+    this.me.designContext = {
+      title: 'Design',
+      tagline: `It's important to me to learn and be familiar with the concepts and tools of this crucial process; measure twice, cut once...`,
+      color: 'blue'
+    };
+    this.me.codeContext = {
+      title: `Code`,
+      tagline: `In the pursuit of being a world-class developer, I continue to build what interests me...`,
+      color: `green`
+    };
+    this.me.createContext = {
+      title: `Create`,
+      tagline: `I continue to develop creative and design inspiration through what I see in my travels and working with different materials...`,
+      color: `yellow`
+    };
   }
 
   getMe(): Me {
