@@ -1,0 +1,44 @@
+@import 'styles';
+
+.landingContainer {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-gap: $grid-gap;
+  grid-template: repeat(16, 1fr) / repeat(16, 1fr);
+}
+
+.landingTitle {
+  grid-column: 3 / 14;
+  grid-row: 4 / 7;
+}
+
+.landingSubTitle {
+  grid-column: 16 / -1;
+  grid-row: 1 / -1;
+}
+
+.menu {
+  grid-column: 9 / 14;
+  grid-row: 9 / 16;
+  text-align: center;
+  li {
+    padding: 10px 0;
+  }
+}
+
+.menuList {
+  list-style-type: none;
+}
+
+@media only screen and (max-width: 766px) {
+  .menu {
+    grid-column: 1 / 8;
+    grid-row: 7 / -1;
+  }
+
+  .ctaButton {
+    min-width: 100px;
+  }
+}
