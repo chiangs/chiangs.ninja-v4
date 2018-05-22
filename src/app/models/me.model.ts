@@ -1,15 +1,11 @@
 import { ContextModel } from './context.model';
+import { SocialMediaLink } from './social-media-link.model';
 
 export class Me {
   firstName: string;
   middleName: string;
   lastName: string;
   email: string;
-  phone: string;
-  linkedin: { icon: string; url: string };
-  twitter: { icon: string; url: string };
-  instagram: { icon: string; url: string };
-  github: { icon: string; url: string };
   location: {
     city: string;
     country: string;
@@ -24,6 +20,10 @@ export class Me {
   beliefs: string;
   goals: string;
   story: string;
+  linkedin: SocialMediaLink;
+  twitter: SocialMediaLink;
+  instagram: SocialMediaLink;
+  github: SocialMediaLink;
   designContext: ContextModel;
   codeContext: ContextModel;
   createContext: ContextModel;

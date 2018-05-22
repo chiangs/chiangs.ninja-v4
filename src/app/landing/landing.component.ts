@@ -26,6 +26,9 @@ import { DeviceSizeService } from '../services/device-size.service';
         <li><button mat-button color="accent" class="ctaButton" (click)="goToBlog()">Write</button></li>
       </ul>
     </div>
+    <div class="socialMedia">
+     <app-social-media-links [me]="me" [orientation]="socialLinksOrientation" *ngIf="me"></app-social-media-links>
+    </div>
   </div>
   `,
   styleUrls: ['./landing.component.scss']
@@ -40,6 +43,7 @@ export class LandingComponent implements OnInit, OnDestroy {
   snackbarMsg: string;
   snackbarAction: string;
   isArrowHidden: boolean;
+  socialLinksOrientation: string;
 
   constructor(
     private themeSvc: ThemeSelectService,
@@ -55,6 +59,7 @@ export class LandingComponent implements OnInit, OnDestroy {
     this.isArrowHidden = true;
     this.snackbarMsg = 'Hi, try changing the theme by clicking on the slider.';
     this.snackbarAction = 'Ok, got it!';
+    this.socialLinksOrientation = 'vertical';
     this.checkOpenSnackbar();
   }
 

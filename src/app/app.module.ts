@@ -22,6 +22,7 @@ import { CodeComponent } from './code/code.component';
 import { DesignComponent } from './design/design.component';
 import { ContextIntroComponent } from './shared/context-intro/context-intro.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { SocialMediaLinksComponent } from './shared/social-media-links/social-media-links.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     CodeComponent,
     DesignComponent,
     ContextIntroComponent,
-    FooterComponent
+    FooterComponent,
+    SocialMediaLinksComponent
   ],
   imports: [
     BrowserModule,

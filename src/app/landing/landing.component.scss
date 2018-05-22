@@ -16,7 +16,12 @@
 
 .landingSubTitle {
   grid-column: 16 / -1;
-  grid-row: 1 / -1;
+  grid-row: 1 / 8;
+}
+
+.socialMedia {
+  grid-column: 16 / -1;
+  grid-row: 9 / -1;
 }
 
 .menu {
