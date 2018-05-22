@@ -28,7 +28,8 @@
               "src/assets",
               "src/humans.txt",
               "src/robots.txt",
-              "src/manifest.json"
+              "src/manifest.json",
+              "src/_redirects"
             ],
             "stylePreprocessorOptions": {
               "includePaths": ["src/sass"]
