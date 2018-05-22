@@ -1,0 +1,44 @@
+@import 'styles';
+
+.socialLinks {
+  margin: 0;
+  text-align: center;
+  display: flex;
+}
+
+.socialLink img {
+  max-width: 25px;
+  max-height: 25px;
+}
+
+// Horizontal
+.horizontal.socialLinks {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  .socialLink {
+    padding: 0 10px;
+  }
+
+  .socialLink img {
+    max-width: 35px;
+    max-height: 35px;
+  }
+}
+
+// Vertical
+.vertical.socialLinks {
+  height: 100%;
+  padding-right: spacing(medium);
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  .socialLink {
+    padding: spacing(extra-tight) spacing(none);
+  }
+
+  .socialLink img {
+    max-width: 20px;
+    max-height: 20px;
+  }
+}

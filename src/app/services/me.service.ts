@@ -15,20 +15,26 @@ export class MeService {
     this.me.middleName = 'e.';
     this.me.lastName = 'chiang';
     this.me.email = 'stephen.e.chiang@gmail.com';
-    this.me.phone = '+47 4122 3902';
     this.me.linkedin = {
-      icon: 'linkedin',
+      iconD: '../../assets/images/icons/linkedin-blk.svg',
+      iconL: '../../assets/images/icons/linkedin-wht.svg',
       url: 'https://www.linkedin.com/in/chiangs'
     };
     this.me.twitter = {
-      icon: 'twitter',
+      iconD: '../../assets/images/icons/twitter-blk.svg',
+      iconL: '../../assets/images/icons/twitter-wht.svg',
       url: 'https://www.twitter.com/chiangse'
     };
     this.me.instagram = {
-      icon: 'instagram',
+      iconD: '../../assets/images/icons/instagram-blk.svg',
+      iconL: '../../assets/images/icons/instagram-wht.svg',
       url: 'https://www.instagram.com/chiangse'
     };
-    this.me.github = { icon: 'github', url: 'https://www.github.com/chiangs' };
+    this.me.github = {
+      iconD: '../../assets/images/icons/github-blk.svg',
+      iconL: '../../assets/images/icons/github-wht.svg',
+      url: 'https://www.github.com/chiangs'
+    };
     this.me.location = {
       city: 'stavanger',
       country: 'norway',
@@ -58,17 +64,17 @@ export class MeService {
     // contexts
     this.me.designContext = {
       title: 'Design',
-      tagline: `It's important to me to learn and be familiar with the concepts and tools of this crucial process; measure twice, cut once...`,
+      tagline: `Although not a designer by trade, it's important to me to integrate the concepts and tools of this crucial process; measure twice, cut once...`,
       color: 'blue'
     };
     this.me.codeContext = {
       title: `Code`,
-      tagline: `In the pursuit of being a world-class developer, I continue to build what interests me...`,
+      tagline: `In the pursuit of being a world-class developer, I continue to build and stretch my learning...`,
       color: `green`
     };
     this.me.createContext = {
       title: `Create`,
-      tagline: `I continue to develop creative and design inspiration through what I see in my travels and working with different materials...`,
+      tagline: `I cultivate my inspiration through discovering the physical world, because that's what enhances the virtual experience...`,
       color: `yellow`
     };
   }
