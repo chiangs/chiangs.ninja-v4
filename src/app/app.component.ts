@@ -4,8 +4,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   template: `
-    <app-navbar *ngIf="!isLanding"></app-navbar>
+    <app-navbar class="header" *ngIf="!isLanding"></app-navbar>
     <router-outlet></router-outlet>
+    <app-footer class="footer" *ngIf="!isLanding"></app-footer>
   `,
   styleUrls: ['./app.component.scss']
 })

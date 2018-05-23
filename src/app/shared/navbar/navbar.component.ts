@@ -3,6 +3,7 @@ import { MatSlideToggle } from '@angular/material';
 import { Subscription } from 'rxjs';
 import { ThemeSelectService } from '../../services/theme-select.service';
 import { DeviceSizeService } from '../../services/device-size.service';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,14 +13,14 @@ import { DeviceSizeService } from '../../services/device-size.service';
         <mat-slide-toggle class="themeToggle" [checked]="checked" [labelPosition]="'before'" (change)="onToggleTheme($event)">
           <img class="brand" src="../../../assets/images/icon-s.svg">
         </mat-slide-toggle>
-        <div class="links" *ngIf="!isMobilePhone">
+        <div class="links">
           <li routerLinkActive="active" 
             [routerLinkActiveOptions]="{exact: true}" 
             [routerLink]="item"
             *ngFor="let item of navLinks">.{{ item }}</li>
           <li id="navBlogLink" rel="noopener" (click)="goToBlog()">{{ blogNavTitle }}</li>
         </div>
-        <div class="navEnd"></div>
+        <div class="navEnd" *ngIf="!isMobilePhone" (click)="scrollToFooter('footer')">@</div>
       </ul>
     </nav>
   `,
@@ -36,7 +37,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   constructor(
     private themeSvc: ThemeSelectService,
-    private isMobileSvc: DeviceSizeService
+    private isMobileSvc: DeviceSizeService,
+    private scrollSvc: ScrollService
   ) {
     this.themeSub = this.themeSvc.getTheme().subscribe(theme => {
       this.checked = theme;
@@ -63,5 +65,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   goToBlog(): void {
     window.open(this.blogLink, '_blank');
+  }
+
+  scrollToFooter(className: string): void {
+    this.scrollSvc.scrollTo(className);
   }
 }

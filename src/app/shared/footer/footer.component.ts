@@ -3,10 +3,12 @@ import { Subscription } from 'rxjs';
 import { Me } from '../../models/me.model';
 import { MeService } from '../../services/me.service';
 import { ThemeSelectService } from '../../services/theme-select.service';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-footer',
   template: `
+    <button (click)="scrollToHeader('header')">Scroll</button>
     <ul>
       <li>{{ me.firstName }} {{ me.middleName }}. {{ me.lastName }}</li>
       <li>{{ me.email }}</li>
@@ -25,7 +27,11 @@ export class FooterComponent implements OnInit, OnDestroy {
   themeSub: Subscription;
   theme: boolean;
 
-  constructor(private meSvc: MeService, private themeSvc: ThemeSelectService) {
+  constructor(
+    private meSvc: MeService,
+    private themeSvc: ThemeSelectService,
+    private scrollSvc: ScrollService
+  ) {
     this.me = this.meSvc.getMe();
     this.themeSub = this.themeSvc
       .getTheme()
@@ -38,5 +44,9 @@ export class FooterComponent implements OnInit, OnDestroy {
     if (this.themeSub) {
       this.themeSub.unsubscribe();
     }
+  }
+
+  scrollToHeader(className: string): void {
+    this.scrollSvc.scrollTo(className);
   }
 }

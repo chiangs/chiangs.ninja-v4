@@ -48,9 +48,15 @@ mat-slide-toggle,
   .brand {
     max-width: 25px;
   }
+
+  .container .links {
+    text-align: right;
+    padding: spacing(tight) spacing(base) 0 0;
+  }
+
   .container .links li {
-    font-size: $fontSizeRegular;
-    width: spacing(tight);
-    padding: spacing(tight) spacing(loose);
+    font-size: $fontSizeSmall;
+    display: inline;
+    padding: spacing(tight) spacing(tight);
   }
 }
