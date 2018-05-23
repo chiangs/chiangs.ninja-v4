@@ -6,11 +6,9 @@ import { Subject, BehaviorSubject, Observable } from 'rxjs';
 })
 export class ThemeSelectService {
   selectedTheme: Subject<boolean> = new BehaviorSubject<boolean>(null);
-  seenSnackbar: boolean;
+  snackBarViewed = 'snackBarViewed';
 
-  constructor() {
-    this.seenSnackbar = false;
-  }
+  constructor() {}
 
   getTheme(): Observable<boolean> {
     return this.selectedTheme.asObservable();
@@ -21,10 +19,16 @@ export class ThemeSelectService {
   }
 
   setSeenGuide(): void {
-    this.seenSnackbar = true;
+    // this.seenSnackbar = true;
+    localStorage.setItem(this.snackBarViewed, JSON.stringify(true));
   }
 
   getSeenGuide(): boolean {
-    return this.seenSnackbar;
+    const data = localStorage.getItem(this.snackBarViewed);
+    return JSON.parse(data);
+  }
+
+  resetGuide(): void {
+    localStorage.removeItem(this.snackBarViewed);
   }
 }
