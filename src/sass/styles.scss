@@ -87,6 +87,12 @@ li {
   text-decoration: underline;
 }
 
+.link {
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: spacing(unit) - 2;
+}
+
 .title {
   font-size: calc(150% + 20 * (100vw - 600px) / 500);
 }
@@ -126,6 +132,10 @@ li {
     background-color: $black;
     color: $white;
   }
+
+  .link:hover {
+    color: $accent;
+  }
 }
 
 // Dark
@@ -152,6 +162,10 @@ li {
   .devToButton {
     background-color: $white;
     color: $black;
+  }
+
+  .link:hover {
+    color: $blue;
   }
 }
 

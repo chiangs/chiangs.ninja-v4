@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject, BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -6,9 +7,10 @@ import { Subject, BehaviorSubject, Observable } from 'rxjs';
 })
 export class ThemeSelectService {
   selectedTheme: Subject<boolean> = new BehaviorSubject<boolean>(null);
-  snackBarViewed = 'snackBarViewed';
+  viewedGuide = false;
+  snackBarViewedCache = 'snackBarViewed';
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   getTheme(): Observable<boolean> {
     return this.selectedTheme.asObservable();
@@ -19,16 +21,21 @@ export class ThemeSelectService {
   }
 
   setSeenGuide(): void {
-    // this.seenSnackbar = true;
-    localStorage.setItem(this.snackBarViewed, JSON.stringify(true));
+    localStorage
+      ? localStorage.setItem(this.snackBarViewedCache, JSON.stringify(true))
+      : (this.viewedGuide = true);
   }
 
   getSeenGuide(): boolean {
-    const data = localStorage.getItem(this.snackBarViewed);
-    return JSON.parse(data);
+    return localStorage
+      ? JSON.parse(localStorage.getItem(this.snackBarViewedCache))
+      : this.viewedGuide;
   }
 
   resetGuide(): void {
-    localStorage.removeItem(this.snackBarViewed);
+    localStorage
+      ? localStorage.removeItem(this.snackBarViewedCache)
+      : (this.viewedGuide = false);
+    this.router.navigate(['/']);
   }
 }

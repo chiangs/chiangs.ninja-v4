@@ -39,7 +39,7 @@ export class MeService {
     this.me.location = {
       city: 'stavanger',
       country: 'norway',
-      coordinates: { lat: 58.97, lng: 5.731 }
+      coordinates: { lat: `58.97˚`, lng: `5.73˚` }
     };
     this.me.companies = [
       {

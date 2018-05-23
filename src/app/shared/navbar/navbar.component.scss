@@ -16,7 +16,7 @@ nav {
 
 mat-slide-toggle,
 .navEnd {
-  padding: spacing(base) 0 0 0;
+  padding: spacing(base) 0 0 spacing(base);
   width: spacing(unit) * 25;
 }
 
@@ -36,6 +36,10 @@ mat-slide-toggle,
   width: spacing(loose);
   list-style-type: none;
   padding: spacing(base) spacing(extra-loose);
+}
+
+.container .links li:hover {
+  color: $blue;
 }
 
 @media only screen and(max-width: 823px) {

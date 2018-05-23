@@ -7,16 +7,16 @@ import { ThemeSelectService } from '../../services/theme-select.service';
   selector: 'app-social-media-links',
   template: `
   <div class="socialLinks" [ngClass]="orientation">
-     <a class="socialLink" href="{{ me.github.url }}" target="_blank" rel="noopener">
+     <a class="link socialLink" href="{{ me.github.url }}" target="_blank" rel="noopener">
         <img src="{{ theme ? me.github.iconL : me.github.iconD }}">
       </a>
-      <a class="socialLink" href="{{ me.linkedin.url }}" target="_blank" rel="noopener">
+      <a class="link socialLink" href="{{ me.linkedin.url }}" target="_blank" rel="noopener">
         <img src="{{ theme ? me.linkedin.iconL : me.linkedin.iconD }}">
       </a>
-      <a class="socialLink" href="{{ me.instagram.url }}" target="_blank" rel="noopener">
+      <a class="link socialLink" href="{{ me.instagram.url }}" target="_blank" rel="noopener">
         <img src="{{ theme ? me.instagram.iconL : me.instagram.iconD }}">
       </a>
-      <a class="socialLink" href="{{ me.twitter.url }}" target="_blank" rel="noopener">
+      <a class="link socialLink" href="{{ me.twitter.url }}" target="_blank" rel="noopener">
         <img src="{{ theme ? me.twitter.iconL : me.twitter.iconD }}">
       </a>
   </div>

@@ -20,7 +20,7 @@ import { ScrollService } from '../../services/scroll.service';
             *ngFor="let item of navLinks">.{{ item }}</li>
           <li id="navBlogLink" rel="noopener" (click)="goToBlog()">{{ blogNavTitle }}</li>
         </div>
-        <div class="navEnd" *ngIf="!isMobilePhone" (click)="scrollToFooter('footer')">@</div>
+        <div class="navEnd link" *ngIf="!isMobilePhone" (click)="scrollToFooter('footer')">@</div>
       </ul>
     </nav>
   `,
