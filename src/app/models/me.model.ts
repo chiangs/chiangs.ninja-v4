@@ -6,6 +6,7 @@ export class Me {
   middleName: string;
   lastName: string;
   email: string;
+  blog: string;
   location: {
     city: string;
     country: string;

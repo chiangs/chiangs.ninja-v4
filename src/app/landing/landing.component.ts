@@ -23,7 +23,7 @@ import { DeviceSizeService } from '../services/device-size.service';
         <li><button mat-button color="accent" class="ctaButton" (click)="goToDesign()">Design</button></li>
         <li><button mat-button color="accent" class="ctaButton" (click)="goToProjects()">Code</button></li>
         <li><button mat-button color="accent" class="ctaButton" (click)="goToGallery()">Create</button></li>
-        <li><button mat-button color="accent" class="ctaButton" (click)="goToBlog()">Write</button></li>
+        <li><button mat-button color="accent" class="ctaButton" (click)="goToBlog()" rel="noopener">Write</button></li>
       </ul>
     </div>
     <div class="socialMedia">
@@ -107,6 +107,6 @@ export class LandingComponent implements OnInit, OnDestroy {
   }
 
   goToBlog(): void {
-    window.open('https://dev.to/chiangs', '_blank');
+    window.open(this.me.blog, '_blank');
   }
 }

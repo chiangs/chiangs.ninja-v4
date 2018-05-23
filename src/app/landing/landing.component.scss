@@ -35,6 +35,9 @@
 
 .menuList {
   list-style-type: none;
+  li button {
+    font-family: $fnt-main;
+  }
 }
 
 @media only screen and (max-width: 766px) {

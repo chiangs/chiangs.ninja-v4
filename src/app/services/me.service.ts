@@ -15,6 +15,7 @@ export class MeService {
     this.me.middleName = 'e.';
     this.me.lastName = 'chiang';
     this.me.email = 'stephen.e.chiang@gmail.com';
+    this.me.blog = 'https://dev.to/chiangs';
     this.me.linkedin = {
       iconD: '../../assets/images/icons/linkedin-blk.svg',
       iconL: '../../assets/images/icons/linkedin-wht.svg',

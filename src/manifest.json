@@ -1,8 +1,8 @@
 {
   "name": "ChiangsNinja",
-  "short_name": "ChiangsNinja",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "short_name": "Stephen E. Chiang",
+  "theme_color": "#1b1f29",
+  "background_color": "#1b1f29",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",

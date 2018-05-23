@@ -17,7 +17,7 @@ import { DeviceSizeService } from '../../services/device-size.service';
             [routerLinkActiveOptions]="{exact: true}" 
             [routerLink]="item"
             *ngFor="let item of navLinks">.{{ item }}</li>
-          <li id="navBlogLink" (click)="goToBlog()">{{ blogNavTitle }}</li>
+          <li id="navBlogLink" rel="noopener" (click)="goToBlog()">{{ blogNavTitle }}</li>
         </div>
         <div class="navEnd"></div>
       </ul>
