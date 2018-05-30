@@ -3,10 +3,12 @@ import { Router } from '@angular/router';
 import { MatButton } from '@angular/material';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subscription } from 'rxjs';
+import { en, dk, no } from '../constants';
+import { ThemeSelectService } from '../services/theme-select.service';
+import { LanguageService } from '../services/language.service';
+import { DeviceSizeService } from '../services/device-size.service';
 import { Me } from '../models/me.model';
 import { MeService } from '../services/me.service';
-import { ThemeSelectService } from '../services/theme-select.service';
-import { DeviceSizeService } from '../services/device-size.service';
 
 @Component({
   selector: 'app-landing',
@@ -19,12 +21,11 @@ import { DeviceSizeService } from '../services/device-size.service';
       <app-landing-tagline [tagline]="me.tagline"></app-landing-tagline>
     </div>
     <div class="menu">
-      <ul class="menuList">
-        <li><button mat-button color="accent" class="ctaButton" (click)="goToDesign()">Design</button></li>
-        <li><button mat-button color="accent" class="ctaButton" (click)="goToProjects()">Code</button></li>
-        <li><button mat-button color="accent" class="ctaButton" (click)="goToGallery()">Create</button></li>
-        <li><button mat-button color="accent" class="ctaButton" (click)="goToBlog()" rel="noopener">Write</button></li>
-      </ul>
+    <app-menu-list [language]="selectedLanguage"
+      (goToDesign)="goToDesign()"
+      (goToCode)="goToCode()"
+      (goToCreate)="goToCreate()"
+      (goToWrite)="goToWrite()"></app-menu-list>
     </div>
     <div class="socialMedia">
      <app-social-media-links [me]="me" [orientation]="socialLinksOrientation" *ngIf="me"></app-social-media-links>
@@ -36,17 +37,34 @@ import { DeviceSizeService } from '../services/device-size.service';
 export class LandingComponent implements OnInit, OnDestroy {
   me: Me;
   themeSub: Subscription;
+  langSub: Subscription;
   snackbarRef: any;
   isMobile: boolean;
   isPhone: boolean;
   theme: boolean;
+  selectedLanguage: string;
   snackbarMsg: string;
   snackbarAction: string;
   isArrowHidden: boolean;
   socialLinksOrientation: string;
+  // Content
+  pageContent: { snackbarMsg: string; snackbarAction: string };
+  enContent = {
+    snackbarMsg: `Hi, try changing the theme by clicking on the slider.`,
+    snackbarAction: `Ok, got it!`
+  };
+  dkContent = {
+    snackbarMsg: `Hej, prøv at ændre temaet ved at klikke på skyderen.`,
+    snackbarAction: 'Ok, det ved jeg godt!'
+  };
+  noContent = {
+    snackbarMsg: `Hei, prøv å endre temaet ved at klikke på glidebryteren.`,
+    snackbarAction: 'Ok, skjønner!'
+  };
 
   constructor(
     private themeSvc: ThemeSelectService,
+    private langSvc: LanguageService,
     private meSvc: MeService,
     private isMobileSvc: DeviceSizeService,
     private router: Router,
@@ -67,6 +85,9 @@ export class LandingComponent implements OnInit, OnDestroy {
     this.themeSub = this.themeSvc
       .getTheme()
       .subscribe(theme => (this.theme = theme));
+    this.langSub = this.langSvc
+      .getLang()
+      .subscribe(language => (this.selectedLanguage = language));
   }
 
   ngOnDestroy(): void {
@@ -98,15 +119,15 @@ export class LandingComponent implements OnInit, OnDestroy {
     this.router.navigate(['/design']);
   }
 
-  goToProjects(): void {
+  goToCode(): void {
     this.router.navigate(['/code']);
   }
 
-  goToGallery(): void {
+  goToCreate(): void {
     this.router.navigate(['/create']);
   }
 
-  goToBlog(): void {
+  goToWrite(): void {
     window.open(this.me.blog, '_blank');
   }
 }

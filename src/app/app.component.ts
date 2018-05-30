@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LanguageService } from './services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
   title = 'Chiangs.Ninja';
   isLanding: boolean;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private langSvc: LanguageService) {}
 
   ngOnInit() {
     this.router.events.subscribe(
