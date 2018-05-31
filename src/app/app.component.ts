@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { LanguageService } from './services/language.service';
+import { en, dk, no } from './constants';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +14,16 @@ import { LanguageService } from './services/language.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Chiangs.Ninja';
+  langSub: Subscription;
   isLanding: boolean;
+  title = `Chiangs.Ninja`;
+  defaultLang = en;
 
-  constructor(private router: Router, private langSvc: LanguageService) {}
+  constructor(private router: Router, private langSvc: LanguageService) {
+    navigator.language
+      ? this.langSvc.setLang(navigator.language)
+      : this.langSvc.setLang(this.defaultLang);
+  }
 
   ngOnInit() {
     this.router.events.subscribe(

@@ -94,6 +94,9 @@ export class LandingComponent implements OnInit, OnDestroy {
     if (this.themeSub) {
       this.themeSub.unsubscribe();
     }
+    if (this.langSub) {
+      this.langSub.unsubscribe();
+    }
   }
 
   checkOpenSnackbar(): void {

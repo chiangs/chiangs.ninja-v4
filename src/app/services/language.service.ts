@@ -6,21 +6,19 @@ import { en, no, dk } from '../constants';
   providedIn: 'root'
 })
 export class LanguageService {
-  _browserLang: Subject<string>;
   _currentLang: Subject<string>;
   hasLocalStorage: boolean;
   selectedLangCache = 'language';
 
   constructor() {
     this.hasLocalStorage = localStorage ? true : false;
-    this._currentLang = new BehaviorSubject<string>(en);
-    this._browserLang = navigator.language
+    this._currentLang = navigator.language
       ? new BehaviorSubject<string>(navigator.language)
       : new BehaviorSubject<string>(en);
   }
 
   getLang(): Observable<string> {
-    return this._currentLang.asObservable() || this._browserLang.asObservable();
+    return this._currentLang.asObservable();
   }
 
   setLang(language: string): void {

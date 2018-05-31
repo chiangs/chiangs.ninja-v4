@@ -44,6 +44,9 @@ export class MenuListComponent implements OnInit {
     this.goToCode = new EventEmitter<any>();
     this.goToCreate = new EventEmitter<any>();
     this.goToWrite = new EventEmitter<any>();
+  }
+
+  ngOnInit() {
     this.viewContent = this.langSvc.langSwitchHandler(
       this.language,
       this.enContent,
@@ -51,8 +54,6 @@ export class MenuListComponent implements OnInit {
       this.noContent
     );
   }
-
-  ngOnInit() {}
 
   onGoToDesign(): void {
     this.goToDesign.emit();
