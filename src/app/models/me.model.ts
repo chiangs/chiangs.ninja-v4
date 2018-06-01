@@ -25,7 +25,4 @@ export class Me {
   twitter: SocialMediaLink;
   instagram: SocialMediaLink;
   github: SocialMediaLink;
-  designContext: ContextModel;
-  codeContext: ContextModel;
-  createContext: ContextModel;
 }

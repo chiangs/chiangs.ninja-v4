@@ -20,9 +20,7 @@ export class AppComponent implements OnInit {
   defaultLang = en;
 
   constructor(private router: Router, private langSvc: LanguageService) {
-    navigator.language
-      ? this.langSvc.setLang(navigator.language)
-      : this.langSvc.setLang(this.defaultLang);
+    this.setLanguage();
   }
 
   ngOnInit() {
@@ -30,5 +28,15 @@ export class AppComponent implements OnInit {
       res =>
         (this.isLanding = this.router.url.includes('/welcome') ? true : false)
     );
+  }
+
+  setLanguage(): void {
+    if (localStorage.getItem('language')) {
+      this.langSvc.setLang(localStorage.getItem('language'));
+    } else {
+      navigator.language
+        ? this.langSvc.setLang(navigator.language)
+        : this.langSvc.setLang(this.defaultLang);
+    }
   }
 }

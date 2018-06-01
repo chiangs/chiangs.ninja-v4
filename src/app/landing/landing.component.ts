@@ -1,14 +1,12 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
-import { Router } from '@angular/router';
-import { MatButton } from '@angular/material';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { en, dk, no } from '../constants';
-import { ThemeSelectService } from '../services/theme-select.service';
-import { LanguageService } from '../services/language.service';
-import { DeviceSizeService } from '../services/device-size.service';
 import { Me } from '../models/me.model';
+import { DeviceSizeService } from '../services/device-size.service';
+import { LanguageService } from '../services/language.service';
 import { MeService } from '../services/me.service';
+import { ThemeSelectService } from '../services/theme-select.service';
 
 @Component({
   selector: 'app-landing',
@@ -21,7 +19,7 @@ import { MeService } from '../services/me.service';
       <app-landing-tagline [tagline]="me.tagline"></app-landing-tagline>
     </div>
     <div class="menu">
-    <app-menu-list [language]="selectedLanguage"
+    <app-menu-list
       (goToDesign)="goToDesign()"
       (goToCode)="goToCode()"
       (goToCreate)="goToCreate()"
@@ -30,6 +28,7 @@ import { MeService } from '../services/me.service';
     <div class="socialMedia">
      <app-social-media-links [me]="me" [orientation]="socialLinksOrientation" *ngIf="me"></app-social-media-links>
     </div>
+    <app-language-switcher></app-language-switcher>
   </div>
   `,
   styleUrls: ['./landing.component.scss']
@@ -48,7 +47,7 @@ export class LandingComponent implements OnInit, OnDestroy {
   isArrowHidden: boolean;
   socialLinksOrientation: string;
   // Content
-  pageContent: { snackbarMsg: string; snackbarAction: string };
+  viewContent: { snackbarMsg: string; snackbarAction: string };
   enContent = {
     snackbarMsg: `Hi, try changing the theme by clicking on the slider.`,
     snackbarAction: `Ok, got it!`
@@ -75,19 +74,25 @@ export class LandingComponent implements OnInit, OnDestroy {
     this.isMobile = this.isMobileSvc.isMobileDevice();
     this.isPhone = this.isMobileSvc.isMobilePhone();
     this.isArrowHidden = true;
-    this.snackbarMsg = 'Hi, try changing the theme by clicking on the slider.';
-    this.snackbarAction = 'Ok, got it!';
     this.socialLinksOrientation = 'vertical';
-    this.checkOpenSnackbar();
   }
 
   ngOnInit(): void {
     this.themeSub = this.themeSvc
       .getTheme()
       .subscribe(theme => (this.theme = theme));
-    this.langSub = this.langSvc
-      .getLang()
-      .subscribe(language => (this.selectedLanguage = language));
+    this.langSub = this.langSvc.getLang().subscribe(language => {
+      this.selectedLanguage = language;
+      this.viewContent = this.langSvc.langSwitchHandler(
+        this.selectedLanguage,
+        this.enContent,
+        this.dkContent,
+        this.noContent
+      );
+      this.snackbarMsg = this.viewContent.snackbarMsg;
+      this.snackbarAction = this.viewContent.snackbarAction;
+    });
+    this.checkOpenSnackbar();
   }
 
   ngOnDestroy(): void {

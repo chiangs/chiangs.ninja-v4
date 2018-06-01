@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Output,
+  EventEmitter
+} from '@angular/core';
+import { Subscription } from 'rxjs';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
@@ -13,12 +20,13 @@ import { LanguageService } from '../../services/language.service';
   `,
   styleUrls: ['./menu-list.component.scss']
 })
-export class MenuListComponent implements OnInit {
-  @Input() language: string;
+export class MenuListComponent implements OnInit, OnDestroy {
   @Output() goToDesign: EventEmitter<any>;
   @Output() goToCode: EventEmitter<any>;
   @Output() goToCreate: EventEmitter<any>;
   @Output() goToWrite: EventEmitter<any>;
+  langSub: Subscription;
+  language: string;
   viewContent: { menu1: string; menu2: string; menu3: string; menu4: string };
   enContent = {
     menu1: `design`,
@@ -47,12 +55,21 @@ export class MenuListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.viewContent = this.langSvc.langSwitchHandler(
-      this.language,
-      this.enContent,
-      this.dkContent,
-      this.noContent
-    );
+    this.langSub = this.langSvc.getLang().subscribe(language => {
+      this.language = language;
+      this.viewContent = this.langSvc.langSwitchHandler(
+        this.language,
+        this.enContent,
+        this.dkContent,
+        this.noContent
+      );
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.langSub) {
+      this.langSub.unsubscribe();
+    }
   }
 
   onGoToDesign(): void {
