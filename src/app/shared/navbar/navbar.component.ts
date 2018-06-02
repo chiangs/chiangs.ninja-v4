@@ -22,6 +22,7 @@ import { ScrollService } from '../../services/scroll.service';
         </div>
         <div class="navEnd link" *ngIf="!isMobilePhone" (click)="scrollToFooter('footer')">@</div>
       </ul>
+      <app-language-options></app-language-options>
     </nav>
   `,
   styleUrls: ['./navbar.component.scss']

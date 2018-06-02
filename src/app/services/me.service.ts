@@ -7,9 +7,6 @@ import { Me } from '../models/me.model';
 export class MeService {
   private me = new Me();
 
-  // The only place information needs to be populated and updated.
-  // Use lowercase to allow for more styling flexibility in css.
-  // TODO: Complete information here
   constructor() {
     this.me.firstName = 'stephen';
     this.me.middleName = 'e.';
@@ -62,22 +59,6 @@ export class MeService {
     this.me.beliefs = 'string';
     this.me.goals = 'string';
     this.me.story = 'string';
-    // contexts
-    this.me.designContext = {
-      title: 'Design',
-      tagline: `Although not a designer by trade, it's important to me to integrate the concepts and tools of this crucial process; measure twice, cut once...`,
-      color: 'blue'
-    };
-    this.me.codeContext = {
-      title: `Code`,
-      tagline: `In the pursuit of being a world-class developer, I continue to build and stretch my learning...`,
-      color: `green`
-    };
-    this.me.createContext = {
-      title: `Create`,
-      tagline: `I cultivate my inspiration through discovering the physical world, because that's what enhances the virtual experience...`,
-      color: `yellow`
-    };
   }
 
   getMe(): Me {

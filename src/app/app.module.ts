@@ -23,6 +23,9 @@ import { DesignComponent } from './design/design.component';
 import { ContextIntroComponent } from './shared/context-intro/context-intro.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SocialMediaLinksComponent } from './shared/social-media-links/social-media-links.component';
+import { MenuListComponent } from './landing/menu-list/menu-list.component';
+import { LanguageOptionsComponent } from './shared/navbar/language-options/language-options.component';
+import { LanguageSwitcherComponent } from './shared/language-switcher/language-switcher.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { SocialMediaLinksComponent } from './shared/social-media-links/social-me
     DesignComponent,
     ContextIntroComponent,
     FooterComponent,
-    SocialMediaLinksComponent
+    SocialMediaLinksComponent,
+    MenuListComponent,
+    LanguageOptionsComponent,
+    LanguageSwitcherComponent
   ],
   imports: [
     BrowserModule,

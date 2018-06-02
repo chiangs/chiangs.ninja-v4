@@ -5,13 +5,21 @@ import { CreateComponent } from './create/create.component';
 import { DesignComponent } from './design/design.component';
 import { CodeComponent } from './code/code.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { PhotographyComponent } from './create/photography/photography.component';
 
 const routes: Routes = [
   { path: 'welcome', component: LandingComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path: 'design', component: DesignComponent },
   { path: 'code', component: CodeComponent },
-  { path: 'create', component: CreateComponent },
+  {
+    path: 'create',
+    component: CreateComponent,
+    children: [
+      { path: 'photography', component: PhotographyComponent }
+      // { path: 'leatherwork', component: LeatherWorkComponent }
+    ]
+  },
   { path: '**', component: ErrorPageComponent }
 ];
 
