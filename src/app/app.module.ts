@@ -24,8 +24,9 @@ import { ContextIntroComponent } from './shared/context-intro/context-intro.comp
 import { FooterComponent } from './shared/footer/footer.component';
 import { SocialMediaLinksComponent } from './shared/social-media-links/social-media-links.component';
 import { MenuListComponent } from './landing/menu-list/menu-list.component';
-import { LanguageOptionsComponent } from './shared/navbar/language-options/language-options.component';
 import { LanguageSwitcherComponent } from './shared/language-switcher/language-switcher.component';
+import { CreateNavComponent } from './create/create-nav/create-nav.component';
+import { LeatherworkComponent } from './create/leatherwork/leatherwork.component';
 
 @NgModule({
   declarations: [
@@ -44,8 +45,9 @@ import { LanguageSwitcherComponent } from './shared/language-switcher/language-s
     FooterComponent,
     SocialMediaLinksComponent,
     MenuListComponent,
-    LanguageOptionsComponent,
-    LanguageSwitcherComponent
+    LanguageSwitcherComponent,
+    CreateNavComponent,
+    LeatherworkComponent
   ],
   imports: [
     BrowserModule,

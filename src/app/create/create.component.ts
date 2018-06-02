@@ -16,16 +16,12 @@ import { ThemeSelectService } from '../services/theme-select.service';
       [color]="viewContent.context.color">
       </app-context-intro>
     </div>
-    <ul>
-      <li>
-        <a [routerLink]="['./photography']" [routerLinkActive]="'active'">Photogtaphy</a>
-      </li>
-      <li>
-        <a [routerLink]="['./leatherwork']" [routerLinkActive]="'active'">LeatherWork</a>
-      </li>
-    </ul>
-
-    <router-outlet></router-outlet>
+    <div class="contentNav">
+      <app-create-nav></app-create-nav>
+    </div>
+    <div class="contentContainer">
+      <router-outlet></router-outlet>
+    </div>
   </div>
   `,
   styleUrls: ['./create.component.scss']

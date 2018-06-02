@@ -12,6 +12,9 @@ import { ThemeSelectService } from '../services/theme-select.service';
   selector: 'app-landing',
   template: `
     <div class="landingContainer" [ngClass]="theme ? 'light' : 'dark'">
+      <div class="landingLanguageSelector">
+        <app-language-switcher [side]="'left'"></app-language-switcher>
+      </div>
     <div class="landingTitle">
       <app-landing-title [firstName]="me.firstName" [lastName]="me.lastName" [isArrowHidden]="isArrowHidden"></app-landing-title>
     </div>
@@ -19,16 +22,15 @@ import { ThemeSelectService } from '../services/theme-select.service';
       <app-landing-tagline [tagline]="me.tagline"></app-landing-tagline>
     </div>
     <div class="menu">
-    <app-menu-list
-      (goToDesign)="goToDesign()"
-      (goToCode)="goToCode()"
-      (goToCreate)="goToCreate()"
-      (goToWrite)="goToWrite()"></app-menu-list>
+      <app-menu-list
+        (goToDesign)="goToDesign()"
+        (goToCode)="goToCode()"
+        (goToCreate)="goToCreate()"
+        (goToWrite)="goToWrite()"></app-menu-list>
     </div>
     <div class="socialMedia">
-     <app-social-media-links [me]="me" [orientation]="socialLinksOrientation" *ngIf="me"></app-social-media-links>
+      <app-social-media-links [me]="me" [orientation]="socialLinksOrientation" *ngIf="me"></app-social-media-links>
     </div>
-    <app-language-switcher></app-language-switcher>
   </div>
   `,
   styleUrls: ['./landing.component.scss']
