@@ -21,8 +21,8 @@ import { ScrollService } from '../../services/scroll.service';
           <li id="navBlogLink" rel="noopener" (click)="goToBlog()">{{ blogNavTitle }}</li>
         </div>
         <div class="navEnd link" *ngIf="!isMobilePhone" (click)="scrollToFooter('footer')">@</div>
+        <app-language-switcher [side]="'right'"></app-language-switcher>
       </ul>
-      <app-language-options></app-language-options>
     </nav>
   `,
   styleUrls: ['./navbar.component.scss']

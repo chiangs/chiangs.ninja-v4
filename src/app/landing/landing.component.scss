@@ -9,6 +9,11 @@
   grid-template: repeat(16, 1fr) / repeat(16, 1fr);
 }
 
+.landingLanguageSelector {
+  grid-column: 1 / 10;
+  grid-row: 1 / 2;
+}
+
 .landingTitle {
   grid-column: 3 / 14;
   grid-row: 4 / 7;

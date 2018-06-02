@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LanguageOptionsComponent } from './language-options.component';
+import { CreateNavComponent } from './create-nav.component';
 
-describe('LanguageOptionsComponent', () => {
-  let component: LanguageOptionsComponent;
-  let fixture: ComponentFixture<LanguageOptionsComponent>;
+describe('CreateNavComponent', () => {
+  let component: CreateNavComponent;
+  let fixture: ComponentFixture<CreateNavComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LanguageOptionsComponent ]
+      declarations: [ CreateNavComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LanguageOptionsComponent);
+    fixture = TestBed.createComponent(CreateNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,18 @@
+@import 'styles';
+
+.createMenu {
+  display: flex;
+  min-height: 300px;
+  min-width: 100%;
+}
+
+.createMenuItem {
+  display: inline-block;
+  min-height: inherit;
+  min-width: 300px;
+  border: $test-border1;
+}
+
+.createMenuItem a {
+  cursor: pointer;
+}
