@@ -7,9 +7,9 @@ import { ThemeSelectService } from '../../services/theme-select.service';
 @Component({
   selector: 'app-language-switcher',
   template: `
-    <div class="languageSelectorIcon" (click)="toggleMenu()" (mouseenter)="toggleMenu()">
-      <img src="../../../assets/images/icons/language-blk.svg" *ngIf="theme">
-      <img src="../../../assets/images/icons/language-wht.svg" *ngIf="!theme">
+    <div class="languageSelectorIcon" (click)="toggleMenu()">
+      <img src="../../../assets/images/icons/language-blk.svg" *ngIf="theme" (mouseenter)="toggleMenu()">
+      <img src="../../../assets/images/icons/language-wht.svg" *ngIf="!theme" (mouseenter)="toggleMenu()">
     </div>
     <div class="languageList" *ngIf="showMenu" [ngClass]="side === 'left' ? 'left' : 'right'" (mouseleave)="clickedOutside()">
       <ul class="menuList">

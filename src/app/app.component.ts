@@ -7,10 +7,8 @@ import { en, dk, no } from './constants';
 @Component({
   selector: 'app-root',
   template: `
-  <div class="app">
     <app-navbar class="header" *ngIf="!isLanding"></app-navbar>
     <router-outlet></router-outlet>
-  </div>
     <app-footer class="footer" *ngIf="!isLanding"></app-footer>
   `,
   styleUrls: ['./app.component.scss']
