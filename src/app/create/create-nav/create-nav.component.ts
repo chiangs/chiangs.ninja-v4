@@ -9,7 +9,7 @@ import { LanguageService } from '../../services/language.service';
     <div class="createMenuItem leftMenu">
       <a [routerLink]="['./leatherwork']" [routerLinkActive]="'active'">{{ viewContent.leftMenuText }}</a>
     </div>
-
+    //
     <div class="createMenuItem rightMenu">
       <a [routerLink]="['./photography']" [routerLinkActive]="'active'">{{ viewContent.rightMenuText }}</a>
     </div>

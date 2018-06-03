@@ -1,1 +1,11 @@
 @import 'styles';
+
+.contentNav {
+  grid-column: 9 / -1;
+  grid-row: 1 / 2;
+}
+
+.contentContainer {
+  grid-column: 1 / -1;
+  grid-row: 2 / -1;
+}

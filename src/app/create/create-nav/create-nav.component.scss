@@ -2,15 +2,17 @@
 
 .createMenu {
   display: flex;
-  min-height: 300px;
+  min-height: 150px;
   min-width: 100%;
+  padding-top: 80px;
 }
 
 .createMenuItem {
+  flex: 1;
   display: inline-block;
   min-height: inherit;
   min-width: 300px;
-  border: $test-border1;
+  text-align: center;
 }
 
 .createMenuItem a {
