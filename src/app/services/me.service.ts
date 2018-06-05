@@ -54,7 +54,7 @@ export class MeService {
     ];
     this.me.illustratedPic = 'string';
     this.me.livePic = 'string';
-    this.me.freelanceStatus = 'string';
+    this.me.freelanceStatus = 'Currently not available for freelance';
     this.me.tagline = 'Full-stack developer & designer';
     this.me.beliefs = 'string';
     this.me.goals = 'string';

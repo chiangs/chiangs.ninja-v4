@@ -8,15 +8,16 @@
 html,
 body {
   height: 100%;
-  font-size: 100%;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: $text;
   overflow-x: hidden;
+  font-size: 100%;
+  color: $text;
 }
 
 html {
+  line-height: 1.2;
   // Scales by 1px for every 100px from 600px onwards
   @media (min-width: 600px) {
     font-size: calc(112.5% + 4 * (100vw - 600px) / 400);

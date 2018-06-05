@@ -11,6 +11,7 @@
   position: absolute;
   font-size: $fontSizeRegular;
   border: $borderThinDark;
+  z-index: 999;
 }
 
 .languageList.left {
@@ -25,4 +26,13 @@
 
 .menuList {
   padding: 0 10px;
+  z-index: 1000;
+}
+
+.dark.menuList {
+  background-color: $main;
+}
+
+.light.menuList {
+  background-color: $white;
 }
