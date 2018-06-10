@@ -7,10 +7,11 @@ import { CodeComponent } from './code/code.component';
 import { PhotographyComponent } from './create/photography/photography.component';
 import { LeatherworkComponent } from './create/leatherwork/leatherwork.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { MenuTabbedComponent } from './shared/menu-tabbed/menu-tabbed.component';
 
 const routes: Routes = [
   { path: 'welcome', component: LandingComponent },
-  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
+  { path: '', redirectTo: '/tabbed', pathMatch: 'full' },
   { path: 'design', component: DesignComponent },
   { path: 'code', component: CodeComponent },
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'leatherwork', component: LeatherworkComponent }
     ]
   },
+  { path: 'tabbed', component: MenuTabbedComponent },
   { path: '**', component: ErrorPageComponent }
 ];
 

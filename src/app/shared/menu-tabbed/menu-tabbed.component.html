@@ -1,0 +1,64 @@
+<!-- <div class="viewContainer">
+    <div class="section">
+        <ul class="tabs" role="tablist">
+            <li *ngFor="let tab of tabs; let i = index">
+                <input type="radio" name="tabs" id="tab{{tab.label}}" [checked]="i === selectedTab" />
+                <label for="{{tab.label}}" role="tab" aria-selected="true" aria-controls="panel1" [tabindex]="i" (click)="onTabSelect(i)">{{tab.label}}</label>
+
+                <div [id]="'tab-content' + i" class="tab-content" role="tabpanel" aria-labelledby="description" aria-hidden="false">
+                    <p>{{ tab.content }}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div> -->
+
+<div class="viewContainer dark">
+    <div class="section selectionSummary">
+    </div>
+
+    <div class="section selectionOptions">
+        <ul class="tabs" role="tablist">
+            <!-- Centrals -->
+            <li>
+                <input type="radio" name="tabs" id="tab1" checked />
+                <label for="tab1" role="tab" aria-selected="true" aria-controls="panel1" tabindex="0">{{ centralTab.label }}</label>
+                <div id="tab-content1" class="tab-content" role="tabpanel" aria-labelledby="centrals" aria-hidden="false">
+                    <a class="section link" *ngFor="let item of centralTab.centrals">
+                        <img class="icon" src="{{item.icon}}">&nbsp;&nbsp;{{ item.centralName }}
+                    </a>
+                </div>
+            </li>
+            <!-- CarOptions -->
+            <li>
+                <input type="radio" name="tabs" id="tab2" />
+                <label for="tab2" role="tab" aria-selected="false" aria-controls="panel2" tabindex="1">{{ carOptionsTab.label }}</label>
+                <div id="tab-content1" class="tab-content" role="tabpanel" aria-labelledby="description" aria-hidden="false">
+                    <a class="section link" *ngFor="let item of carOptionsTab.options" [class.disabled]="!item.isSupported">{{ item.option }}</a>
+                    <div class="section italic">
+                        {{ carOptionsTab.notSupportedInstructions }}
+                    </div>
+                </div>
+            </li>
+            <!-- PickUp -->
+            <li>
+                <input type="radio" name="tabs" id="tab3" />
+                <label for="tab3" role="tab" aria-selected="false" aria-controls="panel3" tabindex="2">{{ pickUpInfoTab.label }}</label>
+                <div id="tab-content1" class="tab-content" role="tabpanel" aria-labelledby="description" aria-hidden="false">
+                    <h4>{{pickUpInfoTab.userInstructions1}}</h4>
+                    <h5>{{pickUpInfoTab.userInstructions2}}</h5>
+                    <textarea name="pickUpInfo" cols="80" rows="5"></textarea>
+                </div>
+            </li>
+            <!-- PaymentOptions -->
+            <li>
+                <input type="radio" name="tabs" id="tab4" />
+                <label for="tab4" role="tab" aria-selected="false" aria-controls="panel4" tabindex="3">{{ paymentOptionTab.label }}</label>
+                <div id="tab-content1" class="tab-content" role="tabpanel" aria-labelledby="description" aria-hidden="false">
+                    <h4>{{paymentOptionTab.userInstructions1}}</h4>
+                    <a class="section link" *ngFor="let item of paymentOptionTab.options">{{ item.option }}</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

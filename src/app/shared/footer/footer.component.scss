@@ -5,6 +5,25 @@
   width: 100%;
 }
 
+.link {
+  font-size: $fontSizeRegular;
+}
+
+.location {
+  width: 100%;
+  font-size: $fontSizeSmall;
+  text-align: center;
+  flex: 1;
+  justify-content: center;
+  padding-bottom: spacing(base);
+}
+
+.freelanceStatus {
+  font-style: italic;
+  font-size: $fontSizeSmall;
+  color: $red;
+}
+
 .socialLinks,
 .siteControls {
   width: 100%;
@@ -20,35 +39,36 @@
 
 .myInformation {
   display: flex;
+  padding: spacing(base);
 }
 
 .profilePicImg {
+  flex: 1;
   max-width: 100px;
   border-radius: $circle;
 }
 
 .meInfo {
+  padding: 0 0 0 spacing(base);
   text-transform: capitalize;
+  h4.fullName {
+    margin-top: 0;
+  }
   a {
     color: $blue;
+    font-size: $fontSizeSmall;
+    text-transform: lowercase;
+  }
+  .emailIcon {
+    max-height: 15px;
+    margin: 0 spacing(unit) (-(spacing(unit))) 0;
   }
 }
 
-.location {
-  width: 100%;
-  font-size: $fontSizeSmall;
-  text-align: center;
-  flex: 1;
-  justify-content: center;
-  margin: spacing(base);
+.languageSkillList {
+  display: none;
 }
 
-.freelanceStatus {
-  font-style: italic;
+.languageSkillList .languageSkills {
   font-size: $fontSizeSmall;
-  color: $red;
-}
-
-.link {
-  font-size: $fontSizeRegular;
 }

@@ -10,9 +10,9 @@ import { ThemeSelectService } from '../services/theme-select.service';
   selector: 'app-code',
   template: `
     <div class="viewContainer" [ngClass]="theme ? 'light' : 'dark'">
-    <div class="contextIntro">
-      <app-context-intro [title]="viewContent.context.title" 
-      [tagline]="viewContent.context.tagline" 
+    <div class="section contextIntro">
+      <app-context-intro [title]="viewContent.context.title"
+      [tagline]="viewContent.context.tagline"
       [color]="viewContent.context.color">
       </app-context-intro>
     </div>

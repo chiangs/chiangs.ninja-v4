@@ -27,6 +27,7 @@ import { MenuListComponent } from './landing/menu-list/menu-list.component';
 import { LanguageSwitcherComponent } from './shared/language-switcher/language-switcher.component';
 import { CreateNavComponent } from './create/create-nav/create-nav.component';
 import { LeatherworkComponent } from './create/leatherwork/leatherwork.component';
+import { MenuTabbedComponent } from './shared/menu-tabbed/menu-tabbed.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { LeatherworkComponent } from './create/leatherwork/leatherwork.component
     MenuListComponent,
     LanguageSwitcherComponent,
     CreateNavComponent,
-    LeatherworkComponent
+    LeatherworkComponent,
+    MenuTabbedComponent
   ],
   imports: [
     BrowserModule,

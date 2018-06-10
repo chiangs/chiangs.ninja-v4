@@ -47,10 +47,10 @@ export class MeService {
       { name: 'bouvet', url: 'bouvet.no', title: 'consultant' }
     ];
     this.me.languages = [
-      { lang: 'english', skillLvl: 'C2 / C2' },
-      { lang: 'dansk', skillLvl: 'B1 / B2' },
-      { lang: 'norsk', skillLvl: 'A2 / B2' },
-      { lang: '中文', skillLvl: 'A1 / B1 | ' }
+      { lang: 'english', skillLvl: 'Native' },
+      { lang: 'dansk', skillLvl: 'Professional' },
+      { lang: 'norsk', skillLvl: 'Professional' },
+      { lang: '中文', skillLvl: 'Conversational' }
     ];
     this.me.illustratedPic = 'string';
     this.me.livePic = 'string';

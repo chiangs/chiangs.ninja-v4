@@ -1,0 +1,93 @@
+@import 'styles';
+
+.tabs {
+  min-width: 900px;
+  width: 100%;
+  //   float: none;
+  list-style: none;
+  position: relative;
+  margin: 80px 0 0 10px;
+  text-align: left;
+  color: $black;
+  padding: 0;
+  li {
+    float: left;
+    display: block;
+  }
+  input[type='radio'] {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+  }
+  label {
+    cursor: pointer;
+    position: relative;
+    top: 4px;
+    display: block;
+    padding: 14px 21px;
+    border-radius: $square;
+    background: $white;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    @include transition(all, 0.3s, ease-in-out);
+    &:hover {
+      background: darken($white, 10);
+    }
+  }
+
+  .icon {
+    max-width: 25px;
+    max-height: 25px;
+  }
+
+  .disabled,
+  .disabled:hover {
+    color: darkgrey !important;
+    cursor: not-allowed !important;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .link {
+    color: $black;
+    margin-bottom: spacing(tight);
+  }
+
+  .link:hover {
+    color: $accent;
+  }
+
+  .tab-content {
+    z-index: 2;
+    display: none;
+    overflow: hidden;
+    width: 100%;
+    font-size: 17px;
+    line-height: 25px;
+    padding: 25px;
+    position: absolute;
+    top: 53px;
+    left: 0;
+    background: darken($white, 15);
+  }
+
+  //The Magic
+  [id^='tab'] + label {
+    outline: none;
+  }
+
+  [id^='tab']:checked + label {
+    top: 0;
+    padding-top: 17px;
+    background: darken($white, 15);
+    outline: none;
+  }
+
+  [id^='tab']:checked ~ [id^='tab-content'] {
+    display: block;
+    outline: none;
+  }
+}

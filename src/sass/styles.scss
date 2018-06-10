@@ -51,6 +51,22 @@ li {
   outline: none;
 }
 
+// base flex-box rows and columns
+.section {
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.column {
+  flex: 1 1 0px;
+}
+
+.section:first-of-type,
+.column:first-of-type {
+  flex: 2 2 22px;
+}
+
 // base CSS grid
 .viewContainer {
   min-height: 100%;
