@@ -10,7 +10,7 @@ export class Me {
   location: {
     city: string;
     country: string;
-    coordinates: { lat: number; lng: number };
+    coordinates: { lat: string; lng: string };
   };
   companies: { name: string; url: string; title: string }[];
   languages: { lang: string; skillLvl: string }[];
@@ -25,7 +25,4 @@ export class Me {
   twitter: SocialMediaLink;
   instagram: SocialMediaLink;
   github: SocialMediaLink;
-  designContext: ContextModel;
-  codeContext: ContextModel;
-  createContext: ContextModel;
 }

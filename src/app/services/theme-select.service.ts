@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject, BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -6,10 +7,21 @@ import { Subject, BehaviorSubject, Observable } from 'rxjs';
 })
 export class ThemeSelectService {
   selectedTheme: Subject<boolean> = new BehaviorSubject<boolean>(null);
-  seenSnackbar: boolean;
+  viewedGuide = false;
+  theme: boolean;
+  snackBarViewedCache = 'snackBarViewed';
+  selectedThemeCache = 'selectedTheme';
+  hasLocalStorage: boolean;
 
-  constructor() {
-    this.seenSnackbar = false;
+  constructor(private router: Router) {
+    this.hasLocalStorage = localStorage ? true : false;
+    this.theme =
+      localStorage && localStorage.getItem(this.selectedThemeCache)
+        ? JSON.parse(localStorage.getItem(this.selectedThemeCache))
+        : null;
+    if (this.theme !== null) {
+      this.selectedTheme.next(this.theme);
+    }
   }
 
   getTheme(): Observable<boolean> {
@@ -17,14 +29,31 @@ export class ThemeSelectService {
   }
 
   setTheme(selectedTheme: boolean): void {
+    if (this.hasLocalStorage) {
+      localStorage.setItem(
+        this.selectedThemeCache,
+        JSON.stringify(selectedTheme)
+      );
+    }
     this.selectedTheme.next(selectedTheme);
   }
 
   setSeenGuide(): void {
-    this.seenSnackbar = true;
+    localStorage
+      ? localStorage.setItem(this.snackBarViewedCache, JSON.stringify(true))
+      : (this.viewedGuide = true);
   }
 
   getSeenGuide(): boolean {
-    return this.seenSnackbar;
+    return localStorage
+      ? JSON.parse(localStorage.getItem(this.snackBarViewedCache))
+      : this.viewedGuide;
+  }
+
+  resetGuide(): void {
+    localStorage
+      ? localStorage.removeItem(this.snackBarViewedCache)
+      : (this.viewedGuide = false);
+    this.router.navigate(['/']);
   }
 }

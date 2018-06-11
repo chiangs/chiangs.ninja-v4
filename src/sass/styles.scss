@@ -6,16 +6,18 @@
 @import 'animations.scss';
 
 html,
-body,
-view {
+body {
   height: 100%;
-  font-size: 100%;
   box-sizing: border-box;
-  margin: 0px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-size: 100%;
   color: $text;
 }
 
 html {
+  line-height: 1.2;
   // Scales by 1px for every 100px from 600px onwards
   @media (min-width: 600px) {
     font-size: calc(112.5% + 4 * (100vw - 600px) / 400);
@@ -49,13 +51,29 @@ li {
   outline: none;
 }
 
+// base flex-box rows and columns
+.section {
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.column {
+  flex: 1 1 0px;
+}
+
+.section:first-of-type,
+.column:first-of-type {
+  flex: 2 2 22px;
+}
+
 // base CSS grid
 .viewContainer {
-  height: 100%;
+  min-height: 100%;
   display: grid;
   grid-gap: $grid-gap;
   grid-template: repeat(16, 1fr) / repeat(16, 1fr);
-  padding: spacing(extra-loose);
+  position: relative;
 }
 
 .contextIntro {
@@ -73,11 +91,6 @@ li {
   grid-row: 4 / 5;
 }
 
-.contentContainer {
-  grid-column: 1 / -1;
-  grid-row: 5 / -1;
-}
-
 // app-wide classes
 .hidden {
   display: none !important;
@@ -85,6 +98,12 @@ li {
 
 .underline {
   text-decoration: underline;
+}
+
+.link {
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: spacing(unit) - 2;
 }
 
 .title {
@@ -99,6 +118,17 @@ li {
 .ctaButton {
   min-width: 150px;
   min-height: 50px;
+}
+
+.menuList {
+  li {
+    padding: 10px 0;
+  }
+
+  list-style-type: none;
+  li button {
+    font-family: $fnt-main;
+  }
 }
 
 // Light
@@ -126,6 +156,10 @@ li {
     background-color: $black;
     color: $white;
   }
+
+  .link:hover {
+    color: $accent;
+  }
 }
 
 // Dark
@@ -152,5 +186,16 @@ li {
   .devToButton {
     background-color: $white;
     color: $black;
+  }
+
+  .link:hover {
+    color: $blue;
+  }
+}
+
+@media only screen and(max-width: 823px) {
+  .contextIntro {
+    grid-column: 1 / -1;
+    grid-row: 0 / 1;
   }
 }

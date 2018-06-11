@@ -9,6 +9,11 @@
   grid-template: repeat(16, 1fr) / repeat(16, 1fr);
 }
 
+.landingLanguageSelector {
+  grid-column: 1 / 10;
+  grid-row: 1 / 2;
+}
+
 .landingTitle {
   grid-column: 3 / 14;
   grid-row: 4 / 7;
@@ -28,16 +33,6 @@
   grid-column: 9 / 14;
   grid-row: 9 / 16;
   text-align: center;
-  li {
-    padding: 10px 0;
-  }
-}
-
-.menuList {
-  list-style-type: none;
-  li button {
-    font-family: $fnt-main;
-  }
 }
 
 @media only screen and (max-width: 766px) {

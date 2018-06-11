@@ -16,7 +16,12 @@ nav {
 
 mat-slide-toggle,
 .navEnd {
-  padding: spacing(base) 0 0 0;
+  padding: spacing(base) 0 0 spacing(base);
+  width: spacing(unit) * 25;
+}
+
+app-language-switcher {
+  padding: 22px 0 0 0;
   width: spacing(unit) * 25;
 }
 
@@ -38,6 +43,10 @@ mat-slide-toggle,
   padding: spacing(base) spacing(extra-loose);
 }
 
+.container .links li:hover {
+  color: $blue;
+}
+
 @media only screen and(max-width: 823px) {
   mat-slide-toggle,
   .navEnd {
@@ -48,9 +57,15 @@ mat-slide-toggle,
   .brand {
     max-width: 25px;
   }
+
+  .container .links {
+    text-align: right;
+    padding: spacing(tight) spacing(base) 0 0;
+  }
+
   .container .links li {
-    font-size: $fontSizeRegular;
-    width: spacing(tight);
-    padding: spacing(tight) spacing(loose);
+    font-size: $fontSizeSmall;
+    display: inline;
+    padding: spacing(tight) spacing(tight);
   }
 }

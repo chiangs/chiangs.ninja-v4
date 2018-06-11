@@ -26,9 +26,9 @@
   text-transform: uppercase;
   text-shadow: $shadowTextDark;
   margin: 0;
-  position: absolute;
-  top: 80px;
-  left: 25%;
+  position: relative;
+  top: 40px;
+  left: 50%;
   animation: slideTitle 2.5s ease-in-out 1 normal;
 }
 
@@ -36,9 +36,9 @@
   font-family: $fnt-contextTagline;
   font-weight: 400;
   color: $accent;
-  text-align: center;
+  text-align: left;
   line-height: 1.5;
-  margin: 0;
+  margin: spacing(medium) 0;
   animation: slideTagline 3.5s ease-in-out 1 normal;
 }
 
@@ -64,5 +64,11 @@
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@media only screen and(max-width: 823px) {
+  .contextTitle h2 {
+    top: 60px;
   }
 }

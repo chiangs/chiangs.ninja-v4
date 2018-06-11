@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Raleway:400,800|Source+Code+Pro);
 
 // == COLORS
-$main: #1b1f29;
+$main: #030915;
 $red: #ee4035;
 $white: #f7f7f7;
 $black: #333333;
@@ -23,6 +23,7 @@ $fnt-labels-hv: 900;
 
 // == DIMENSIONS
 $grid-gap: 3px;
+$footer-height: 400px;
 
 // SIZES
 $unit: 4px;
@@ -35,6 +36,7 @@ $fontSizeHuge: 56px;
 // == SHAPES and RADII
 $square: 0px;
 $rounded: 3px;
+$circle: 50%;
 
 // == SHADOWS
 $shadowTextDark: 1px 1px 1px $black;

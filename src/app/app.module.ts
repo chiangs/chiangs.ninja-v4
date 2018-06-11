@@ -23,6 +23,11 @@ import { DesignComponent } from './design/design.component';
 import { ContextIntroComponent } from './shared/context-intro/context-intro.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SocialMediaLinksComponent } from './shared/social-media-links/social-media-links.component';
+import { MenuListComponent } from './landing/menu-list/menu-list.component';
+import { LanguageSwitcherComponent } from './shared/language-switcher/language-switcher.component';
+import { CreateNavComponent } from './create/create-nav/create-nav.component';
+import { LeatherworkComponent } from './create/leatherwork/leatherwork.component';
+import { MenuTabbedComponent } from './shared/menu-tabbed/menu-tabbed.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,12 @@ import { SocialMediaLinksComponent } from './shared/social-media-links/social-me
     DesignComponent,
     ContextIntroComponent,
     FooterComponent,
-    SocialMediaLinksComponent
+    SocialMediaLinksComponent,
+    MenuListComponent,
+    LanguageSwitcherComponent,
+    CreateNavComponent,
+    LeatherworkComponent,
+    MenuTabbedComponent
   ],
   imports: [
     BrowserModule,

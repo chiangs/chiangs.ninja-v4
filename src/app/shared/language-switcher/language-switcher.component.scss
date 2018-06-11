@@ -1,0 +1,38 @@
+@import 'styles';
+
+.languageSelectorIcon {
+  padding: spacing(unit);
+  img {
+    max-height: 25px;
+  }
+}
+
+.languageList {
+  position: absolute;
+  font-size: $fontSizeRegular;
+  border: $borderThinDark;
+  z-index: 999;
+}
+
+.languageList.left {
+  top: spacing(medium);
+  left: spacing(base);
+}
+
+.languageList.right {
+  top: spacing(medium) + 22;
+  right: spacing(loose);
+}
+
+.menuList {
+  padding: 0 10px;
+  z-index: 1000;
+}
+
+.dark.menuList {
+  background-color: $main;
+}
+
+.light.menuList {
+  background-color: $white;
+}
