@@ -77,9 +77,6 @@ export class LandingComponent implements OnInit, OnDestroy {
     this.isPhone = this.isMobileSvc.isMobilePhone();
     this.isArrowHidden = true;
     this.socialLinksOrientation = 'vertical';
-  }
-
-  ngOnInit(): void {
     this.themeSub = this.themeSvc
       .getTheme()
       .subscribe(theme => (this.theme = theme));
@@ -96,6 +93,8 @@ export class LandingComponent implements OnInit, OnDestroy {
     });
     this.checkOpenSnackbar();
   }
+
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     if (this.themeSub) {
