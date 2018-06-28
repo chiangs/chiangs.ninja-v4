@@ -14,10 +14,13 @@ nav {
   display: flex;
 }
 
-mat-slide-toggle,
 .navEnd {
   padding: spacing(base) 0 0 spacing(base);
   width: spacing(unit) * 25;
+}
+
+mat-slide-toggle {
+  padding: spacing(base) 0;
 }
 
 app-language-switcher {
@@ -26,7 +29,8 @@ app-language-switcher {
 }
 
 .brand {
-  max-height: 50px;
+  padding: 12px 0 0 spacing(base);
+  max-height: 60px;
 }
 
 .links {

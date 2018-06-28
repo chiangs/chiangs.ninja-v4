@@ -10,37 +10,44 @@ import { LanguageService } from '../../services/language.service';
 @Component({
   selector: 'app-footer',
   template: `
-    <div class="footerContainer" [ngClass]="theme ? 'light' : 'dark'">
-      <div class="meInfo location">
-        {{ me.location.coordinates.lat }}, {{ me.location.coordinates.lng }}&nbsp;&nbsp;&nbsp;•
-        &nbsp;&nbsp;{{ me.location.city }}, {{ me.location.country }}&nbsp;&nbsp;&nbsp;•
-        &nbsp;&nbsp;<span class="freelanceStatus">{{ me.freelanceStatus }}</span>
-      </div>
-      <div class="socialLinks">
-        <app-social-media-links [me]="me" [orientation]="socialLinksOrientation"></app-social-media-links>
-      </div>
-      <div class="siteControls">
-        <p class="link backToLanding" (click)="backToLanding()">{{ viewContent.navToLanding }}</p>
-        <p class="link resetGuide" (click)="resetGuidedTour()">{{ viewContent.resetGuide }}</p>
-        <p class="link scrollButtonUp" (click)="scrollToHeader('header')">{{ viewContent.backToTop }}</p>
-      </div>
-      <hr />
-
-      <div class="myInformation">
-        <div class="meInfo profilePic">
+    <div class="section footerContainer" [ngClass]="theme ? 'light' : 'dark'">
+      <div class="column myInformation leftColumn">
+        <div class="column meInfo profilePic">
           <img class="profilePicImg" src="../../../assets/images/profilePic.png" />
         </div>
-        <div class="meInfo">
+        <div class="column meInfo">
           <h4 class="fullName">{{ me.firstName }} {{ me.middleName }} {{ me.lastName }}</h4>
-          <br />
           <a href="mailto:stephen.e.chiang@gmail.com">
             <img class="emailIcon" src="../../../assets/images/icons/email-blu.svg">{{ me.email }}
           </a>
         </div>
-        <div class="meInfo languageSkillList">
-          <span class="languageSkills" *ngFor="let langauge of me.languages">
-            <p>{{ langauge.lang }} - {{ langauge.skillLvl }}</p>
-          </span>
+      </div>
+      <div class="column myInformation middleColumn">
+        <div class="section socialLinks">
+          <app-social-media-links [me]="me" [orientation]="socialLinksOrientation"></app-social-media-links>
+        </div>
+        <div class="section language">
+          <div class="column languageItem" *ngFor="let language of me.languages">
+            {{ language.lang}}
+            <br>
+            [{{ language.skillLvl }}]
+          </div>
+        </div>
+        <div class="section location">
+          {{ me.location.coordinates.lat }}, {{ me.location.coordinates.lng }}&nbsp;&nbsp;&nbsp;•
+          &nbsp;&nbsp;{{ me.location.city }}, {{ me.location.country }}&nbsp;&nbsp;&nbsp;•
+          &nbsp;&nbsp;
+          <span class="freelanceStatus">{{ me.freelanceStatus }}</span>
+        </div>
+      </div>
+
+      <div class="column myInformation rightColumn">
+        <div class="column rightAligned siteControls">
+          <ul>
+            <li><p class="link backToLanding" (click)="backToLanding()">{{ viewContent.navToLanding }}</p></li>
+            <li><p class="link resetGuide" (click)="resetGuidedTour()">{{ viewContent.resetGuide }}</p></li>
+            <li><p class="link scrollButtonUp" (click)="scrollToHeader('header')">{{ viewContent.backToTop }}</p></li>
+          </ul>
         </div>
       </div>
     </div>

@@ -5,54 +5,23 @@
   width: 100%;
 }
 
-.link {
-  font-size: $fontSizeRegular;
-}
-
-.location {
-  width: 100%;
-  font-size: $fontSizeSmall;
-  text-align: center;
-  flex: 1;
-  justify-content: center;
-  padding-bottom: spacing(base);
-}
-
-.freelanceStatus {
-  font-style: italic;
-  font-size: $fontSizeSmall;
-  color: $red;
-}
-
-.socialLinks,
-.siteControls {
-  width: 100%;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-.siteControls .link {
-  display: inline-block;
-  flex: 1;
-}
-
 .myInformation {
-  display: flex;
   padding: spacing(base);
 }
 
-.profilePicImg {
-  flex: 1;
-  max-width: 100px;
-  border-radius: $circle;
-}
-
-.meInfo {
-  padding: 0 0 0 spacing(base);
-  text-transform: capitalize;
+.leftColumn {
+  max-width: 25%;
+  .meInfo {
+    padding: 0 0 0 spacing(base);
+    text-transform: capitalize;
+  }
+  .profilePicImg {
+    max-width: 100px;
+    border-radius: $circle;
+  }
   h4.fullName {
-    margin-top: 0;
+    padding: 0;
+    margin: 0;
   }
   a {
     color: $blue;
@@ -65,10 +34,41 @@
   }
 }
 
-.languageSkillList {
-  display: none;
+.middleColumn {
+  max-width: 50%;
+  text-align: center;
+  justify-content: center;
+  & div {
+    margin: spacing(extra-tight);
+    justify-content: center;
+  }
+
+  .location {
+    font-size: $fontSizeSmall;
+  }
+
+  .freelanceStatus {
+    font-style: italic;
+    font-size: $fontSizeSmall;
+    color: $red;
+  }
+
+  .languageItem {
+    padding-top: spacing(tight);
+    max-width: 25%;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: $fontSizeSmall;
+  }
 }
 
-.languageSkillList .languageSkills {
-  font-size: $fontSizeSmall;
+.rightColumn {
+  max-width: 25%;
+  .siteControls {
+    padding-top: 70px;
+    font-size: $fontSizeSmall;
+  }
+  ul {
+    list-style: none;
+  }
 }
