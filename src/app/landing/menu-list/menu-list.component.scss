@@ -1,1 +1,9 @@
-@import 'styles';
+@import 'variables';
+@import 'mixins';
+
+$min-font-size: $fntSizeReg;
+$max-font-size: $fntSizeLabel;
+
+.menuList {
+  @include fluid-font($min-vw, $max-vw, $min-font-size, $max-font-size);
+}

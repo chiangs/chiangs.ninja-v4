@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, fromEvent } from 'rxjs';
 import { LanguageService } from './services/language.service';
 import { en, dk, no } from './constants';
 
@@ -8,16 +8,15 @@ import { en, dk, no } from './constants';
   selector: 'app-root',
   template: `
   <div class="app">
-    <router-outlet></router-outlet>
+    <app-navbar class="header" *ngIf="!isLanding"></app-navbar>
+    <div class="masterContainer">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer class="footer" *ngIf="!isLanding"></app-footer>
   </div>
   `,
   styleUrls: ['./app.component.scss']
 })
-
-// <app-navbar class="header" * ngIf="!isLanding" > </app-navbar>
-// <app-footer class="footer" * ngIf="!isLanding" > </app-footer>
-
-
 export class AppComponent implements OnInit {
   langSub: Subscription;
   isLanding: boolean;

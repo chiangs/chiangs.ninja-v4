@@ -21,7 +21,7 @@
 .contextTitle h2 {
   font-family: $fnt-labels;
   font-weight: $fnt-labels-hv;
-  font-size: $fontSizeHuge;
+  // font-size: $fontSizeHuge;
   font-style: italic;
   text-transform: uppercase;
   text-shadow: $shadowTextDark;
@@ -38,7 +38,7 @@
   color: $accent;
   text-align: left;
   line-height: 1.5;
-  margin: spacing(medium) 0;
+  margin: spacing(quad) 0;
   animation: slideTagline 3.5s ease-in-out 1 normal;
 }
 

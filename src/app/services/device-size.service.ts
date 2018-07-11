@@ -20,14 +20,11 @@ export class DeviceSizeService {
   }
 
   isMobileDevice(): boolean {
-    return this.width <= 1366 ? true : false;
+    const portrait = window.innerHeight > window.innerWidth ? true : false;
+    return this.width <= 992 || (this.width <= 1024 && portrait === true);
   }
 
-  isMobilePhone(): boolean {
-    return this.width <= 766 ? true : false;
-  }
-
-  isMobilePhonePortrait(): boolean {
-    return this.width <= 670 ? true : false;
+  isPhone(): boolean {
+    return this.height <= 820 ? true : false;
   }
 }

@@ -9,19 +9,19 @@
 
 .languageList {
   position: absolute;
-  font-size: $fontSizeRegular;
+  // font-size: $fontSizeRegular;
   border: $borderThinDark;
   z-index: 999;
 }
 
 .languageList.left {
-  top: spacing(medium);
-  left: spacing(base);
+  top: spacing(quad);
+  left: spacing(triple);
 }
 
 .languageList.right {
-  top: spacing(medium) + 22;
-  right: spacing(loose);
+  top: spacing(quad) + 22;
+  right: spacing(double);
 }
 
 .menuList {

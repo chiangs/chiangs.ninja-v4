@@ -12,10 +12,9 @@ import { LanguageService } from '../../services/language.service';
   selector: 'app-menu-list',
   template: `
     <ul class="menuList">
-        <li><button mat-button color="accent" class="ctaButton" (click)="onGoToDesign()">{{ viewContent.menu1 }}</button></li>
-        <li><button mat-button color="accent" class="ctaButton" (click)="onGoToCode()">{{ viewContent.menu2 }}</button></li>
-        <li><button mat-button color="accent" class="ctaButton" (click)="onGoToCreate()">{{ viewContent.menu3 }}</button></li>
-        <li><button mat-button color="accent" class="ctaButton" (click)="onGoToWrite()" rel="noopener">{{ viewContent.menu4 }}</button></li>
+        <li *ngFor="let link of viewContent.links; let i = index">
+          <app-button [buttonText]="link" (buttonClick)="onGoTo(i)"></app-button>
+        </li>
     </ul>
   `,
   styleUrls: ['./menu-list.component.scss']
@@ -26,25 +25,15 @@ export class MenuListComponent implements OnInit, OnDestroy {
   @Output() goToCreate: EventEmitter<any>;
   @Output() goToWrite: EventEmitter<any>;
   langSub: Subscription;
-  language: string;
-  viewContent: { menu1: string; menu2: string; menu3: string; menu4: string };
+  viewContent: { links: string[] };
   enContent = {
-    menu1: `design`,
-    menu2: `code`,
-    menu3: `create`,
-    menu4: `write`
+    links: [`design`, `code`, `create`, `write`]
   };
   dkContent = {
-    menu1: `design`,
-    menu2: `kode`,
-    menu3: `skabe`,
-    menu4: `skrive`
+    links: [`design`, `kode`, `skabe`, `skrive`]
   };
   noContent = {
-    menu1: `design`,
-    menu2: `kode`,
-    menu3: `skape`,
-    menu4: `skrive`
+    links: [`design`, `kode`, `skape`, `skrive`]
   };
 
   constructor(private langSvc: LanguageService) {
@@ -56,9 +45,8 @@ export class MenuListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.langSub = this.langSvc.getLang().subscribe(language => {
-      this.language = language;
       this.viewContent = this.langSvc.langSwitchHandler(
-        this.language,
+        language,
         this.enContent,
         this.dkContent,
         this.noContent
@@ -72,16 +60,22 @@ export class MenuListComponent implements OnInit, OnDestroy {
     }
   }
 
-  onGoToDesign(): void {
-    this.goToDesign.emit();
-  }
-  onGoToCode(): void {
-    this.goToCode.emit();
-  }
-  onGoToCreate(): void {
-    this.goToCreate.emit();
-  }
-  onGoToWrite(): void {
-    this.goToWrite.emit();
+  onGoTo(index: number): void {
+    switch (index) {
+      case 0:
+        this.goToDesign.emit();
+        break;
+      case 1:
+        this.goToCode.emit();
+        break;
+      case 2:
+        this.goToCreate.emit();
+        break;
+      case 3:
+        this.goToWrite.emit();
+        break;
+      default:
+        return;
+    }
   }
 }

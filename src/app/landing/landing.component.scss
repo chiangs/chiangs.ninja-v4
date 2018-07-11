@@ -1,12 +1,14 @@
-@import 'styles';
+@import 'variables';
+@import 'mixins';
 
 .landingContainer {
-  height: 100%;
-  width: 100%;
-  margin: 0;
   display: grid;
   grid-gap: $grid-gap;
   grid-template: repeat(16, 1fr) / repeat(16, 1fr);
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  overflow-y: hidden;
 }
 
 .landingLanguageSelector {
@@ -26,7 +28,7 @@
 
 .socialMedia {
   grid-column: 16 / -1;
-  grid-row: 9 / -1;
+  grid-row: 14 / -1;
 }
 
 .menu {
@@ -37,11 +39,12 @@
 
 @media only screen and (max-width: 766px) {
   .menu {
-    grid-column: 1 / 8;
+    grid-column: 1 / 16;
     grid-row: 7 / -1;
   }
 
-  .ctaButton {
-    min-width: 100px;
+  .socialMedia {
+    grid-column: 16 / -1;
+    grid-row: 13 / -1;
   }
 }

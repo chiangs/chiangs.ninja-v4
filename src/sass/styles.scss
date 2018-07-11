@@ -5,39 +5,35 @@
 @import 'functions.scss';
 @import 'animations.scss';
 
+$min-font-size: $fntSizeMin;
+$max-font-size: $fntSizeReg;
+
 html,
 body {
-  height: 100%;
-  box-sizing: border-box;
+  @include fluid-font($min-vw, $max-vw, $min-font-size, $max-font-size);
+  min-height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-size: 100%;
+  font-family: $fnt-main;
   color: $text;
 }
 
-html {
-  line-height: 1.2;
-  // Scales by 1px for every 100px from 600px onwards
-  @media (min-width: 600px) {
-    font-size: calc(112.5% + 4 * (100vw - 600px) / 400);
-  }
-
-  // Sets font-size to 22px after a viewport of 1000px
-  @media (min-width: 1000px) {
-    font-size: calc(137.5%);
-  }
-}
-
-h2,
-h3,
-h4 {
-  font-family: $fnt-labels;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 h1,
+h2,
+h3,
+h4,
 h5,
-h6,
+h6 {
+  font-family: $fnt-labels;
+}
+
 p {
   font-family: $fnt-main;
 }
@@ -45,13 +41,26 @@ p {
 a,
 a:visited,
 a:active,
-a:hover,
-li {
+a:hover {
   text-decoration: none;
   outline: none;
 }
 
+ul {
+  list-style-type: none;
+}
+
 // base flex-box rows and columns
+// base CSS grid
+.viewContainer {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: grid;
+  grid-gap: $grid-gap;
+  grid-template: repeat(16, 1fr) / repeat(16, 1fr);
+  position: relative;
+}
+
 .section {
   display: flex;
   max-width: 100%;
@@ -67,47 +76,29 @@ li {
   flex: 2 2 22px;
 }
 
-// base CSS grid
-.viewContainer {
-  min-height: 100%;
-  display: grid;
-  grid-gap: $grid-gap;
-  grid-template: repeat(16, 1fr) / repeat(16, 1fr);
-  position: relative;
-}
+// .contextIntro {
+//   grid-column: 2 / 6;
+//   grid-row: 0 / 1;
+// }
 
-.contextIntro {
-  grid-column: 2 / 6;
-  grid-row: 0 / 1;
-}
+// .title {
+//   grid-column: 1 / -1;
+//   grid-row: 2 / 4;
+// }
 
-.title {
-  grid-column: 1 / -1;
-  grid-row: 2 / 4;
-}
-
-.subtitle {
-  grid-column: 1 / -1;
-  grid-row: 4 / 5;
-}
+// .subtitle {
+//   grid-column: 1 / -1;
+//   grid-row: 4 / 5;
+// }
 
 // app-wide classes
-.hidden {
-  display: none !important;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
 .link {
   cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: spacing(unit) - 2;
 }
 
-.title {
-  font-size: calc(150% + 20 * (100vw - 600px) / 500);
+.label {
+  text-transform: uppercase;
 }
 
 .devToButton {
@@ -115,20 +106,47 @@ li {
   color: $white;
 }
 
-.ctaButton {
-  min-width: 150px;
-  min-height: 50px;
+// effect for rolling link, use \xa0 in strings for spaces
+.linkRoloEffect a {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  margin: 15px 25px;
+  outline: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  // text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  font-size: 1.35em;
+  overflow: hidden;
+  padding: 0 4px;
+  height: 1em;
 }
 
-.menuList {
-  li {
-    padding: 10px 0;
-  }
+.linkRoloEffect a span {
+  position: relative;
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+}
 
-  list-style-type: none;
-  li button {
-    font-family: $fnt-main;
-  }
+.linkRoloEffect a span::before {
+  position: absolute;
+  top: 100%;
+  content: attr(data-hover);
+  font-weight: 700;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.linkRoloEffect a:hover span,
+.linkRoloEffect a:focus span {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
 // Light
@@ -148,9 +166,9 @@ li {
     @include shadow-hoverL;
   }
 
-  .ctaButton {
-    border: $borderThinDark;
-  }
+  // .ctaButton {
+  //   border: $borderThinDark;
+  // }
 
   .devToButton {
     background-color: $black;
@@ -159,6 +177,10 @@ li {
 
   .link:hover {
     color: $accent;
+  }
+
+  .linkRoloEffect a {
+    color: $black;
   }
 }
 
@@ -179,23 +201,17 @@ li {
     @include shadow-hoverD;
   }
 
-  .ctaButton {
-    border: $borderThinLight;
-  }
-
-  .devToButton {
-    background-color: $white;
-    color: $black;
-  }
-
-  .link:hover {
-    color: $blue;
+  // .ctaButton {
+  //   border: $borderThinLight;
+  // }
+  .linkRoloEffect a {
+    color: $white;
   }
 }
 
-@media only screen and(max-width: 823px) {
-  .contextIntro {
-    grid-column: 1 / -1;
-    grid-row: 0 / 1;
-  }
-}
+// @media only screen and(max-width: 823px) {
+//   .contextIntro {
+//     grid-column: 1 / -1;
+//     grid-row: 0 / 1;
+//   }
+// }

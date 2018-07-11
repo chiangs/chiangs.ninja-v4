@@ -1,5 +1,12 @@
 @import 'styles';
 
+$min-font-size: $fntSizeReg;
+$max-font-size: $fntSizeDisplay;
+
+.title {
+  @include fluid-font($min-vw, $max-vw, $min-font-size, $max-font-size);
+}
+
 .firstName {
   color: $blue;
   font-weight: 300;
@@ -7,6 +14,7 @@
 
 .lastName {
   font-weight: 500;
+  letter-spacing: spacing(unit);
 }
 
 .leftArrow {
@@ -15,18 +23,4 @@
 
 .moving.leftArrow {
   animation: attention 1s ease-in-out infinite alternate;
-}
-
-@media only screen and (max-width: 766px) {
-  .firstName,
-  .lastName {
-    font-size: $fontSizeBig;
-  }
-}
-
-@media only screen and (max-width: 340px) {
-  .firstName,
-  .lastName {
-    font-size: $fontSizeRegular;
-  }
 }

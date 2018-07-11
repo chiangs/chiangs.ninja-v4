@@ -29,12 +29,11 @@
 // Vertical
 .vertical.socialLinks {
   height: 100%;
-  padding-right: spacing(medium);
   flex-direction: column;
   flex-wrap: wrap;
 
   .socialLink {
-    padding: spacing(extra-tight) spacing(none);
+    padding: spacing(unit) spacing(none);
   }
 
   .socialLink img {

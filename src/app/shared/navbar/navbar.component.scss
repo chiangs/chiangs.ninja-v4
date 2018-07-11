@@ -1,71 +1,49 @@
 @import 'styles';
 
-nav {
-  background: transparent;
-  font-family: $fnt-main;
-}
-
 .container {
+  display: flex;
+  background: transparent;
+  text-align: center;
   width: 100%;
-  max-height: spacing(base) * 3;
+  min-height: $navbar-height;
   padding: 0;
   margin: 0 auto;
-  text-align: center;
-  display: flex;
+  & > .column {
+    display: flex;
+    align-items: center;
+  }
 }
 
-mat-slide-toggle,
-.navEnd {
-  padding: spacing(base) 0 0 spacing(base);
-  width: spacing(unit) * 25;
+.brandContainer {
+  max-width: 10%;
+  justify-content: center;
+  .brand {
+    max-height: 60px;
+  }
 }
 
-app-language-switcher {
-  padding: 22px 0 0 0;
-  width: spacing(unit) * 25;
-}
-
-.brand {
-  max-height: 50px;
+.column.themeToggleContainer {
+  max-width: 10%;
+  justify-content: left;
+  mat-slide-toggle {
+    max-width: 50%;
+  }
 }
 
 .links {
-  text-align: center;
-  width: 100%;
-  flex: 1;
+  min-width: 60%;
+  justify-content: center;
 }
 
-.container .links li {
-  cursor: pointer;
-  display: inline-block;
-  width: spacing(loose);
-  list-style-type: none;
-  padding: spacing(base) spacing(extra-loose);
+.navEnd {
+  max-width: 10%;
+  justify-content: right;
 }
 
-.container .links li:hover {
-  color: $blue;
+app-language-switcher {
 }
 
-@media only screen and(max-width: 823px) {
-  mat-slide-toggle,
-  .navEnd {
-    height: 52px;
-    padding: spacing(unit) 0 0 10px;
-  }
-
-  .brand {
-    max-width: 25px;
-  }
-
-  .container .links {
-    text-align: right;
-    padding: spacing(tight) spacing(base) 0 0;
-  }
-
-  .container .links li {
-    font-size: $fontSizeSmall;
-    display: inline;
-    padding: spacing(tight) spacing(tight);
-  }
+.languageSwitcher {
+  max-width: 10%;
+  justify-content: center;
 }
