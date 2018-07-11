@@ -154,21 +154,21 @@ ul {
   background-color: $white;
   color: $text;
   @include themeL-transition;
+  .linkRoloEffect a {
+    color: $dark;
+  }
+
   .active {
     color: $accent;
   }
 
   .lastName {
-    color: $main;
+    color: $dark;
   }
 
   .shadow:hover {
     @include shadow-hoverL;
   }
-
-  // .ctaButton {
-  //   border: $borderThinDark;
-  // }
 
   .devToButton {
     background-color: $black;
@@ -178,17 +178,17 @@ ul {
   .link:hover {
     color: $accent;
   }
-
-  .linkRoloEffect a {
-    color: $black;
-  }
 }
 
 // Dark
 .dark {
-  background-color: $main;
+  background-color: $dark;
   color: $text-inverted;
   @include themeD-transition;
+  .linkRoloEffect a {
+    color: $light;
+  }
+
   .active {
     color: $blue;
   }
@@ -199,13 +199,6 @@ ul {
 
   .shadow:hover {
     @include shadow-hoverD;
-  }
-
-  // .ctaButton {
-  //   border: $borderThinLight;
-  // }
-  .linkRoloEffect a {
-    color: $white;
   }
 }
 

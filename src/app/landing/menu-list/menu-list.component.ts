@@ -7,13 +7,14 @@ import {
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LanguageService } from '../../services/language.service';
+import { DeviceSizeService } from '../../services/device-size.service';
 
 @Component({
   selector: 'app-menu-list',
   template: `
-    <ul class="menuList">
-        <li *ngFor="let link of viewContent.links; let i = index">
-          <app-button [buttonText]="link" (buttonClick)="onGoTo(i)"></app-button>
+    <ul class="menuList" [ngClass]="{'phone': isPhone}">
+        <li  class="linkRoloEffect" *ngFor="let link of viewContent.links; let i = index">
+          <a (click)="onGoTo(i)"><span attr.data-hover="{{ link }}">{{ link }}</span></a>
         </li>
     </ul>
   `,
@@ -25,6 +26,7 @@ export class MenuListComponent implements OnInit, OnDestroy {
   @Output() goToCreate: EventEmitter<any>;
   @Output() goToWrite: EventEmitter<any>;
   langSub: Subscription;
+  isPhone: boolean;
   viewContent: { links: string[] };
   enContent = {
     links: [`design`, `code`, `create`, `write`]
@@ -36,11 +38,15 @@ export class MenuListComponent implements OnInit, OnDestroy {
     links: [`design`, `kode`, `skape`, `skrive`]
   };
 
-  constructor(private langSvc: LanguageService) {
+  constructor(
+    private langSvc: LanguageService,
+    private deviceSvc: DeviceSizeService
+  ) {
     this.goToDesign = new EventEmitter<any>();
     this.goToCode = new EventEmitter<any>();
     this.goToCreate = new EventEmitter<any>();
     this.goToWrite = new EventEmitter<any>();
+    this.isPhone = this.deviceSvc.isPhone();
   }
 
   ngOnInit() {

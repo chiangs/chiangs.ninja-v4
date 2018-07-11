@@ -30,7 +30,11 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe(
       res =>
-        (this.isLanding = this.router.url.includes('/welcome') ? true : false)
+        (this.isLanding = this.router.url.includes(
+          'design' || 'code' || 'create'
+        )
+          ? false
+          : true)
     );
   }
 

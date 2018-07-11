@@ -1,0 +1,11 @@
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
+$min-font-size: $fntSizeMin;
+$max-font-size: $fntSizeReg;
+
+.viewContainer {
+  @include fluid-font($min-vw, $max-vw, $min-font-size, $max-font-size);
+  background: $red;
+}

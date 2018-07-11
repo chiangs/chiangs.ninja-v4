@@ -125,7 +125,7 @@ export class LandingComponent implements OnInit, OnDestroy {
   }
 
   goToDesign(): void {
-    this.router.navigate(['/design']);
+    this.router.navigate(['design']);
   }
 
   goToCode(): void {

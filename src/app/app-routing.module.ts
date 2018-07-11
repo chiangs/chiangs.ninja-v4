@@ -4,14 +4,16 @@ import { LandingComponent } from './landing/landing.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 
 const routes: Routes = [
-  { path: 'welcome', component: LandingComponent },
-  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   {
-    path: 'code',
-    loadChildren: './code/code.module#CodeModule'
+    path: 'design',
+    loadChildren: './design/design.module#DesignModule'
   },
-  // { path: 'create', loadChildren: 'create.module#CreateModule' },
-  // { path: 'design', loadChildren: 'design.module#DesignModule' },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full',
+    component: LandingComponent
+  },
   { path: '**', component: ErrorPageComponent }
 ];
 

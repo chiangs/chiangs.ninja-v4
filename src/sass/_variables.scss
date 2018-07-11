@@ -1,11 +1,10 @@
-// @import url('https://fonts.googleapis.com/css?family=Montserrat:300,
-//   400,500|Raleway:400,800|Source+Code+Pro');
-
 // == COLORS
-$main: #030915;
-$red: #ee4035;
+$dark: #030915;
+$light: #f7f7f7;
+// $red: #ee4035;
 $white: #f7f7f7;
 $black: #333333;
+$red: #ff1744;
 $blue: #7ca8b1;
 $green: #00c853;
 $accent: #ff4081;
@@ -15,9 +14,10 @@ $text-inverted: $white;
 $opacityLight: 30%;
 
 // == TYPOGRAPHY
-$fnt-main: 'Montserrat', sans-serif;
-$fnt-labels: 'Raleway', sans-serif;
-$fnt-contextTagline: 'Source Code Pro', sans-serif;
+$fnt-main: 'Manrope', sans-serif;
+$fnt-labels: 'Manrope', sans-serif;
+$fnt-code: 'Source Code Pro', monospace;
+$fnt-contextTagline: $fnt-code;
 $fnt-main-lt: 300;
 $fnt-main-md: 500;
 $fnt-main-hv: 900;
@@ -25,8 +25,8 @@ $fnt-labels-hv: 900;
 $fntSizeMin: 12px;
 $fntSizeSmall: 14px;
 $fntSizeReg: 18px;
-$fntSizeLabel: 22px;
-$fntSizeDisplay: 96px;
+$fntSizeLabel: 36px;
+$fntSizeDisplay: 144px;
 
 // == DIMENSIONS
 $grid-gap: 3px;
