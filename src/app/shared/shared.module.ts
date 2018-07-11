@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LanguageSwitcherComponent } from './language-switcher/language-switcher.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SocialMediaLinksComponent } from './social-media-links/social-media-links.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SocialMediaLinksComponent } from './social-media-links/social-media-lin
     FooterComponent,
     LanguageSwitcherComponent,
     NavbarComponent,
-    SocialMediaLinksComponent
+    SocialMediaLinksComponent,
+    ButtonComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,7 @@ import { SocialMediaLinksComponent } from './social-media-links/social-media-lin
     MatMenuModule
   ],
   exports: [
+    ButtonComponent,
     ContextIntroComponent,
     FooterComponent,
     LanguageSwitcherComponent,

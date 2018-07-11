@@ -6,69 +6,18 @@
 }
 
 .myInformation {
-  padding: spacing(base);
 }
 
 .leftColumn {
   max-width: 25%;
-  .meInfo {
-    padding: 0 0 0 spacing(base);
-    text-transform: capitalize;
-  }
-  .profilePicImg {
-    max-width: 100px;
-    border-radius: $circle;
-  }
-  h4.fullName {
-    padding: 0;
-    margin: 0;
-  }
-  a {
-    color: $blue;
-    font-size: $fontSizeSmall;
-    text-transform: lowercase;
-  }
-  .emailIcon {
-    max-height: 15px;
-    margin: 0 spacing(unit) (-(spacing(unit))) 0;
-  }
 }
 
 .middleColumn {
   max-width: 50%;
   text-align: center;
   justify-content: center;
-  & div {
-    margin: spacing(extra-tight);
-    justify-content: center;
-  }
-
-  .location {
-    font-size: $fontSizeSmall;
-  }
-
-  .freelanceStatus {
-    font-style: italic;
-    font-size: $fontSizeSmall;
-    color: $red;
-  }
-
-  .languageItem {
-    padding-top: spacing(tight);
-    max-width: 25%;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: $fontSizeSmall;
-  }
 }
 
 .rightColumn {
   max-width: 25%;
-  .siteControls {
-    padding-top: 70px;
-    font-size: $fontSizeSmall;
-  }
-  ul {
-    list-style: none;
-  }
 }

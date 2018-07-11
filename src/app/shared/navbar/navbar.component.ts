@@ -1,33 +1,14 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { MatSlideToggle } from '@angular/material';
-import { Subscription } from 'rxjs';
-import { ThemeSelectService } from '../../services/theme-select.service';
-import { DeviceSizeService } from '../../services/device-size.service';
-import { ScrollService } from '../../services/scroll.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { DeviceSizeService } from '../../services/device-size.service';
 import { LanguageService } from '../../services/language.service';
+import { ScrollService } from '../../services/scroll.service';
+import { ThemeSelectService } from '../../services/theme-select.service';
 
 @Component({
   selector: 'app-navbar',
-  template: `
-    <nav [ngClass]="theme ? 'light' : 'dark'">
-    <ul class="container">
-      <div class="brandContainer" (click)="goTo('/')">
-        <img class="link brand" src="../../../assets/images/icon-s.svg">
-      </div>
-      <mat-slide-toggle class="themeToggle" [checked]="checked" [labelPosition]="'before'" (change)="onToggleTheme($event)">
-        </mat-slide-toggle>
-        <div class="links">
-          <li *ngFor="let item of viewContent.navLinks">
-          <a>{{ item }}</a>
-            </li>
-          <li id="navBlogLink" rel="noopener" (click)="goToBlog()">{{ viewContent.blogNavTitle }}</li>
-        </div>
-        <div class="navEnd link" *ngIf="!isMobilePhone" (click)="scrollToFooter('footer')">@</div>
-        <app-language-switcher [side]="'right'"></app-language-switcher>
-      </ul>
-    </nav>
-  `,
+  templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit, OnDestroy {
@@ -36,12 +17,37 @@ export class NavbarComponent implements OnInit, OnDestroy {
   theme: boolean;
   checked: boolean;
   isMobilePhone: boolean;
-  blogLink: string;
-  viewContent: { navLinks: string[]; blogNavTitle: string };
-  enContent = { navLinks: [`design`, `code`, `create`], blogNavTitle: `write` };
-  noContent = { navLinks: [`design`, `kode`, `skabe`], blogNavTitle: `skrive` };
+  designUrl = `design`;
+  codeUrl = `code`;
+  createUrl = `create`;
+  writeUrl = `https://dev.to/chiangs`;
+
+  viewContent: {
+    navLinks: { name: string; url: string }[];
+    blogNavTitle: string;
+  };
+  enContent = {
+    navLinks: [
+      { name: `design`, url: this.designUrl },
+      { name: `code`, url: this.codeUrl },
+      { name: `create`, url: this.createUrl }
+    ],
+    blogNavTitle: `write`
+  };
+  noContent = {
+    navLinks: [
+      { name: `design`, url: this.designUrl },
+      { name: `kode`, url: this.codeUrl },
+      { name: `skabe`, url: this.createUrl }
+    ],
+    blogNavTitle: `skrive`
+  };
   dkContent = {
-    navLinks: [`design`, `kode`, `skape`],
+    navLinks: [
+      { name: `design`, url: this.designUrl },
+      { name: `kode`, url: this.codeUrl },
+      { name: `skape`, url: this.createUrl }
+    ],
     blogNavTitle: `skrive`
   };
 
@@ -51,9 +57,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     private isMobileSvc: DeviceSizeService,
     private scrollSvc: ScrollService,
     private langSvc: LanguageService
-  ) {
-    this.blogLink = `https://dev.to/chiangs`;
-  }
+  ) {}
 
   ngOnInit() {
     this.themeSub = this.themeSvc.getTheme().subscribe(theme => {
@@ -68,7 +72,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.dkContent
       );
     });
-    this.isMobilePhone = this.isMobileSvc.isMobilePhonePortrait();
   }
 
   ngOnDestroy() {
@@ -86,7 +89,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   goToBlog(): void {
-    window.open(this.blogLink, '_blank');
+    window.open(this.writeUrl, '_blank', 'noopener');
   }
 
   scrollToFooter(className: string): void {

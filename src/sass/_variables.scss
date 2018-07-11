@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Raleway:400,800|Source+Code+Pro);
+// @import url('https://fonts.googleapis.com/css?family=Montserrat:300,
+//   400,500|Raleway:400,800|Source+Code+Pro');
 
 // == COLORS
 $main: #030915;
@@ -11,6 +12,7 @@ $accent: #ff4081;
 $grey: #f2f2f2;
 $text: $black;
 $text-inverted: $white;
+$opacityLight: 30%;
 
 // == TYPOGRAPHY
 $fnt-main: 'Montserrat', sans-serif;
@@ -20,18 +22,21 @@ $fnt-main-lt: 300;
 $fnt-main-md: 500;
 $fnt-main-hv: 900;
 $fnt-labels-hv: 900;
+$fntSizeMin: 12px;
+$fntSizeSmall: 14px;
+$fntSizeReg: 18px;
+$fntSizeLabel: 22px;
+$fntSizeDisplay: 96px;
 
 // == DIMENSIONS
 $grid-gap: 3px;
+$navbar-height: 80px;
 $footer-height: 400px;
 
 // SIZES
-$unit: 4px;
-$fontSizeSmall: 12px;
-$fontSizeRegular: 16px;
-$fontSizeLarge: 20px;
-$fontSizeBig: 32px;
-$fontSizeHuge: 56px;
+$unit: 5px;
+$min-vw: 300px;
+$max-vw: 1920px;
 
 // == SHAPES and RADII
 $square: 0px;

@@ -1,0 +1,47 @@
+@import 'styles';
+
+$min-font-size: $fntSizeMin;
+$max-font-size: $fntSizeLabel;
+$originalStateBorder: 1px solid rgba(255, 255, 255, 0.5);
+$darkBorder: rgba(0, 0, 0, 1);
+$lightBorder: rgba(255, 255, 255, 1);
+
+.button {
+  @include fluid-font($min-vw, $max-vw, $min-font-size, $max-font-size);
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
+  min-height: 100%;
+  padding: spacing(double);
+  border: $originalStateBorder;
+  color: $text;
+  font-family: $fnt-labels;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  //   background: linear-gradient(135deg, $whiteTransparent 50%, transparent 50%);
+  background-size: 300% 100%;
+  background-position: right bottom;
+  transition: all 0.35s ease-in;
+  outline: none;
+}
+
+.button:hover {
+  //   border: $borderThinLight;
+}
+
+.button.active {
+  //   background: $greenTransparent;
+}
+
+.button.loading {
+  background-position: left bottom;
+}
+
+.button.disabled {
+  cursor: not-allowed;
+  //   background: $whiteTransparent;
+}
+
+.button.disabled:hover {
+  border: $originalStateBorder;
+}

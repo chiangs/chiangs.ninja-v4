@@ -74,7 +74,7 @@ export class LandingComponent implements OnInit, OnDestroy {
   ) {
     this.me = this.meSvc.getMe();
     this.isMobile = this.isMobileSvc.isMobileDevice();
-    this.isPhone = this.isMobileSvc.isMobilePhone();
+    this.isPhone = this.isMobileSvc.isPhone();
     this.isArrowHidden = true;
     this.socialLinksOrientation = 'vertical';
     this.themeSub = this.themeSvc
