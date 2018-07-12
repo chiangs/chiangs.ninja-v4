@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { LanguageService } from '../../services/language.service';
+import { ThemeSelectService } from '../../services/theme-select.service';
 
 @Component({
   selector: 'app-code',
@@ -12,7 +15,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./code.component.scss']
 })
 export class CodeComponent implements OnInit {
-  constructor() {}
+  themeSub: Subscription;
+  langSub: Subscription;
+  theme: boolean;
+  constructor(
+    private themeSvc: ThemeSelectService,
+    private langSvc: LanguageService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.themeSub = this.themeSvc
+      .getTheme()
+      .subscribe(theme => (this.theme = theme));
+    this.langSub = this.langSvc.getLang().subscribe(language => {
+      // this.viewContent = this.langSvc.langSwitchHandler(
+      //   language,
+      //   this.enContent,
+      //   this.dkContent,
+      //   this.noContent
+      // );
+    });
+  }
 }

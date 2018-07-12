@@ -33,7 +33,6 @@ export class FooterComponent implements OnInit, OnDestroy {
   themeSub: Subscription;
   theme: boolean;
   langSub: Subscription;
-  language: string;
   socialLinksOrientation: string;
 
   constructor(
@@ -52,9 +51,8 @@ export class FooterComponent implements OnInit, OnDestroy {
       .getTheme()
       .subscribe(theme => (this.theme = theme));
     this.langSub = this.langSvc.getLang().subscribe(language => {
-      this.language = language;
       this.viewContent = this.langSvc.langSwitchHandler(
-        this.language,
+        language,
         this.enContent,
         this.dkContent,
         this.noContent
