@@ -9,6 +9,14 @@ const routes: Routes = [
     loadChildren: './design/design.module#DesignModule'
   },
   {
+    path: 'code',
+    loadChildren: './code/code.module#CodeModule'
+  },
+  {
+    path: 'create',
+    loadChildren: './create/create.module#CreateModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full',

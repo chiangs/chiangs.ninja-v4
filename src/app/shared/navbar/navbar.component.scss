@@ -1,4 +1,12 @@
-@import 'styles';
+@import 'variables';
+@import 'mixins';
+
+$min-font-size: $fntSizeMin;
+$max-font-size: $fntSizeReg;
+
+nav {
+  @include fluid-font($min-vw, $max-vw, $min-font-size, $max-font-size);
+}
 
 .container {
   display: flex;
@@ -15,35 +23,19 @@
 }
 
 .brandContainer {
-  max-width: 10%;
+  max-width: 15%;
   justify-content: center;
   .brand {
     max-height: 60px;
   }
 }
 
-.column.themeToggleContainer {
-  max-width: 10%;
-  justify-content: left;
-  mat-slide-toggle {
-    max-width: 50%;
-  }
-}
-
 .links {
-  min-width: 60%;
+  min-width: 70%;
   justify-content: center;
 }
 
-.navEnd {
-  max-width: 10%;
-  justify-content: right;
-}
-
-app-language-switcher {
-}
-
 .languageSwitcher {
-  max-width: 10%;
+  max-width: 15%;
   justify-content: center;
 }

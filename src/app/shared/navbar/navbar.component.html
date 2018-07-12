@@ -1,34 +1,31 @@
 <nav [ngClass]="theme ? 'light' : 'dark'" *ngIf="!isMobilePhone">
     <ul class="section container">
-        <div class="column brandContainer" (click)="goTo('/')">
-            <img class="link brand" src="../../../assets/images/icon-s.svg" alt="S brand">
+        <div class="column brandContainer">
+            <img class="link brand" src="../../../assets/images/icon-s.svg" alt="S brand" (click)="goTo('/')">
+            <div class=" themeToggleContainer">
+                <mat-slide-toggle class="themeToggle" [checked]="checked" [labelPosition]="'before'" (change)="onToggleTheme($event)">
+                </mat-slide-toggle>
+            </div>
         </div>
-        <div class="column themeToggleContainer">
-            <mat-slide-toggle class="themeToggle" [checked]="checked" [labelPosition]="'before'" (change)="onToggleTheme($event)">
-            </mat-slide-toggle>
-        </div>
-        <div class="column links">
+        <div class="column links" *ngIf="!isMobilePhone">
             <li class="linkRoloEffect" *ngFor="let item of viewContent.navLinks">
                 <a (click)="goTo(item.url)">
                     <span attr.data-hover="{{ item.name }}">{{ item.name }}</span>
                 </a>
             </li>
-            <li id="navBlogLink" class="linkRoloEffect">
+            <li class="linkRoloEffect">
                 <a (click)="goToBlog()">
                     <span attr.data-hover="{{viewContent.blogNavTitle}}">{{ viewContent.blogNavTitle }}</span>
                 </a>
             </li>
-        </div>
-        <div class="column navEnd">
-            <div class="link" *ngIf="!isMobilePhone" (click)="scrollToFooter('footer')">@</div>
+            <li class="linkRoloEffect">
+                <a (click)="scrollToFooter('footer')">
+                    <span attr.data-hover="{{ socialMedia }}">{{ socialMedia }}</span>
+                </a>
+            </li>
         </div>
         <div class="column languageSwitcher">
             <app-language-switcher [side]="'right'"></app-language-switcher>
         </div>
     </ul>
-</nav>
-<!-- Phone -->
-<nav *ngIf="isMobilePhone">
-    <div class="section brand">ChiangsNinja</div>
-    <div class="section links">Links</div>
 </nav>

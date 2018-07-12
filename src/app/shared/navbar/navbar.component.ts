@@ -21,6 +21,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   codeUrl = `code`;
   createUrl = `create`;
   writeUrl = `https://dev.to/chiangs`;
+  socialMedia = `@`;
 
   viewContent: {
     navLinks: { name: string; url: string }[];
@@ -57,7 +58,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
     private isMobileSvc: DeviceSizeService,
     private scrollSvc: ScrollService,
     private langSvc: LanguageService
-  ) {}
+  ) {
+    this.isMobilePhone = this.isMobileSvc.isPhone();
+  }
 
   ngOnInit() {
     this.themeSub = this.themeSvc.getTheme().subscribe(theme => {
