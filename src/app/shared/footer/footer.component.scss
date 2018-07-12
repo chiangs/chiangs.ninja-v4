@@ -1,23 +1,63 @@
-@import 'styles';
+@import 'variables';
+@import 'mixins';
+@import 'functions';
+
+$min-font-size: $fntSizeMin;
+$max-font-size: $fntSizeReg;
 
 .footerContainer {
+  @include fluid-font($min-vw, $max-vw, $min-font-size, $max-font-size);
   max-height: $footer-height;
   width: 100%;
-}
-
-.myInformation {
+  padding: spacing(double);
 }
 
 .leftColumn {
   max-width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .profilePic {
+    text-align: center;
+  }
+  .profilePic,
+  .meInfo {
+    max-width: 50%;
+  }
+  .profilePicImg {
+    max-width: 100px;
+    border-radius: $circle;
+  }
+  .language li {
+    padding: spacing(unit);
+  }
+  .badges a {
+    padding: spacing(unit);
+  }
 }
 
 .middleColumn {
   max-width: 50%;
-  text-align: center;
-  justify-content: center;
+  padding: 4%;
+  & > div {
+    justify-content: center;
+    padding: spacing(unit);
+  }
+  .location {
+    margin-top: spacing(unit);
+  }
+  .freelanceStatus {
+    font-style: italic;
+    margin-top: spacing(unit);
+  }
 }
 
 .rightColumn {
   max-width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .link {
+    padding: spacing(double);
+  }
 }

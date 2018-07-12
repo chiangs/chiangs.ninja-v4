@@ -1,0 +1,56 @@
+<div class="section footerContainer" [ngClass]="theme ? 'light' : 'dark'">
+    <div class="column myInformation leftColumn">
+        <div class="column meInfo profilePic">
+            <img class="profilePicImg" src="../../../assets/images/profilePic.png" alt="profile image" />
+            <h4 class="fullName">{{ me.firstName }}</h4>
+            <div class="badges">
+                <a (click)="goToBadge('umbraco')">
+                    <img src="../../../assets/images/badge-umbraco-xp.png" alt="Umbraco Professional Badge" height="50" width="50" />
+                </a>
+                <a (click)="goToBadge('devTo')">
+                    <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Stephen E. Chiang's DEV Profile" height="50" width="50" />
+                </a>
+            </div>
+        </div>
+        <div class="column meInfo">
+            <div class="language">
+                <ul>
+                    <li *ngFor="let language of me.languages">
+                        {{ language.lang}}
+                        <br>[{{ language.skillLvl }}]
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="column myInformation middleColumn">
+        <div class="section socialLinks">
+            <app-social-media-links [me]="me" [orientation]="socialLinksOrientation"></app-social-media-links>
+        </div>
+        <div class="section location">
+            {{ me.location.coordinates.lat }}, {{ me.location.coordinates.lng }}&nbsp;&nbsp;&nbsp;• &nbsp;&nbsp;{{ me.location.city }}, {{ me.location.country }}
+        </div>
+        <div class="section freelanceStatus">
+            {{ me.freelanceStatus }}
+        </div>
+    </div>
+
+    <div class="column myInformation rightColumn">
+        <div class="column rightAligned siteControls">
+            <ul>
+                <li>
+                    <p class="link backToLanding" (click)="backToLanding()">{{ viewContent.navToLanding }}</p>
+                </li>
+                <li>
+                    <p class="link resetGuide" (click)="resetGuidedTour()">{{ viewContent.resetGuide }}</p>
+                </li>
+                <li>
+                    <p class="link scrollButtonUp" (click)="scrollToHeader('header')">{{ viewContent.backToTop }}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

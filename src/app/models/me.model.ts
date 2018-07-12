@@ -14,6 +14,8 @@ export class Me {
   };
   companies: { name: string; url: string; title: string }[];
   languages: { lang: string; skillLvl: string }[];
+  umbracoCert: string;
+  devTo: string;
   illustratedPic: string;
   livePic: string;
   freelanceStatus: string;

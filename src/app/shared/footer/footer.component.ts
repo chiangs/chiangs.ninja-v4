@@ -1,64 +1,15 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { Subscription, fromEvent } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Me } from '../../models/me.model';
-import { MeService } from '../../services/me.service';
-import { ThemeSelectService } from '../../services/theme-select.service';
-import { ScrollService } from '../../services/scroll.service';
 import { LanguageService } from '../../services/language.service';
+import { MeService } from '../../services/me.service';
+import { ScrollService } from '../../services/scroll.service';
+import { ThemeSelectService } from '../../services/theme-select.service';
 
 @Component({
   selector: 'app-footer',
-  template: `
-    <div class="section footerContainer" [ngClass]="theme ? 'light' : 'dark'">
-      <div class="column myInformation leftColumn">
-        <div class="column meInfo profilePic">
-          <img class="profilePicImg" src="../../../assets/images/profilePic.png" alt="profile image"/>
-        </div>
-        <div class="column meInfo">
-          <h4 class="fullName">{{ me.firstName }} {{ me.middleName }} {{ me.lastName }}</h4>
-          <a href="mailto:stephen.e.chiang@gmail.com">
-            <img class="emailIcon" src="../../../assets/images/icons/email-blu.svg">{{ me.email }}
-          </a>
-          <div class="section badges">
-            <a href="" target="_blank" rel="noopener noreferrer">
-              <img src="../../../assets/images/badge-umbraco-xp.png" alt="Umbraco Professional Badge" height="30" width="30"/>
-            </a>
-            <a href="https://dev.to/chiangs" rel="noopener noreferrer">
-              <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Stephen E. Chiang's DEV Profile" height="30" width="30" />
-            </a>
-        </div>
-      </div>
-      <div class="column myInformation middleColumn">
-        <div class="section socialLinks">
-          <app-social-media-links [me]="me" [orientation]="socialLinksOrientation"></app-social-media-links>
-        </div>
-        <div class="section language">
-          <div class="column languageItem" *ngFor="let language of me.languages">
-            {{ language.lang}}
-            <br>
-            [{{ language.skillLvl }}]
-          </div>
-        </div>
-        <div class="section location">
-          {{ me.location.coordinates.lat }}, {{ me.location.coordinates.lng }}&nbsp;&nbsp;&nbsp;•
-          &nbsp;&nbsp;{{ me.location.city }}, {{ me.location.country }}&nbsp;&nbsp;&nbsp;•
-          &nbsp;&nbsp;
-          <span class="freelanceStatus">{{ me.freelanceStatus }}</span>
-        </div>
-      </div>
-
-      <div class="column myInformation rightColumn">
-        <div class="column rightAligned siteControls">
-          <ul>
-            <li><p class="link backToLanding" (click)="backToLanding()">{{ viewContent.navToLanding }}</p></li>
-            <li><p class="link resetGuide" (click)="resetGuidedTour()">{{ viewContent.resetGuide }}</p></li>
-            <li><p class="link scrollButtonUp" (click)="scrollToHeader('header')">{{ viewContent.backToTop }}</p></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  `,
+  templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit, OnDestroy {
@@ -97,16 +48,6 @@ export class FooterComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    // this.router.events.subscribe(event => {
-    //   if (event instanceof NavigationEnd) {
-    //     const body = document.getElementById('body');
-    //     const docHeight = body.getBoundingClientRect();
-    //     console.log( docHeight.height );
-    //     if ( docHeight.height > 700px && isMobile) {
-    //   this.showScrollTopBtn = true;
-    // };
-    //   }
-    // });
     this.themeSub = this.themeSvc
       .getTheme()
       .subscribe(theme => (this.theme = theme));
@@ -128,6 +69,21 @@ export class FooterComponent implements OnInit, OnDestroy {
     if (this.langSub) {
       this.langSub.unsubscribe();
     }
+  }
+
+  goToBadge(badge: string): void {
+    let externalUrl;
+    switch (badge) {
+      case `umbraco`:
+        externalUrl = this.me.umbracoCert;
+        break;
+      case `devTo`:
+        externalUrl = this.me.devTo;
+        break;
+      default:
+        break;
+    }
+    window.open(externalUrl, '_blank', 'noopener noreferrer');
   }
 
   scrollToHeader(className: string): void {

@@ -52,6 +52,9 @@ export class MeService {
       { lang: 'norsk', skillLvl: 'Professional' },
       { lang: '中文', skillLvl: 'Conversational' }
     ];
+    // tslint:disable-next-line:max-line-length
+    this.me.umbracoCert = `https://umbraco.com/training/certified-developers/umbraco-7-certified-developers/certifieddeveloperdetails/?id=1298cd46-b520-476d-9dba-cb3b52294df1`;
+    this.me.devTo = `https://dev.to/chiangs`;
     this.me.illustratedPic = 'string';
     this.me.livePic = 'string';
     this.me.freelanceStatus = 'Currently not available for freelance';
