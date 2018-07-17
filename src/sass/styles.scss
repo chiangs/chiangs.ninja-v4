@@ -55,10 +55,10 @@ ul {
 .viewContainer {
   min-height: 100vh;
   min-width: 100vw;
-  display: grid;
-  grid-gap: $grid-gap;
-  grid-template: repeat(16, 1fr) / repeat(16, 1fr);
-  position: relative;
+  // display: grid;
+  // grid-gap: $grid-gap;
+  // grid-template: repeat(16, 1fr) / repeat(16, 1fr);
+  // position: relative;
 }
 
 .section {
@@ -75,11 +75,6 @@ ul {
 .column:first-of-type {
   flex: 2 2 22px;
 }
-
-// .contextIntro {
-//   grid-column: 2 / 6;
-//   grid-row: 0 / 1;
-// }
 
 // .title {
 //   grid-column: 1 / -1;
@@ -201,10 +196,3 @@ ul {
     @include shadow-hoverD;
   }
 }
-
-// @media only screen and(max-width: 823px) {
-//   .contextIntro {
-//     grid-column: 1 / -1;
-//     grid-row: 0 / 1;
-//   }
-// }

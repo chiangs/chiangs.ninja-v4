@@ -10,3 +10,13 @@ $max-font-size: $fntSizeReg;
   background: $red;
   color: $white;
 }
+
+.projectCards {
+  min-height: 85vh;
+  flex-wrap: wrap;
+  padding: spacing(squared);
+
+  .cardItem {
+    padding: spacing(unit);
+  }
+}

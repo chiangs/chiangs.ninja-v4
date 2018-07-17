@@ -1,17 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Me } from '../../models/me.model';
-import { Subscription } from '../../../../node_modules/rxjs';
+import { Subscription } from 'rxjs';
 import { MeService } from '../../services/me.service';
 import { ThemeSelectService } from '../../services/theme-select.service';
 import { LanguageService } from '../../services/language.service';
+import { ProjectService } from '../../services/project.service';
+import { Project } from '../../models/project.model';
 
 @Component({
   selector: 'app-design',
   template: `
     <div class="viewContainer" [ngClass]="theme ? 'light' : 'dark'">
-      <div class="contextIntro">
-      <h1>CONTENT</h1>
-      <app-card [cardId]="1" [imagePath]="projPath" [title]="'Chiangs.Ninja'"></app-card>
+      <div class="section contextIntro">
+        <h1>CONTENT</h1>
+      </div>
+      <div class="section projectCardsGrid" *ngIf="gridView">
+        <div class="column cardItem" *ngFor="let project of projects; let i = index">
+              <app-card [cardId]="i" [imagePath]="project.designImageUrl" [title]="project.name"></app-card>
+        </div>
       </div>
     </div>
   `,
@@ -22,13 +28,15 @@ export class DesignComponent implements OnInit {
   themeSub: Subscription;
   langSub: Subscription;
   theme: boolean;
+  projects: Project[];
+  gridView = true;
   viewContent: {};
-  projPath = `../../../assets/projects/chiangs.jpg`;
 
   constructor(
     private meSvc: MeService,
     private themeSvc: ThemeSelectService,
-    private langSvc: LanguageService
+    private langSvc: LanguageService,
+    private projectSvc: ProjectService
   ) {
     this.me = this.meSvc.getMe();
   }
@@ -45,5 +53,6 @@ export class DesignComponent implements OnInit {
       //   this.noContent
       // );
     });
+    this.projects = this.projectSvc.getDesignProjects();
   }
 }

@@ -1,4 +1,3 @@
-import { ContextModel } from './context.model';
 import { SocialMediaLink } from './social-media-link.model';
 
 export class Me {

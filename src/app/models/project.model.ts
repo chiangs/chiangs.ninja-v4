@@ -7,6 +7,7 @@ export class Project {
   contributions: string;
   url: string;
   repoUrl: string;
-  imageUrl: string;
-  category: string;
+  projectImageUrl: string;
+  designImageUrl: string;
+  category: string[];
 }
