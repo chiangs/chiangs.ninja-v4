@@ -2,7 +2,7 @@
 https://chiangsninja.netlify.com/* https://www.chiangs.ninja/:splat 301!
 
 # Redirects from what the browser requests to what we serve
-/welcome              /
+/              /
 /code                 /code
 /design               /design
 /create               /create

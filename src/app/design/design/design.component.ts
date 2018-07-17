@@ -11,6 +11,7 @@ import { LanguageService } from '../../services/language.service';
     <div class="viewContainer" [ngClass]="theme ? 'light' : 'dark'">
       <div class="contextIntro">
       <h1>CONTENT</h1>
+      <app-card [cardId]="1" [imagePath]="projPath" [title]="'Chiangs.Ninja'"></app-card>
       </div>
     </div>
   `,
@@ -22,6 +23,7 @@ export class DesignComponent implements OnInit {
   langSub: Subscription;
   theme: boolean;
   viewContent: {};
+  projPath = `../../../assets/projects/chiangs.jpg`;
 
   constructor(
     private meSvc: MeService,

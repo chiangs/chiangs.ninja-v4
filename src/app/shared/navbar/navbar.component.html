@@ -1,4 +1,4 @@
-<nav [ngClass]="theme ? 'light' : 'dark'" *ngIf="!isMobilePhone">
+<nav [ngClass]="theme ? 'light' : 'dark'">
     <ul class="section container">
         <div class="column brandContainer">
             <img class="link brand" src="../../../assets/images/icon-s.svg" alt="S brand" (click)="goTo('/')">
@@ -28,14 +28,4 @@
             <app-language-switcher [side]="'right'"></app-language-switcher>
         </div>
     </ul>
-</nav>
-<nav *ngIf="isMobilePhone">
-    <i class='bx bxs-layout'></i>
-    <i class='bx bx-layout'></i>
-    <i class='bx bx-code'></i>
-    <i class='bx bxs-cube'></i>
-    <i class='bx bx-cube'></i>
-    <i class='bx bxs-pencil'></i>
-    <i class='bx bx-pencil'></i>
-    <i class='bx bx-skull'></i>
 </nav>

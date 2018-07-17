@@ -11,6 +11,8 @@ import { LanguageSwitcherComponent } from './language-switcher/language-switcher
 import { NavbarComponent } from './navbar/navbar.component';
 import { SocialMediaLinksComponent } from './social-media-links/social-media-links.component';
 import { ButtonComponent } from './button/button.component';
+import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ButtonComponent } from './button/button.component';
     LanguageSwitcherComponent,
     NavbarComponent,
     SocialMediaLinksComponent,
-    ButtonComponent
+    ButtonComponent,
+    NavbarMobileComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
@@ -35,12 +39,14 @@ import { ButtonComponent } from './button/button.component';
     FooterComponent,
     LanguageSwitcherComponent,
     NavbarComponent,
+    NavbarMobileComponent,
     SocialMediaLinksComponent,
     MatSlideToggleModule,
     MatTooltipModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatMenuModule
+    MatMenuModule,
+    CardComponent
   ]
 })
 export class SharedModule {}

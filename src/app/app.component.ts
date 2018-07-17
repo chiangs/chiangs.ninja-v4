@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription, fromEvent } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { en } from './constants';
+import { DeviceSizeService } from './services/device-size.service';
 import { LanguageService } from './services/language.service';
-import { en, dk, no } from './constants';
 
 @Component({
   selector: 'app-root',
   template: `
   <div class="app">
-    <app-navbar class="header" *ngIf="!isLanding"></app-navbar>
+    <app-navbar class="header" *ngIf="!isLanding && !isPhone"></app-navbar>
+    <app-navbar-mobile *ngIf="!isLanding && isPhone"></app-navbar-mobile>
     <div class="masterContainer">
       <router-outlet></router-outlet>
     </div>
@@ -22,12 +24,17 @@ export class AppComponent implements OnInit {
   isLanding: boolean;
   title = `Chiangs.Ninja`;
   defaultLang = en;
-
-  constructor(private router: Router, private langSvc: LanguageService) {
+  isPhone = false;
+  constructor(
+    private router: Router,
+    private langSvc: LanguageService,
+    private deviceSvc: DeviceSizeService
+  ) {
     this.setLanguage();
   }
 
   ngOnInit() {
+    this.isPhone = this.deviceSvc.isPhone();
     this.router.events.subscribe(
       res =>
         (this.isLanding =

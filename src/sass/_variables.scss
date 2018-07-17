@@ -4,11 +4,11 @@ $light: #f7f7f7;
 // $red: #ee4035;
 $white: #f7f7f7;
 $black: #333333;
+$grey: #f2f2f2;
 $red: #ff1744;
 $blue: #7ca8b1;
 $green: #00c853;
 $accent: #ff4081;
-$grey: #f2f2f2;
 $text: $black;
 $text-inverted: $white;
 $opacityLight: 30%;
@@ -40,14 +40,14 @@ $max-vw: 1920px;
 
 // == SHAPES and RADII
 $square: 0px;
-$rounded: 3px;
+$rounded: 2px;
 $circle: 50%;
 
 // == SHADOWS
 $shadowTextDark: 1px 1px 1px $black;
 
 //  == BORDERS
-$borderThinDark: 1px solid $black;
+$borderThinDark: 1px solid $grey;
 $borderThinLight: 1px solid $white;
 $borderThickDark: 2px solid $black;
 $borderThickLight: 2px solid $white;

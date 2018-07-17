@@ -9,6 +9,13 @@
     "@angular-devkit/core" "0.6.1"
     rxjs "^6.0.0"
 
+"@angular-devkit/architect@0.6.8":
+  version "0.6.8"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.6.8.tgz#977acc605aba45d21b95ca704cc99492e14299dd"
+  dependencies:
+    "@angular-devkit/core" "0.6.8"
+    rxjs "^6.0.0"
+
 "@angular-devkit/build-angular@~0.6.0":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-0.6.1.tgz#e59df34271d74436e62086dcf1523e2d22ac7f1b"
@@ -83,11 +90,27 @@
     rxjs "^6.0.0"
     source-map "^0.5.6"
 
+"@angular-devkit/core@0.6.8":
+  version "0.6.8"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.6.8.tgz#3b09d97bd2588f0091df11921f7ed772431806aa"
+  dependencies:
+    ajv "~6.4.0"
+    chokidar "^2.0.3"
+    rxjs "^6.0.0"
+    source-map "^0.5.6"
+
 "@angular-devkit/schematics@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.6.1.tgz#8e94fbd45e24596f1f0a086a70dde88dbc6cf96e"
   dependencies:
     "@angular-devkit/core" "0.6.1"
+    rxjs "^6.0.0"
+
+"@angular-devkit/schematics@0.6.8":
+  version "0.6.8"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.6.8.tgz#6360a0271f1f422862bf932a03b3741e76ac5ff0"
+  dependencies:
+    "@angular-devkit/core" "0.6.8"
     rxjs "^6.0.0"
 
 "@angular/animations@^6.1.0-rc.0":
@@ -102,15 +125,15 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/cli@~6.0.0":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-6.0.1.tgz#52c21451716be51716a413c5367b3f3d003f8447"
+"@angular/cli@^6.0.8":
+  version "6.0.8"
+  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-6.0.8.tgz#65070958b944be30053232c51f8449b7ddd4d92a"
   dependencies:
-    "@angular-devkit/architect" "0.6.1"
-    "@angular-devkit/core" "0.6.1"
-    "@angular-devkit/schematics" "0.6.1"
-    "@schematics/angular" "0.6.1"
-    "@schematics/update" "0.6.1"
+    "@angular-devkit/architect" "0.6.8"
+    "@angular-devkit/core" "0.6.8"
+    "@angular-devkit/schematics" "0.6.8"
+    "@schematics/angular" "0.6.8"
+    "@schematics/update" "0.6.8"
     opn "~5.3.0"
     resolve "^1.1.7"
     rxjs "^6.0.0"
@@ -217,12 +240,20 @@
     "@angular-devkit/schematics" "0.6.1"
     typescript ">=2.6.2 <2.8"
 
-"@schematics/update@0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@schematics/update/-/update-0.6.1.tgz#047ae51df9d80827d56e2f88b662b7c109cb0988"
+"@schematics/angular@0.6.8":
+  version "0.6.8"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-0.6.8.tgz#a8d1afc33e77160296b0a8b3d02f0ee4dfe9d1d2"
   dependencies:
-    "@angular-devkit/core" "0.6.1"
-    "@angular-devkit/schematics" "0.6.1"
+    "@angular-devkit/core" "0.6.8"
+    "@angular-devkit/schematics" "0.6.8"
+    typescript ">=2.6.2 <2.8"
+
+"@schematics/update@0.6.8":
+  version "0.6.8"
+  resolved "https://registry.yarnpkg.com/@schematics/update/-/update-0.6.8.tgz#3b4f897dd3b28335acc53a49d9f0dc10ebd934a7"
+  dependencies:
+    "@angular-devkit/core" "0.6.8"
+    "@angular-devkit/schematics" "0.6.8"
     npm-registry-client "^8.5.1"
     rxjs "^6.0.0"
     semver "^5.3.0"
@@ -773,10 +804,6 @@ boom@5.x.x:
   resolved "https://registry.yarnpkg.com/boom/-/boom-5.2.0.tgz#5dd9da6ee3a5f302077436290cb717d3f4a54e02"
   dependencies:
     hoek "4.x.x"
-
-boxicons@^1.5.6:
-  version "1.5.6"
-  resolved "https://registry.yarnpkg.com/boxicons/-/boxicons-1.5.6.tgz#54b541199f935fae93c64ebdb4b8f9405a90cda0"
 
 brace-expansion@^1.1.7:
   version "1.1.11"

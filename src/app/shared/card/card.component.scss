@@ -1,0 +1,30 @@
+@import 'variables';
+@import 'mixins';
+@import 'functions';
+
+$min-font-size: $fntSizeReg;
+$max-font-size: $fntSizeLabel;
+
+.cardContainer {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: $borderThinDark;
+  border-radius: $rounded;
+}
+
+.cardTitle {
+  @include fluid-font($min-vw, $max-vw, $min-font-size, $max-font-size);
+  color: white;
+  visibility: hidden;
+}
+
+.cardContainer.hover {
+  .cardTitle {
+    visibility: visible;
+  }
+}
+
+// TODO: Darken bgimage
+// TODO: Fade in title (opacity)
