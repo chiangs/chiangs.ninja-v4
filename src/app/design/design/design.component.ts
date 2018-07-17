@@ -19,6 +19,9 @@ import { Project } from '../../models/project.model';
               <app-card [cardId]="i" [imagePath]="project.designImageUrl" [title]="project.name"></app-card>
         </div>
       </div>
+      <div class="section projectsList" *ngIf="!gridView">
+        ListView
+      </div>
     </div>
   `,
   styleUrls: ['./design.component.scss']

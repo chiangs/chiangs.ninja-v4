@@ -17,9 +17,17 @@ export class ProjectService {
   }
 
   getDesignProjects(): Project[] {
+    return this.getProjectsType('design');
+  }
+
+  getCodeProjects(): Project[] {
+    return this.getProjectsType(`code`);
+  }
+
+  getProjectsType(category: string): Project[] {
     const designProjectList = [];
     this.projectList.forEach(project => {
-      if (project.category.includes(`design`)) {
+      if (project.category.includes(category)) {
         designProjectList.push(project);
       }
     });

@@ -13,6 +13,8 @@ import { SocialMediaLinksComponent } from './social-media-links/social-media-lin
 import { ButtonComponent } from './button/button.component';
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import { CardComponent } from './card/card.component';
+import { ProjectGridComponent } from './project-grid/project-grid.component';
+import { ProjectListComponent } from './project-list/project-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CardComponent } from './card/card.component';
     SocialMediaLinksComponent,
     ButtonComponent,
     NavbarMobileComponent,
-    CardComponent
+    CardComponent,
+    ProjectGridComponent,
+    ProjectListComponent
   ],
   imports: [
     CommonModule,
@@ -46,7 +50,9 @@ import { CardComponent } from './card/card.component';
     MatButtonModule,
     MatSnackBarModule,
     MatMenuModule,
-    CardComponent
+    CardComponent,
+    ProjectGridComponent,
+    ProjectListComponent
   ]
 })
 export class SharedModule {}
