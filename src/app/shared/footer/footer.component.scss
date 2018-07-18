@@ -32,11 +32,8 @@ $max-font-size: $fntSizeReg;
     padding: spacing(unit);
   }
   .badges a {
+    cursor: pointer;
     padding: spacing(unit);
-  }
-
-  .devToBadge {
-    background-color: #ffffff;
   }
 }
 
