@@ -6,21 +6,23 @@ import { ThemeSelectService } from '../../services/theme-select.service';
 import { LanguageService } from '../../services/language.service';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../models/project.model';
+import { ContextModel } from '../../models/context.model';
 
 @Component({
   selector: 'app-design',
   template: `
     <div class="viewContainer" [ngClass]="theme ? 'light' : 'dark'">
       <div class="section contextIntro">
-        <h1>CONTENT</h1>
+        <app-context-intro [title]="viewContent.context.title" 
+          [tagline]="viewContent.context.tagline" 
+          [color]="viewContent.context.color">
+        </app-context-intro>
       </div>
       <div class="section projectCardsGrid" *ngIf="gridView">
-        <div class="column cardItem" *ngFor="let project of projects; let i = index">
-              <app-card [cardId]="i" [imagePath]="project.designImageUrl" [title]="project.name"></app-card>
-        </div>
+        <app-project-grid [projects]="projects"></app-project-grid>
       </div>
       <div class="section projectsList" *ngIf="!gridView">
-        ListView
+        <app-project-list [projects]="projects"></app-project-list>
       </div>
     </div>
   `,
@@ -33,7 +35,22 @@ export class DesignComponent implements OnInit {
   theme: boolean;
   projects: Project[];
   gridView = true;
-  viewContent: {};
+  contextColor = `white`;
+  viewContent: { context: ContextModel };
+  enContent = {
+    context: {
+      title: `Design`,
+      tagline: `Although not a designer by trade, it's important to me to integrate the concepts
+      and tools of this crucial process; measure twice, cut once...`,
+      color: this.contextColor
+    }
+  };
+  dkContent = {
+    context: { title: `Design`, tagline: ``, color: this.contextColor }
+  };
+  noContent = {
+    context: { title: `Design`, tagline: ``, color: this.contextColor }
+  };
 
   constructor(
     private meSvc: MeService,
@@ -49,12 +66,12 @@ export class DesignComponent implements OnInit {
       .getTheme()
       .subscribe(theme => (this.theme = theme));
     this.langSub = this.langSvc.getLang().subscribe(language => {
-      // this.viewContent = this.langSvc.langSwitchHandler(
-      //   language,
-      //   this.enContent,
-      //   this.dkContent,
-      //   this.noContent
-      // );
+      this.viewContent = this.langSvc.langSwitchHandler(
+        language,
+        this.enContent,
+        this.dkContent,
+        this.noContent
+      );
     });
     this.projects = this.projectSvc.getDesignProjects();
   }

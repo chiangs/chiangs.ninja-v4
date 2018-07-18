@@ -1,5 +1,9 @@
 @import 'styles';
 
+.white {
+  color: #f7f7f7;
+}
+
 .blue {
   color: #00a3ff;
 }
@@ -35,7 +39,7 @@
 .contextTagline h6 {
   font-family: $fnt-contextTagline;
   font-weight: 400;
-  color: $accent;
+  color: $white;
   text-align: left;
   line-height: 1.5;
   margin: spacing(quad) 0;

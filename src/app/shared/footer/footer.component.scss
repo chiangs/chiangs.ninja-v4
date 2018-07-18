@@ -34,6 +34,10 @@ $max-font-size: $fntSizeReg;
   .badges a {
     padding: spacing(unit);
   }
+
+  .devToBadge {
+    background-color: #ffffff;
+  }
 }
 
 .middleColumn {
