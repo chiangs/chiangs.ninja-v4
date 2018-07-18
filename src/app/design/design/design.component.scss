@@ -15,6 +15,7 @@ $max-font-size: $fntSizeReg;
   min-height: 85vh;
   flex-wrap: wrap;
   padding: spacing(squared);
+  background-color: lighten($grey, 20%);
 
   .cardItem {
     padding: spacing(unit);

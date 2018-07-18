@@ -17,17 +17,17 @@ export class ProjectService {
   }
 
   getDesignProjects(): Project[] {
-    return this.getProjectsType('design');
+    return this.getProjectsType('Designer');
   }
 
   getCodeProjects(): Project[] {
-    return this.getProjectsType(`code`);
+    return this.getProjectsType(`Developer`);
   }
 
-  getProjectsType(category: string): Project[] {
+  getProjectsType(role: string): Project[] {
     const designProjectList = [];
     this.projectList.forEach(project => {
-      if (project.category.includes(category)) {
+      if (project.roles.includes(role)) {
         designProjectList.push(project);
       }
     });
