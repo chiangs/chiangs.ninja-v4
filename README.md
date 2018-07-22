@@ -1,3 +1,38 @@
+## ROADMAP
+**SHARED**
+- Navbar: Mobile
+- Footer: Final design & mobile
+- Button: Implementation
+- ContextIntro: Implementation - restyle?
+- Card: Style & data presentation
+- Project-grid & list: Implementation & data presentation
+- MODALCOMP for project focus
+
+**DESIGN**
+- Initial desktop view and logic implementation
+- Mobile layout, ListView as default?
+
+**CODE**
+- Initial design implementation
+
+**CREATE**
+- Routing and view presentation of leather craft and gallery
+
+**SUPPLEMENTARY**
+- Project images and thumbnails for cards
+- Crisp integration
+- Form integration via netlify?
+- Google Analytics
+- Cookies notification
+- PWA test
+- ErrorPage
+- Refactor to generic portfolio open source
+- Unit tests
+
+**BUGS**
+- != ng serve --aot to handle lazy loaded modules
+
+
 # ChiangsNinja
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.

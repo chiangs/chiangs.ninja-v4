@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Project } from '../../models/project.model';
 
 @Component({
@@ -6,7 +6,7 @@ import { Project } from '../../models/project.model';
   template: `
   <div class="cardsContainer">
     <div class="cardItem" *ngFor="let project of projects; let i = index">
-      <app-card [cardId]="i" [imagePath]="project.designImageUrl" [title]="project.name"></app-card>
+      <app-card [cardId]="i" [imagePath]="project.designImageUrl" [title]="project.name" (click)="onProjectSelect(project)"></app-card>
     </div>
   </div>
   `,
@@ -14,8 +14,15 @@ import { Project } from '../../models/project.model';
 })
 export class ProjectGridComponent implements OnInit {
   @Input() projects: Project[];
+  @Output() projEmitter: EventEmitter<Project>;
 
-  constructor() {}
+  constructor() {
+    this.projEmitter = new EventEmitter();
+  }
 
   ngOnInit() {}
+
+  onProjectSelect(project: Project): void {
+    this.projEmitter.emit(project);
+  }
 }

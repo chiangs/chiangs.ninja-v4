@@ -4,6 +4,7 @@ const chiangsNinja = new Project(`Chiangs.Ninja`);
 chiangsNinja.year = 2018;
 chiangsNinja.summary = `Personal Portfolio`;
 chiangsNinja.technology = [
+  `Progressive Web App (PWA)`,
   `Angular 6`,
   `Netlify`,
   `TypeScript`,

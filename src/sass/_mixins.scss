@@ -37,6 +37,13 @@
   transition: $what $time $how;
 }
 
+// Blur on project focus
+@mixin focusBlur() {
+  filter: blur(3px) grayscale(65%);
+  -webkit-transition: filter 0.5s ease-in;
+  transition: filter 0.5s ease-in;
+}
+
 // Responsive font
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);

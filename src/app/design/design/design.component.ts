@@ -19,7 +19,7 @@ import { ContextModel } from '../../models/context.model';
         </app-context-intro>
       </div>
       <div class="section projectCardsGrid" *ngIf="gridView">
-        <app-project-grid [projects]="projects"></app-project-grid>
+        <app-project-grid [projects]="projects" (projEmitter)="focusProject($event)"></app-project-grid>
       </div>
       <div class="section projectsList" *ngIf="!gridView">
         <app-project-list [projects]="projects"></app-project-list>
@@ -74,5 +74,10 @@ export class DesignComponent implements OnInit {
       );
     });
     this.projects = this.projectSvc.getDesignProjects();
+  }
+
+  focusProject(project: Project): void {
+    console.log(project);
+    this.projectSvc.setFocusProject(project);
   }
 }
