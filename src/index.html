@@ -57,10 +57,6 @@
 <body id="body">
   <app-root>
     <style>
-      #body {
-        background-color: #030915;
-      }
-
       .loadingContainer {
         display: flex;
         justify-content: center;
@@ -73,8 +69,8 @@
         height: 100px;
         width: 100px;
         margin: 0 auto;
-        -webkit-animation: mul16turn 1s infinite linear;
-        animation: mul16turn 1s infinite linear;
+        -webkit-animation: rotate 1s infinite linear;
+        animation: rotate 1s infinite linear;
       }
 
       .loadingCircle {
@@ -87,8 +83,8 @@
       }
 
       .loadingCircle1 {
-        -webkit-animation: m16c1anim 2s infinite ease-in-out;
-        animation: m16c1anim 2s infinite ease-in-out;
+        -webkit-animation: orbit 2s infinite ease-in-out;
+        animation: orbit 2s infinite ease-in-out;
       }
 
       .loadingCircle2 {
@@ -96,7 +92,7 @@
         animation: m16c2anim 2s infinite ease-in-out;
       }
 
-      @-webkit-keyframes mul16turn {
+      @-webkit-keyframes rotate {
         0% {
           -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
@@ -107,7 +103,7 @@
         }
       }
 
-      @keyframes mul16turn {
+      @keyframes rotate {
         0% {
           -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
@@ -119,7 +115,7 @@
       }
 
 
-      @-webkit-keyframes m16c1anim {
+      @-webkit-keyframes orbit {
         0%,
         100% {
           -webkit-transform: scale(.25);
@@ -133,7 +129,7 @@
         }
       }
 
-      @keyframes m16c1anim {
+      @keyframes orbit {
         0%,
         100% {
           -webkit-transform: scale(.25);
@@ -152,12 +148,12 @@
         100% {
           -webkit-transform: scale(1.5);
           transform: scale(1.5);
-          background-color: #4b7b9f;
+          background-color: #e57373;
         }
         50% {
           -webkit-transform: scale(.25);
           transform: scale(.25);
-          background-color: #67b4d4;
+          background-color: #e57373;
         }
       }
 
@@ -166,12 +162,12 @@
         100% {
           -webkit-transform: scale(1.5);
           transform: scale(1.5);
-          background-color: #4b7b9f;
+          background-color: #e57373;
         }
         50% {
           -webkit-transform: scale(.25);
           transform: scale(.25);
-          background-color: #67b4d4;
+          background-color: #e57373;
         }
       }
     </style>
