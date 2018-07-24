@@ -18,6 +18,9 @@ import { ContextModel } from '../../models/context.model';
           [color]="viewContent.context.color">
         </app-context-intro>
       </div>
+      <div class="section projectViewPicker">
+        <app-grid-list-picker (viewSelect)="changeProjectView($event)"></app-grid-list-picker>
+      </div>
       <div class="section projectCardsGrid" *ngIf="gridView">
         <app-project-grid [projects]="projects" (projEmitter)="focusProject($event)"></app-project-grid>
       </div>
@@ -80,5 +83,9 @@ export class DesignComponent implements OnInit {
   focusProject(project: Project): void {
     console.log(project);
     this.projectSvc.setFocusProject(project);
+  }
+
+  changeProjectView(event: any): void {
+    this.gridView = event === `grid` ? true : false;
   }
 }

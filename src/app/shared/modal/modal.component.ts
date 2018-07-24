@@ -7,15 +7,15 @@ import { ProjectService } from '../../services/project.service';
   template: `
     <div class="modal">
       <div class="modalContent">
-        <div class="modalNav">
+        <div class="section modalNav">
           <ul>
             <li class="column"><a class="button" (click)="previousModal()">&#12296;</a></li>
             <li class="column"><a class="button" (click)="nextModal()">&#12297;</a></li>
             <li class="column"><a class="button" (click)="closeModal()">&#9587;</a></li>
           </ul>
         </div>
-        <div class="modalFeatureImage"></div>
-        <div class="modalProjectDetails">
+        <div class="section modalFeatureImage"></div>
+        <div class="section modalProjectDetails">
           <h3>{{ project.name }}</h3>
         </div>
       </div>

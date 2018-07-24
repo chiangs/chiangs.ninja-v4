@@ -78,16 +78,18 @@ ul {
 
 .modalContainer {
   position: absolute;
-  top: 1%;
-  left: 2%;
+  top: calc(50vh - (85vh / 2));
+  left: calc(50vw - (90vw / 2));
   width: 90vw;
   height: 85vh;
+  padding: 2%;
   z-index: -1;
 }
 
 .modalContainer.show,
 .modalContainer.show * {
   z-index: 9000;
+  overflow: hidden;
 }
 
 // .title {

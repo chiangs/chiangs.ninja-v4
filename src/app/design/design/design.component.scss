@@ -11,6 +11,11 @@ $max-font-size: $fntSizeReg;
   color: $white;
 }
 
+.projectViewPicker {
+  justify-content: flex-end;
+  padding: 0 spacing(squared);
+}
+
 .projectCardsGrid {
   min-height: 85vh;
   flex-wrap: wrap;
