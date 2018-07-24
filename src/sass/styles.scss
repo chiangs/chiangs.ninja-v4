@@ -76,6 +76,20 @@ ul {
   flex: 2 2 22px;
 }
 
+.modalContainer {
+  position: absolute;
+  top: 1%;
+  left: 2%;
+  width: 90vw;
+  height: 85vh;
+  z-index: -1;
+}
+
+.modalContainer.show,
+.modalContainer.show * {
+  z-index: 9000;
+}
+
 // .title {
 //   grid-column: 1 / -1;
 //   grid-row: 2 / 4;
@@ -87,7 +101,8 @@ ul {
 // }
 
 // app-wide classes
-.link {
+.link,
+.button {
   cursor: pointer;
   text-transform: uppercase;
 }

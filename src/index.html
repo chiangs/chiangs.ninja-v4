@@ -42,59 +42,147 @@
   <link rel="author" type="text/plain" href="humans.txt" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href='https://cdn.jsdelivr.net/npm/boxicons@1.5.6/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    .progress {
+      height: 300px;
+    }
+
+    .progress>svg {
+      height: 100%;
+      display: block;
+    }
+  </style>
 </head>
 
 <body id="body">
   <app-root>
     <style>
-      @import url(https://fonts.googleapis.com/css?family=Montserrat);
+      #body {
+        background-color: #030915;
+      }
 
-      app-root {
+      .loadingContainer {
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100vw;
         height: 100vh;
-
-        color: #f7f7f7;
-        text-transform: lowercase;
-        font-family: 'Montserrat',
-        sans-serif;
-        font-size: 2.5em;
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
       }
 
-      body {
-        background: #030915;
-        margin: 0;
-        padding: 0;
+      .loading {
+        height: 100px;
+        width: 100px;
+        margin: 0 auto;
+        -webkit-animation: mul16turn 1s infinite linear;
+        animation: mul16turn 1s infinite linear;
       }
 
-      @keyframes dots {
-        50% {
-          transform: translateY(-.4rem);
+      .loadingCircle {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: red;
+        float: left;
+        margin: 30px 3px 0;
+      }
+
+      .loadingCircle1 {
+        -webkit-animation: m16c1anim 2s infinite ease-in-out;
+        animation: m16c1anim 2s infinite ease-in-out;
+      }
+
+      .loadingCircle2 {
+        -webkit-animation: m16c2anim 2s infinite ease-in-out;
+        animation: m16c2anim 2s infinite ease-in-out;
+      }
+
+      @-webkit-keyframes mul16turn {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
         }
         100% {
-          transform: translateY(0);
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
         }
       }
 
-      .d {
-        animation: dots 1.5s ease-out infinite;
+      @keyframes mul16turn {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
       }
 
-      .d-2 {
-        animation-delay: .5s;
+
+      @-webkit-keyframes m16c1anim {
+        0%,
+        100% {
+          -webkit-transform: scale(.25);
+          transform: scale(.25);
+          background-color: #67b4d4;
+        }
+        50% {
+          -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+          background-color: #4b7b9f;
+        }
       }
 
-      .d-3 {
-        animation-delay: 1s;
+      @keyframes m16c1anim {
+        0%,
+        100% {
+          -webkit-transform: scale(.25);
+          transform: scale(.25);
+          background-color: #67b4d4;
+        }
+        50% {
+          -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+          background-color: #4b7b9f;
+        }
+      }
+
+      @-webkit-keyframes m16c2anim {
+        0%,
+        100% {
+          -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+          background-color: #4b7b9f;
+        }
+        50% {
+          -webkit-transform: scale(.25);
+          transform: scale(.25);
+          background-color: #67b4d4;
+        }
+      }
+
+      @keyframes m16c2anim {
+        0%,
+        100% {
+          -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+          background-color: #4b7b9f;
+        }
+        50% {
+          -webkit-transform: scale(.25);
+          transform: scale(.25);
+          background-color: #67b4d4;
+        }
       }
     </style>
-    Loading
-    <span class="d">.</span>
-    <span class="d d-2">.</span>
-    <span class="d d-3">.</span>
+    <div class="loadingContainer">
+      <div class="loading">
+        <div class="loadingCircle loadingCircle1"></div>
+        <div class="loadingCircle loadingCircle2"></div>
+      </div>
+    </div>
   </app-root>
+
 </body>
 
 </html>

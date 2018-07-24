@@ -1,0 +1,19 @@
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
+$min-font-size: $fntSizeMin;
+$max-font-size: $fntSizeLabel;
+
+.modal {
+  @include fluid-font($min-vw, $max-vw, $min-font-size, $max-font-size);
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: inherit;
+  background-color: $grey;
+  box-shadow: $modalShadow;
+}
+
+.modalNav {
+}

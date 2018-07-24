@@ -9,11 +9,12 @@ import { Projects } from './project.list';
 export class ProjectService {
   _focusedProject: Subject<Project>;
   private projectList: Project[];
+  private tempProj: Project;
 
   constructor() {
-    const tempProj = new Project('temp');
+    this.tempProj = new Project('temp');
     this.projectList = Projects;
-    this._focusedProject = new BehaviorSubject<Project>(tempProj);
+    this._focusedProject = new BehaviorSubject<Project>(this.tempProj);
   }
 
   getProjects(): Project[] {
@@ -43,6 +44,8 @@ export class ProjectService {
   }
 
   setFocusProject(project: Project): void {
-    this._focusedProject.next(project);
+    project !== null
+      ? this._focusedProject.next(project)
+      : this._focusedProject.next(this.tempProj);
   }
 }

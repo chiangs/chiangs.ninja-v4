@@ -15,6 +15,7 @@ import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import { CardComponent } from './card/card.component';
 import { ProjectGridComponent } from './project-grid/project-grid.component';
 import { ProjectListComponent } from './project-list/project-list.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProjectListComponent } from './project-list/project-list.component';
     NavbarMobileComponent,
     CardComponent,
     ProjectGridComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +54,8 @@ import { ProjectListComponent } from './project-list/project-list.component';
     MatMenuModule,
     CardComponent,
     ProjectGridComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    ModalComponent
   ]
 })
 export class SharedModule {}

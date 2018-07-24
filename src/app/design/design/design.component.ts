@@ -76,6 +76,7 @@ export class DesignComponent implements OnInit {
     this.projects = this.projectSvc.getDesignProjects();
   }
 
+  // Set by proj comp
   focusProject(project: Project): void {
     console.log(project);
     this.projectSvc.setFocusProject(project);
