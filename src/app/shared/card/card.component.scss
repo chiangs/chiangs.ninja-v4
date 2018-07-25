@@ -6,6 +6,7 @@ $min-font-size: $fntSizeReg;
 $max-font-size: $fntSizeLabel;
 
 .cardContainer {
+  cursor: pointer;
   width: 100%;
   height: 100%;
   background-size: cover;

@@ -25,7 +25,7 @@ $max-font-size: $fntSizeLabel;
   li {
     display: inline-block;
     padding: 0 spacing(double);
-    font-size: $fntSizeSmall;
+    font-size: $fntSizeReg;
     color: darken($grey, 30%);
   }
 }
