@@ -39,12 +39,19 @@
 }
 
 .shape {
-  position: absolute;
+  position: fixed;
   left: -8vw;
   top: 20%;
   height: 80%;
   width: 35%;
   transform: rotate(-15deg);
+}
+
+@media only screen and (max-width: 1024px) {
+  .shape {
+    left: -30vw;
+    width: 55%;
+  }
 }
 
 @media only screen and (max-width: 766px) {
@@ -56,5 +63,10 @@
   .socialMedia {
     grid-column: 16 / -1;
     grid-row: 13 / -1;
+  }
+
+  .shape {
+    left: -30vw;
+    width: 85%;
   }
 }
