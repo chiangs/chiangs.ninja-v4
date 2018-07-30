@@ -43,3 +43,42 @@ $originalStateBorder: $black;
 .button.disabled:hover {
   border: $originalStateBorder;
 }
+
+// TODO: check Ripple effect
+// button {
+//   position: relative;
+//   overflow: hidden;
+// }
+
+// button::after {
+//   content: '';
+//   position: absolute;
+//   top: 50%;
+//   left: 51%;
+//   width: 5px;
+//   height: 5px;
+//   background-attachment: $whiteTransparent;
+//   opacity: 0;
+//   background-repeat: $rounded;
+//   transform: scale(1, 1) translate(-50%);
+//   transform-origin: 50% 51%;
+// }
+
+// @keyframes ripple {
+//   0% {
+//     transform: scale(0, 0);
+//     opacity: 1;
+//   }
+//   20% {
+//     transform: scale(25, 25);
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: scale(40, 40);
+//   }
+// }
+
+// button:focus:not(:active)::after {
+//   animation: ripple 1s ease-out;
+// }

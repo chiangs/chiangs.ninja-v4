@@ -8,7 +8,7 @@ import { ThemeSelectService } from '../../services/theme-select.service';
   template: `
     <div class="viewContainer" [ngClass]="theme ? 'light' : 'dark'">
       <div class="contextIntro">
-      <h1>CONTENT</h1>
+      <h1>Under construction</h1>
       </div>
     </div>
   `,

@@ -12,6 +12,11 @@ import { ThemeSelectService } from '../services/theme-select.service';
   selector: 'app-landing',
   template: `
     <div class="landingContainer" [ngClass]="theme ? 'light' : 'dark'">
+    <div class="shape">
+      <svg width="100%" height="100%">
+          <rect width="100%" height="100%" style="fill:#EB3170;"/>
+      </svg>
+    </div>
       <div class="landingLanguageSelector">
         <app-language-switcher [side]="'left'"></app-language-switcher>
       </div>

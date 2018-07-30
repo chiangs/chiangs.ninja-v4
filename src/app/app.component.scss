@@ -10,7 +10,7 @@
   flex-direction: column;
 }
 
-.app.overlay *:not(.modal) {
+.app.overlay {
   @include focusBlur;
   pointer-events: none;
 }

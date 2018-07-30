@@ -4,16 +4,13 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-create',
   template: `
     <p>
-      create works!
+      create under construction!
     </p>
   `,
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

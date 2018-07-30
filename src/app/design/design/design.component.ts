@@ -13,10 +13,7 @@ import { ContextModel } from '../../models/context.model';
   template: `
     <div class="viewContainer" [ngClass]="theme ? 'light' : 'dark'">
       <div class="section contextIntro">
-        <app-context-intro [title]="viewContent.context.title" 
-          [tagline]="viewContent.context.tagline" 
-          [color]="viewContent.context.color">
-        </app-context-intro>
+       
       </div>
       <div class="section projectViewPicker">
         <app-grid-list-picker (viewSelect)="changeProjectView($event)"></app-grid-list-picker>
@@ -31,6 +28,11 @@ import { ContextModel } from '../../models/context.model';
   `,
   styleUrls: ['./design.component.scss']
 })
+
+// <app-context - intro[title]="viewContent.context.title"
+// [tagline] = "viewContent.context.tagline"
+// [color] = "viewContent.context.color" >
+//   </app-context-intro>
 export class DesignComponent implements OnInit {
   me: Me;
   themeSub: Subscription;

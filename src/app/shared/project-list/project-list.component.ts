@@ -5,7 +5,7 @@ import { Project } from '../../models/project.model';
   selector: 'app-project-list',
   template: `
     <p>
-      project-list works!
+      project-list under construction!
     </p>
   `,
   styleUrls: ['./project-list.component.scss']

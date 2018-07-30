@@ -9,8 +9,6 @@ import { ProjectService } from '../../services/project.service';
       <div class="modalContent">
         <div class="section modalNav">
           <ul>
-            <li class="column"><a class="button" (click)="previousModal()">&#12296;</a></li>
-            <li class="column"><a class="button" (click)="nextModal()">&#12297;</a></li>
             <li class="column"><a class="button" (click)="closeModal()">&#9587;</a></li>
           </ul>
         </div>

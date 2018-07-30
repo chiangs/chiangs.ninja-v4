@@ -19,6 +19,7 @@
 .landingTitle {
   grid-column: 3 / 14;
   grid-row: 4 / 7;
+  z-index: 10;
 }
 
 .landingSubTitle {
@@ -35,6 +36,15 @@
   grid-column: 9 / 14;
   grid-row: 9 / 16;
   text-align: center;
+}
+
+.shape {
+  position: absolute;
+  left: -8vw;
+  top: 20%;
+  height: 80%;
+  width: 35%;
+  transform: rotate(-15deg);
 }
 
 @media only screen and (max-width: 766px) {
