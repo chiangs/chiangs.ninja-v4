@@ -38,6 +38,7 @@ export class ThemeSelectService {
     this.selectedTheme.next(selectedTheme);
   }
 
+  // TODO: track each page and continue the tour
   setSeenGuide(): void {
     localStorage
       ? localStorage.setItem(this.snackBarViewedCache, JSON.stringify(true))

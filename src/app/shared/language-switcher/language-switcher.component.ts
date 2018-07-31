@@ -16,8 +16,8 @@ import { ThemeSelectService } from '../../services/theme-select.service';
     theme ? 'light' : 'dark']" (mouseleave)="clickedOutside()">
       <ul class="menuList">
         <li class="link langSwitch enSwitch"(click)="langSwitch(english)">English</li>
-        <li class="link langSwitch enSwitch"(click)="langSwitch(dansk)">Dansk</li>
-        <li class="link langSwitch enSwitch"(click)="langSwitch(norsk)">Norsk</li>
+        <li class="link langSwitch dkSwitch"(click)="langSwitch(dansk)">Dansk</li>
+        <li class="link langSwitch noSwitch"(click)="langSwitch(norsk)">Norsk</li>
       </ul>
     </div>
   `,

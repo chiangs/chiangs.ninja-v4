@@ -27,6 +27,9 @@
 .menuList {
   padding: 0 10px;
   z-index: 1000;
+  .langSwitch {
+    padding: spacing(unit);
+  }
 }
 
 .dark.menuList {

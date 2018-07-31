@@ -16,6 +16,7 @@ $max-font-size: $fntSizeReg;
 }
 
 .projectCardsGrid {
+  width: 100%;
   min-height: 85vh;
   flex-wrap: wrap;
   padding: spacing(squared);
