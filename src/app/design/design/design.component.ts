@@ -16,10 +16,11 @@ import { ContextModel } from '../../models/context.model';
        
       </div>
       <div class="section projectViewPicker">
+        <input type="text" class="filter" [(ngModel)]="filteredStatus">
         <app-grid-list-picker (viewSelect)="changeProjectView($event)"></app-grid-list-picker>
       </div>
       <div class="section projectCardsGrid" *ngIf="gridView">
-        <app-project-grid [projects]="projects" (projEmitter)="focusProject($event)"></app-project-grid>
+        <app-project-grid [filteredStatus]="filteredStatus" [projects]="projects" (projEmitter)="focusProject($event)"></app-project-grid>
       </div>
       <div class="section projectsList" *ngIf="!gridView">
         <app-project-list [projects]="projects"></app-project-list>
@@ -40,6 +41,7 @@ export class DesignComponent implements OnInit {
   theme: boolean;
   projects: Project[];
   gridView = true;
+  filteredStatus = '';
   contextColor = `white`;
   viewContent: { context: ContextModel };
   enContent = {

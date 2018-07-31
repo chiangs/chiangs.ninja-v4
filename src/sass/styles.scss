@@ -51,14 +51,9 @@ ul {
 }
 
 // base flex-box rows and columns
-// base CSS grid
 .viewContainer {
   min-height: 100vh;
   min-width: 100vw;
-  // display: grid;
-  // grid-gap: $grid-gap;
-  // grid-template: repeat(16, 1fr) / repeat(16, 1fr);
-  // position: relative;
 }
 
 .section {
@@ -92,16 +87,6 @@ ul {
   overflow: hidden;
 }
 
-// .title {
-//   grid-column: 1 / -1;
-//   grid-row: 2 / 4;
-// }
-
-// .subtitle {
-//   grid-column: 1 / -1;
-//   grid-row: 4 / 5;
-// }
-
 // app-wide classes
 .link,
 .button {
@@ -116,6 +101,16 @@ ul {
 .devToButton {
   background-color: $black;
   color: $white;
+}
+
+input.filter {
+  height: 25px;
+  outline: none;
+  border: 1px solid transparent;
+  transition: border 0.5s ease-in;
+  &:focus {
+    border: 1px solid $accent;
+  }
 }
 
 // effect for rolling link, use \xa0 in strings for spaces

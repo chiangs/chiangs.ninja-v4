@@ -1,19 +1,28 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { Project } from '../../models/project.model';
 
 @Component({
   selector: 'app-project-grid',
   template: `
   <div class="cardsContainer">
-    <div class="cardItem" *ngFor="let project of projects; let i = index">
+    <div class="cardItem" *ngFor="let project of projects | filter:filteredStatus:'technology'; let i = index">
       <app-card [cardId]="i" [imagePath]="project.designImageUrl" [title]="project.name" (click)="onProjectSelect(project)"></app-card>
     </div>
   </div>
   `,
   styleUrls: ['./project-grid.component.scss']
 })
-export class ProjectGridComponent implements OnInit {
+export class ProjectGridComponent implements OnInit, OnChanges {
   @Input() projects: Project[];
+  @Input() filteredStatus: string;
   @Output() projEmitter: EventEmitter<Project>;
 
   constructor() {
@@ -21,6 +30,10 @@ export class ProjectGridComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.filteredStatus = changes.filteredStatus.currentValue;
+  }
 
   onProjectSelect(project: Project): void {
     this.projEmitter.emit(project);

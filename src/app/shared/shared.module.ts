@@ -17,6 +17,7 @@ import { ProjectGridComponent } from './project-grid/project-grid.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ModalComponent } from './modal/modal.component';
 import { GridListPickerComponent } from './grid-list-picker/grid-list-picker.component';
+import { FilterPipe } from '../pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { GridListPickerComponent } from './grid-list-picker/grid-list-picker.com
     ProjectGridComponent,
     ProjectListComponent,
     ModalComponent,
-    GridListPickerComponent
+    GridListPickerComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
