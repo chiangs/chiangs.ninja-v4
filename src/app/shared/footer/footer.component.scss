@@ -62,3 +62,34 @@ $max-font-size: $fntSizeReg;
     padding: spacing(double);
   }
 }
+
+@media only screen and(max-width: 768px) {
+  .footerContainer {
+    flex-wrap: wrap;
+  }
+  .leftColumn {
+    min-width: 50%;
+  }
+  .middleColumn {
+    flex: 1;
+  }
+  .rightColumn {
+    min-width: 100%;
+    text-align: center;
+    ul {
+      padding: 0;
+    }
+    li {
+      display: inline-block;
+      padding: spacing(double);
+    }
+  }
+}
+
+@media only screen and(max-width: 414px) {
+  .leftColumn,
+  .middleColumn,
+  .rightColumn {
+    min-width: 100%;
+  }
+}

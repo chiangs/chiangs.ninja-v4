@@ -1,5 +1,5 @@
 <div class="section footerContainer" [ngClass]="theme ? 'light' : 'dark'">
-    <div class="column myInformation leftColumn">
+    <div class="column myInformation leftColumn" *ngIf="!isPhone">
         <div class="column meInfo profilePic">
             <img class="profilePicImg" src="../../../assets/images/profilePic.png" alt="profile image" />
             <h4 class="fullName">{{ me.firstName }}</h4>

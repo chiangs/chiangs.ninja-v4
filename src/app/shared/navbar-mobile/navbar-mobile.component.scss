@@ -10,10 +10,36 @@ nav * {
   @include fluid-font($min-vw, $max-vw, $min-font-size, $max-font-size);
 }
 
+.mobileNavContainer {
+  padding: spacing(double);
+}
+
+.brandContainer {
+  display: flex;
+  max-width: 30%;
+}
+
+.brandContainer * {
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+img.brand {
+  width: 30px;
+  height: 30px;
+}
+
+.themToggle {
+  flex: 1;
+}
+
 .name {
   width: 100%;
   justify-content: center;
   align-items: center;
+  text-align: right;
 }
 
 .firstName {
@@ -24,4 +50,27 @@ nav * {
 .lastName {
   font-weight: 500;
   letter-spacing: spacing(unit);
+}
+
+.menu {
+  min-width: 100%;
+  justify-content: center;
+  ul.menuList {
+    width: 100%;
+    display: flex;
+    padding: 0;
+    text-align: center;
+  }
+  li {
+    cursor: pointer;
+    flex: 1;
+    margin: auto;
+    display: inline-block;
+    padding: spacing(double);
+    border-radius: $rounded;
+  }
+}
+
+.light .menu li {
+  background: $grey;
 }

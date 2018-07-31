@@ -6,6 +6,7 @@ import { LanguageService } from '../../services/language.service';
 import { MeService } from '../../services/me.service';
 import { ScrollService } from '../../services/scroll.service';
 import { ThemeSelectService } from '../../services/theme-select.service';
+import { DeviceSizeService } from '../../services/device-size.service';
 
 @Component({
   selector: 'app-footer',
@@ -34,16 +35,19 @@ export class FooterComponent implements OnInit, OnDestroy {
   theme: boolean;
   langSub: Subscription;
   socialLinksOrientation: string;
+  isPhone: boolean;
 
   constructor(
     private router: Router,
     private meSvc: MeService,
     private themeSvc: ThemeSelectService,
     private langSvc: LanguageService,
-    private scrollSvc: ScrollService
+    private scrollSvc: ScrollService,
+    private deviceSvc: DeviceSizeService
   ) {
     this.me = this.meSvc.getMe();
     this.socialLinksOrientation = 'horizontal';
+    this.isPhone = this.deviceSvc.isPhone();
   }
 
   ngOnInit(): void {

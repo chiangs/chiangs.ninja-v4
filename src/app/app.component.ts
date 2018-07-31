@@ -12,7 +12,7 @@ import { ProjectService } from './services/project.service';
   template: `
   <div class="app" [ngClass]="{'overlay': isProjFocused}">
       <app-navbar class="header" *ngIf="!isLanding && !isPhone"></app-navbar>
-      <app-navbar-mobile *ngIf="!isLanding && isPhone"></app-navbar-mobile>
+      <app-navbar-mobile class="header" *ngIf="!isLanding && isPhone"></app-navbar-mobile>
       <div class="masterContainer">
         <router-outlet></router-outlet>
       </div>

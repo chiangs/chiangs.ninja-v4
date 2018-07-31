@@ -9,18 +9,33 @@ import { ThemeSelectService } from '../../services/theme-select.service';
   selector: 'app-navbar-mobile',
   template: `
     <nav [ngClass]="checked ? 'light' : 'dark'">
-      <div class="section name">
-        <span class="title firstName">Stephen</span>
-        <span class="title lastName">Chiang</span>
+      <div class="section mobileNavContainer">
+        <div class="column brandContainer">
+          <img class="link brand" src="../../../assets/images/icon-s.svg" alt="S brand" (click)="goTo('/')">
+          <mat-slide-toggle class="themeToggle" [checked]="checked" [labelPosition]="'before'" (change)="onToggleTheme($event)">
+          </mat-slide-toggle>
+        </div>
+        <div class="column name">
+          <span class="title firstName">Stephen</span>
+          <span class="title lastName">Chiang</span>
+        </div>
       </div>
-      <i class='bx bxs-layout'></i>
-      <i class='bx bx-layout'></i>
-      <i class='bx bx-code'></i>
-      <i class='bx bxs-cube'></i>
-      <i class='bx bx-cube'></i>
-      <i class='bx bxs-pencil'></i>
-      <i class='bx bx-pencil'></i>
-      <i class='bx bx-skull'></i>
+      <div class="section menu">
+        <ul class="menuList" *ngIf="checked">
+          <li (click)="goTo(designUrl)"><i class='bx bxs-layout'></i></li>
+          <li (click)="goTo(codeUrl)"><i class='bx bx-code'></i></li>
+          <li (click)="goTo(createUrl)"><i class='bx bxs-cube'></i></li>
+          <li (click)="goToBlog()"><i class='bx bxs-pencil'></i></li>
+          <li (click)="scrollToFooter('footer')"><i class='bx bx-skull'></i></li>
+        </ul>
+        <ul class="menuList" *ngIf="!checked">
+          <li (click)="goTo(designUrl)"><i class='bx bx-layout'></i></li>
+          <li (click)="goTo(codeUrl)"><i class='bx bx-cube'></i></li>
+          <li (click)="goTo(createUrl)"><i class='bx bx-code'></i></li>
+          <li (click)="goToBlog()"><i class='bx bx-pencil'></i></li>
+          <li (click)="scrollToFooter('footer')"><i class='bx bx-skull'></i></li>
+        </ul>
+      </div>
     </nav>
   `,
   styleUrls: ['./navbar-mobile.component.scss']
