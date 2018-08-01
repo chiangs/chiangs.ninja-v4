@@ -8,11 +8,12 @@ import {
   EventEmitter
 } from '@angular/core';
 import { Project } from '../../models/project.model';
+import { DeviceSizeService } from '../../services/device-size.service';
 
 @Component({
   selector: 'app-project-grid',
   template: `
-  <div class="cardsContainer">
+  <div class="cardsContainer" [ngClass]="{'phone': isPhone}">
     <div class="cardItem" *ngFor="let project of projects | filter:filteredStatus:'technology'; let i = index">
       <app-card [cardId]="i" [imagePath]="project.designImageUrl" [title]="project.name" (click)="onProjectSelect(project)"></app-card>
     </div>
@@ -24,8 +25,10 @@ export class ProjectGridComponent implements OnInit, OnChanges {
   @Input() projects: Project[];
   @Input() filteredStatus: string;
   @Output() projEmitter: EventEmitter<Project>;
+  isPhone: boolean;
 
-  constructor() {
+  constructor(private deviceSvc: DeviceSizeService) {
+    this.isPhone = this.deviceSvc.isPhone();
     this.projEmitter = new EventEmitter();
   }
 

@@ -113,6 +113,16 @@ input.filter {
   }
 }
 
+.clearFilter {
+  height: 25px;
+  background-color: #ffffff;
+  color: $dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: spacing(unit);
+}
+
 input.search {
   background-image: url('../assets/images/icons/search.svg');
   background-size: 15px;

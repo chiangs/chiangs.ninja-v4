@@ -13,3 +13,9 @@
   max-width: 33.3%;
   height: 300px;
 }
+
+.phone.cardsContainer .cardItem {
+  flex: 1 1 50%;
+  max-width: 50%;
+  height: 20vh;
+}

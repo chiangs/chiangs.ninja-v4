@@ -16,7 +16,8 @@ import { ContextModel } from '../../models/context.model';
        
       </div>
       <div class="section projectViewPicker">
-        <input type="text" class="filter search" placeholder="{{viewContent.inputPlaceholder}}" [(ngModel)]="filteredStatus">
+        <input type="text" class="filter search" placeholder="{{viewContent.inputPlaceholder}}" [(ngModel)]="filteredStatus" (click)="selectInputText($event)">
+        <div class="clearFilter button" (click)="clearFilter()">&#9587;</div>
         <app-grid-list-picker (viewSelect)="changeProjectView($event)"></app-grid-list-picker>
       </div>
       <div class="section projectCardsGrid" *ngIf="gridView">
@@ -94,5 +95,15 @@ export class DesignComponent implements OnInit {
 
   changeProjectView(event: any): void {
     this.gridView = event === `grid` ? true : false;
+  }
+
+  selectInputText(e: any): void {
+    e.target.select();
+  }
+
+  clearFilter(): void {
+    const input = document.querySelector('.filter') as HTMLInputElement;
+    input.value = '';
+    this.filteredStatus = '';
   }
 }

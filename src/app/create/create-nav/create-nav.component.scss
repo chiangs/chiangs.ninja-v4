@@ -8,9 +8,10 @@
 .createMenuItem {
   flex: 1;
   display: inline-block;
-  min-height: inherit;
+  min-height: 25px;
   min-width: 300px;
   text-align: center;
+  align-items: center;
 }
 
 .createMenuItem a {

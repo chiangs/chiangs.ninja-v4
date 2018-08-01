@@ -11,9 +11,7 @@ import { ThemeSelectService } from '../../services/theme-select.service';
   template: `
    <div class="viewContainer" [ngClass]="theme ? 'light' : 'dark'">
     
-    <div class="contentNav">
-      <app-create-nav></app-create-nav>
-    </div>
+  
     <div class="contentContainer">
       <router-outlet></router-outlet>
     </div>
@@ -28,6 +26,9 @@ export class CreateComponent implements OnInit, OnDestroy {
   // [color] = "viewContent.context.color" >
   // </app-context-intro>
   //   < /div>
+  //   <div class="contentNav" >
+  // <app-create - nav > </app-create-nav>
+  // < /div>
   me: Me;
   themeSub: Subscription;
   langSub: Subscription;
