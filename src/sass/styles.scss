@@ -113,6 +113,14 @@ input.filter {
   }
 }
 
+input.search {
+  background-image: url('../assets/images/icons/search.svg');
+  background-size: 15px;
+  background-position: spacing(unit);
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+
 // effect for rolling link, use \xa0 in strings for spaces
 .linkRoloEffect a {
   cursor: pointer;

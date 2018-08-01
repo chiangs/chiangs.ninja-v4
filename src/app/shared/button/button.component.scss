@@ -1,4 +1,6 @@
-@import 'styles';
+@import 'variables';
+@import 'mixins';
+@import 'functions';
 
 $min-font-size: $fntSizeMin;
 $max-font-size: $fntSizeLabel;

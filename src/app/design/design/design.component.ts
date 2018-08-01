@@ -16,7 +16,7 @@ import { ContextModel } from '../../models/context.model';
        
       </div>
       <div class="section projectViewPicker">
-        <input type="text" class="filter" [(ngModel)]="filteredStatus">
+        <input type="text" class="filter search" placeholder="{{viewContent.inputPlaceholder}}" [(ngModel)]="filteredStatus">
         <app-grid-list-picker (viewSelect)="changeProjectView($event)"></app-grid-list-picker>
       </div>
       <div class="section projectCardsGrid" *ngIf="gridView">
@@ -43,20 +43,23 @@ export class DesignComponent implements OnInit {
   gridView = true;
   filteredStatus = '';
   contextColor = `white`;
-  viewContent: { context: ContextModel };
+  viewContent: { context: ContextModel; inputPlaceholder: string };
   enContent = {
     context: {
       title: `Design`,
       tagline: `Although not a designer by trade, it's important to me to integrate the concepts
       and tools of this crucial process; measure twice, cut once...`,
       color: this.contextColor
-    }
+    },
+    inputPlaceholder: `Search`
   };
   dkContent = {
-    context: { title: `Design`, tagline: ``, color: this.contextColor }
+    context: { title: `Design`, tagline: ``, color: this.contextColor },
+    inputPlaceholder: `Søg`
   };
   noContent = {
-    context: { title: `Design`, tagline: ``, color: this.contextColor }
+    context: { title: `Design`, tagline: ``, color: this.contextColor },
+    inputPlaceholder: `Søke`
   };
 
   constructor(

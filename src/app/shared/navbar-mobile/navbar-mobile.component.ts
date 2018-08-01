@@ -30,8 +30,8 @@ import { ThemeSelectService } from '../../services/theme-select.service';
         </ul>
         <ul class="menuList" *ngIf="!checked">
           <li (click)="goTo(designUrl)"><i class='bx bx-layout'></i></li>
-          <li (click)="goTo(codeUrl)"><i class='bx bx-cube'></i></li>
-          <li (click)="goTo(createUrl)"><i class='bx bx-code'></i></li>
+          <li (click)="goTo(codeUrl)"><i class='bx bx-code'></i></li>
+          <li (click)="goTo(createUrl)"><i class='bx bx-cube'></i></li>
           <li (click)="goToBlog()"><i class='bx bx-pencil'></i></li>
           <li (click)="scrollToFooter('footer')"><i class='bx bx-skull'></i></li>
         </ul>

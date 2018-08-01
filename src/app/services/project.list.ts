@@ -85,8 +85,8 @@ antoniaDesigns.technology = [
 antoniaDesigns.roles = [des, dev];
 antoniaDesigns.contributions = `Simple local artist's gallery to show of their crafts, built with CSS grid and Flexbox to responsively build a mosaic-like grid that adjusts to the window size. Continuously integrated and deployed view GitHub and Netlify.`;
 antoniaDesigns.url = `www.antonia-designs.com`;
-antoniaDesigns.projectImageUrl = `../../assets/projects/chiangs.jpg`;
-antoniaDesigns.designImageUrl = `../../assets/projects/chiangs.jpg`;
+antoniaDesigns.projectImageUrl = `../../assets/projects/antoniadesigns.png`;
+antoniaDesigns.designImageUrl = `../../assets/projects/antoniadesigns.png`;
 
 // ot //
 const ot = new Project(`OsloTaxi`);
@@ -174,10 +174,10 @@ const sysres = new Project('Systematic-Resumes');
 sysres.year = 2017;
 sysres.summary = `Commercial site for resumé / CV writing service`;
 sysres.technology = [js, aws, fe, vscode, git, html, css];
-sysres.roles = [des, dev];
+sysres.roles = [dev];
 sysres.contributions = `Complete design, develop, deployment and maintenance`;
 sysres.url = `www.systematic-resumes.com`;
-sysres.projectImageUrl = ``;
+sysres.projectImageUrl = `./../assets/projects/sysres.png`;
 
 // wns //
 const wns = new Project(`Wendy's Newborn Services`);
@@ -186,8 +186,8 @@ wns.summary = `Static site for newborn care services provider`;
 wns.technology = [figma];
 wns.roles = [des, dev];
 wns.contributions = `Logo and front-end design. Development of front-end, depoyment and continuous integration`;
-wns.projectImageUrl = `../../assets/projects/chiangs.jpg`;
-wns.designImageUrl = `../../assets/projects/chiangs.jpg`;
+wns.projectImageUrl = `../../assets/projects/wns.png`;
+wns.designImageUrl = `../../assets/projects/wns.png`;
 
 // code & hammer //
 const ch = new Project(`Code & Hammer Design`);
@@ -197,6 +197,7 @@ const parkr = new Project(`ParkR`);
 const mamafit = new Project(`MamaFitness.app`);
 const taco = new Project(`TacoTruck.app`);
 
+// publish projects to display
 export const Projects = [
   chiangsNinja,
   antoniaDesigns,
