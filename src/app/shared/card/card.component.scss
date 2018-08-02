@@ -15,15 +15,28 @@ $max-font-size: $fntSizeLabel;
   border-radius: $rounded;
 }
 
-.cardTitle {
+.overlay {
   @include fluid-font($min-vw, $max-vw, $min-font-size, $max-font-size);
   color: white;
   visibility: hidden;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-out;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.cardTitle {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: $text-inverted;
 }
 
 .cardContainer.hover {
-  .cardTitle {
+  .overlay {
+    border: $borderThinAccent;
     visibility: visible;
+    transform: scaleX(1);
   }
 }
 
