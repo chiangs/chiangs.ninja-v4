@@ -24,7 +24,7 @@ import { ContextModel } from '../../models/context.model';
         <app-project-grid [filteredStatus]="filteredStatus" [projects]="projects" (projEmitter)="focusProject($event)"></app-project-grid>
       </div>
       <div class="section projectsList" *ngIf="!gridView">
-        <app-project-list [projects]="projects"></app-project-list>
+        <app-project-list [filteredStatus]="filteredStatus" [projects]="projects" (projEmitter)="focusProject($event)"></app-project-list>
       </div>
     </div>
   `,

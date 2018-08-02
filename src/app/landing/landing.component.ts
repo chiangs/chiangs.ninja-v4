@@ -142,6 +142,6 @@ export class LandingComponent implements OnInit, OnDestroy {
   }
 
   goToWrite(): void {
-    window.open(this.me.blog, '_blank');
+    window.open(this.me.blog, '_blank', 'noopener noreferrer');
   }
 }

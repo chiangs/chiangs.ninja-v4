@@ -32,6 +32,7 @@ const svc = `Services`;
 const language = `Multi-Language / Translated`;
 const figma = `Figma`;
 const gMaps = `Google Maps APIs`;
+const logo = `logo`;
 
 // chiangs.ninja //
 const chiangsNinja = new Project(`Chiangs.Ninja`);
@@ -183,7 +184,7 @@ sysres.projectImageUrl = `./../assets/projects/sysres.png`;
 const wns = new Project(`Wendy's Newborn Services`);
 wns.year = 2018;
 wns.summary = `Static site for newborn care services provider`;
-wns.technology = [figma];
+wns.technology = [figma, logo];
 wns.roles = [des, dev];
 wns.contributions = `Logo and front-end design. Development of front-end, depoyment and continuous integration`;
 wns.projectImageUrl = `../../assets/projects/wns.png`;

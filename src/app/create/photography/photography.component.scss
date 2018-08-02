@@ -13,16 +13,16 @@
   grid-row: 2 / 5;
 }
 
-.cta {
-  grid-column: 4 / 5;
-  grid-row: 2 / 5;
-  text-align: left;
-}
+// .cta {
+//   grid-column: 4 / 5;
+//   grid-row: 2 / 5;
+//   text-align: left;
+// }
 
 @media only screen and(max-width: 766px) {
   .header-grid {
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 
   .titles {
@@ -36,8 +36,8 @@
     }
   }
 
-  .cta {
-    grid-column: 2 / 8;
-    grid-row: 3 / -1;
-  }
+  // .cta {
+  //   grid-column: 2 / 8;
+  //   grid-row: 3 / -1;
+  // }
 }

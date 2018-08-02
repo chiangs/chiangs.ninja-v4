@@ -92,7 +92,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   goToBlog(): void {
-    window.open(this.writeUrl, '_blank', 'noopener');
+    window.open(this.writeUrl, '_blank', 'noopener noreferrer');
   }
 
   scrollToFooter(className: string): void {
