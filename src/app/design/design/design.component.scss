@@ -29,3 +29,13 @@ $max-font-size: $fntSizeReg;
     height: 100%;
   }
 }
+
+.projectsList {
+  width: 100%;
+  padding: spacing(squared);
+
+  app-project-list {
+    width: 100%;
+    height: 100%;
+  }
+}

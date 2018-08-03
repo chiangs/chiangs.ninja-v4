@@ -14,24 +14,14 @@ import { DeviceSizeService } from '../../services/device-size.service';
   selector: 'app-project-list',
   template: `
   <div class="listContainer" [ngClass]="{'phone': isPhone}">
-    <table>
-      <thead>
-        <th>Name</th>
-        <th>Year</th>
-        <th>Contributions</th>
-        <th>URL</th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let project of projects | filter:filteredStatus:'technology'; let i = index">
-          <td>{{ project.name }}</td>
-          <td>{{ project.year }}</td>
-          <td>{{ project.contributions | trim: textTrimAmount }}</td>
-          <td>
-            <a href="https://{{ project.url }}" target ="_blank" rel="noopener noreferrer">{{ project.url }}</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="section listProjectRow" *ngFor="let project of projects | filter:filteredStatus:'technology'; let i = index" (click)="onProjectSelect(project)">
+      <div class="column data name">{{ project.name }}</div>
+      <div class="column data year">{{ project.year }}</div>
+      <div class="column data contributions">{{ project.contributions | trim: textTrimAmount }}</div>
+      <div class="column data url">
+        <a href="https://{{ project.url }}" target ="_blank" rel="noopener noreferrer">{{ project.url }}</a>
+      </div>
+    </div>
   </div>
   `,
   styleUrls: ['./project-list.component.scss']

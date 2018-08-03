@@ -15,7 +15,8 @@ import { ProjectService } from '../../services/project.service';
         <div class="section modalFeatureImage"></div>
         <div class="section modalProjectDetails">
           <h3>{{ project.name }}</h3>
-        </div>
+          </div>
+          <h4>This feature is still being constructed. More details coming soon</h4>
       </div>
     </div>
   `,

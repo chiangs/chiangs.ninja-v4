@@ -1,0 +1,41 @@
+@import 'variables';
+@import 'functions';
+
+.listContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.section.listProjectRow {
+  cursor: pointer;
+  width: 100%;
+  min-height: 50px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  color: $text;
+  border-radius: 25px;
+  box-shadow: $shadowTextDark;
+  margin: 0.5px 0;
+  padding: 0 spacing(triple);
+}
+
+.section.listProjectRow:nth-child(odd) {
+  background-color: darken($white, 10%);
+}
+.section.listProjectRow:nth-child(even) {
+  background-color: $white;
+}
+
+.column.data.name {
+  max-width: 20%;
+}
+.column.data.year {
+  max-width: 5%;
+}
+.column.data.contributions {
+  flex: 1;
+}
+.column.data.url {
+  max-width: 20%;
+}
