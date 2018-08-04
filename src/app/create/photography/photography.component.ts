@@ -34,8 +34,8 @@ export class PhotographyComponent implements OnInit, OnDestroy {
     private themeSvc: ThemeSelectService,
     private gallerySvc: GalleryService
   ) {
-    this.title = `A way to find inspiration and lessons in design.`;
-    this.title2 = `A creative outlet to develop observational and detail-oriented aspects of problem-solving skills.`;
+    this.title = `I use photogaphy as a way to find inspiration and lessons in design.`;
+    this.title2 = `This is how I use creativity to develop observational and detail-oriented aspects of problem-solving skills.`;
     this.cta = `This gallery is built with`;
     this.themeSub = this.themeSvc
       .getTheme()

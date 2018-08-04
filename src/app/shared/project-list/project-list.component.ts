@@ -21,7 +21,7 @@ import { DeviceSizeService } from '../../services/device-size.service';
       <div class="column data contributions" *ngIf="!isPhone">{{ project.contributions | trim: textTrimAmount }}</div>
       <div class="column data url" *ngIf="!isPhone">
         <a href="https://{{ project.url }}" target ="_blank" rel="noopener noreferrer">{{ project.url }}</a>
-      </div>s
+      </div>
      </div>
   </div>
   `,
