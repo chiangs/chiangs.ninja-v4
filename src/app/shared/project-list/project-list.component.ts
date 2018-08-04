@@ -13,15 +13,16 @@ import { DeviceSizeService } from '../../services/device-size.service';
 @Component({
   selector: 'app-project-list',
   template: `
-  <div class="listContainer" [ngClass]="{'phone': isPhone}">
-    <div class="section listProjectRow" *ngFor="let project of projects | filter:filteredStatus:'technology'; let i = index" (click)="onProjectSelect(project)">
-      <div class="column data name">{{ project.name }}</div>
-      <div class="column data year">{{ project.year }}</div>
-      <div class="column data contributions">{{ project.contributions | trim: textTrimAmount }}</div>
-      <div class="column data url">
+  <div class="listContainer">
+    <div class="section listProjectRow" *ngFor="let project of projects | filter:filteredStatus:'technology'; let i = index" 
+    (click)="onProjectSelect(project)">
+      <div class="column data name" [ngClass]="{'phone': isPhone}">{{ project.name }}</div>
+      <div class="column data year" *ngIf="!isPhone">{{ project.year }}</div>
+      <div class="column data contributions" *ngIf="!isPhone">{{ project.contributions | trim: textTrimAmount }}</div>
+      <div class="column data url" *ngIf="!isPhone">
         <a href="https://{{ project.url }}" target ="_blank" rel="noopener noreferrer">{{ project.url }}</a>
-      </div>
-    </div>
+      </div>s
+     </div>
   </div>
   `,
   styleUrls: ['./project-list.component.scss']
@@ -39,7 +40,7 @@ export class ProjectListComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.textTrimAmount = this.isPhone ? 30 : 80;
+    this.textTrimAmount = this.isPhone ? 10 : 80;
   }
 
   ngOnChanges(changes: SimpleChanges) {

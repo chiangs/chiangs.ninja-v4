@@ -12,9 +12,14 @@ import { ThemeSelectService } from '../services/theme-select.service';
   selector: 'app-landing',
   template: `
     <div class="landingContainer" [ngClass]="theme ? 'light' : 'dark'">
-    <div class="shape">
+    <div class="shape" *ngIf="!theme">
       <svg width="100%" height="100%">
-          <rect width="100%" height="100%" style="fill:#EB3170;"/>
+        <rect width="100%" height="100%" style="fill:#EB3170;"/>
+      </svg>
+    </div>
+    <div class="shape" *ngIf="theme">
+      <svg width="100%" height="100%" *ngIf="theme">
+          <rect width="100%" height="100%" style="fill:#78909c;"/>
       </svg>
     </div>
       <div class="landingLanguageSelector">

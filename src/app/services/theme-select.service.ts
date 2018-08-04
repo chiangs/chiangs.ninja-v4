@@ -55,6 +55,7 @@ export class ThemeSelectService {
     localStorage
       ? localStorage.removeItem(this.snackBarViewedCache)
       : (this.viewedGuide = false);
+    this.setTheme(false);
     this.router.navigate(['/']);
   }
 }

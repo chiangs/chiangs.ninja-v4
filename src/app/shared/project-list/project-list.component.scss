@@ -1,5 +1,9 @@
 @import 'variables';
 @import 'functions';
+@import 'mixins';
+
+$min-font-size: $fntSizeMin;
+$max-font-size: $fntSizeReg;
 
 .listContainer {
   height: 100%;
@@ -16,7 +20,7 @@
   color: $text;
   border-radius: 25px;
   box-shadow: $shadowTextDark;
-  margin: 0.5px 0;
+  margin: 1px 0;
   padding: 0 spacing(triple);
 }
 
@@ -25,6 +29,10 @@
 }
 .section.listProjectRow:nth-child(even) {
   background-color: $white;
+}
+
+.column.data {
+  @include fluid-font($min-vw, $max-vw, $min-font-size, $max-font-size);
 }
 
 .column.data.name {
@@ -38,4 +46,9 @@
 }
 .column.data.url {
   max-width: 20%;
+}
+
+.phone.column.data.name {
+  max-width: 100%;
+  text-align: center;
 }

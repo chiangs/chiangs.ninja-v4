@@ -25,6 +25,7 @@ export class DeviceSizeService {
   }
 
   isPhone(): boolean {
-    return this.height <= 820 ? true : false;
+    const portrait = window.innerHeight > window.innerWidth ? true : false;
+    return this.height <= 820 && portrait ? true : false;
   }
 }

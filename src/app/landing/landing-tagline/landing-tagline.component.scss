@@ -1,9 +1,10 @@
 @import 'variables';
+@import 'functions';
 
 .landingS {
   max-height: 80%;
   max-width: 100px;
-  padding: spacing(triple) spacing(triple) 0 0;
+  padding: spacing(triple) 0 0 0;
   display: flex;
   flex-flow: column wrap;
   align-items: stretch;
