@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Me } from '../../models/me.model';
 import { Subscription } from 'rxjs';
 import { MeService } from '../../services/me.service';
@@ -35,7 +35,7 @@ import { ContextModel } from '../../models/context.model';
 // [tagline] = "viewContent.context.tagline"
 // [color] = "viewContent.context.color" >
 //   </app-context-intro>
-export class DesignComponent implements OnInit {
+export class DesignComponent implements OnInit, OnDestroy {
   me: Me;
   themeSub: Subscription;
   langSub: Subscription;
@@ -85,6 +85,12 @@ export class DesignComponent implements OnInit {
       );
     });
     this.projects = this.projectSvc.getDesignProjects();
+  }
+
+  ngOnDestroy() {
+    [this.themeSub, this.langSub].forEach(subscription =>
+      subscription.unsubscribe()
+    );
   }
 
   // Set by proj comp

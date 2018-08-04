@@ -178,7 +178,7 @@ sysres.technology = [js, aws, fe, vscode, git, html, css];
 sysres.roles = [dev];
 sysres.contributions = `Complete design, develop, deployment and maintenance`;
 sysres.url = `www.systematic-resumes.com`;
-sysres.projectImageUrl = `./../assets/projects/sysres.png`;
+sysres.projectImageUrl = `../../assets/projects/sysres.png`;
 
 // wns //
 const wns = new Project(`Wendy's Newborn Services`);

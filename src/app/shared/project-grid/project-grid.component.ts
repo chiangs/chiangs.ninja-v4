@@ -7,6 +7,7 @@ import {
   Output,
   EventEmitter
 } from '@angular/core';
+import { Router } from '@angular/router';
 import { Project } from '../../models/project.model';
 import { DeviceSizeService } from '../../services/device-size.service';
 
@@ -15,7 +16,7 @@ import { DeviceSizeService } from '../../services/device-size.service';
   template: `
   <div class="cardsContainer" [ngClass]="{'phone': isPhone}">
     <div class="cardItem" *ngFor="let project of projects | filter:filteredStatus:'technology'; let i = index">
-      <app-card [cardId]="i" [imagePath]="project.designImageUrl" [title]="project.name" (click)="onProjectSelect(project)"></app-card>
+      <app-card [cardId]="i" [project]="project" [useDesign]="useDesign" (click)="onProjectSelect(project)"></app-card>
     </div>
   </div>
   `,
@@ -26,10 +27,12 @@ export class ProjectGridComponent implements OnInit, OnChanges {
   @Input() filteredStatus: string;
   @Output() projEmitter: EventEmitter<Project>;
   isPhone: boolean;
+  useDesign: boolean;
 
-  constructor(private deviceSvc: DeviceSizeService) {
+  constructor(private deviceSvc: DeviceSizeService, private router: Router) {
     this.isPhone = this.deviceSvc.isPhone();
     this.projEmitter = new EventEmitter();
+    this.useDesign = this.router.url.includes('design') ? true : false;
   }
 
   ngOnInit() {}
