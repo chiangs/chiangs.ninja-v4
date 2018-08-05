@@ -61,8 +61,8 @@ chiangsNinja.technology = [
 chiangsNinja.roles = [des, dev];
 chiangsNinja.url = `www.chiangs.ninja`;
 chiangsNinja.contributions = `Complete design, development, and deployment`;
-chiangsNinja.projectImageUrl = `../../assets/projects/chiangs.jpg`;
-chiangsNinja.designImageUrl = `../../assets/projects/chiangs.jpg`;
+chiangsNinja.projectImageUrl = `../../assets/projects/chiangsProj.jpeg`;
+chiangsNinja.designImageUrl = `../../assets/projects/chiangsDes.jpg`;
 
 // antonia-designs //
 const antoniaDesigns = new Project(`Antonia-Designs`);
@@ -116,8 +116,7 @@ ot.technology = [
 ot.roles = [dev];
 ot.contributions = `Front-end feature development and API consumption. Back-end development of Umbraco as headless CMS.`;
 ot.url = `www.oslotaxi.no`;
-ot.projectImageUrl = `../../assets/projects/chiangs.jpg`;
-ot.designImageUrl = `../../assets/projects/chiangs.jpg`;
+ot.projectImageUrl = `../../assets/projects/ot.jpeg`;
 
 // tf //
 const tf = new Project(`TaxiFix`);
@@ -144,8 +143,7 @@ tf.technology = [
 tf.roles = [dev];
 tf.contributions = `Front-end complete refresh, refactor, and feature development, API consumption. Back-end development of Umbraco as headless CMS.`;
 tf.url = `www.antonia-designs.com`;
-tf.projectImageUrl = `../../assets/projects/chiangs.jpg`;
-tf.designImageUrl = `../../assets/projects/chiangs.jpg`;
+tf.projectImageUrl = `../../assets/projects/tf.jpeg`;
 
 // clib //
 const clib = new Project('Angular Component Library - Open Source');
@@ -167,8 +165,8 @@ clib.technology = [
 ];
 clib.roles = [dev];
 clib.contributions = `Reusable and flexiblbe components, library admin`;
-clib.repoUrl = ``;
-clib.projectImageUrl = ``;
+clib.repoUrl = `www.github.com/chiangs/AngularComponentLibrary`;
+clib.projectImageUrl = `../../assets/projects/clib.png`;
 
 // sysres //
 const sysres = new Project('Systematic-Resumes');
